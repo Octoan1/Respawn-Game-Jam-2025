@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=15 format=3 uid="uid://b8k07vwbcoo4v"]
 
-[ext_resource type="Texture2D" uid="uid://qd3hwn6pphqa" path="res://assets/real icon.png" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://ys7fals88ttl" path="res://assets/models/Obelisk.obj" id="2_sugp2"]
-[ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
+[ext_resource type="Script" path="res://scenes/box_test.gd" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,9 +20,6 @@ glow_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sgp6g"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
-albedo_texture = ExtResource("1_jyhfs")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0wfyh"]
@@ -39,10 +35,13 @@ metallic_specular = 0.4
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_color = Color(0.003921569, 1, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
+
 [node name="Main" type="Node3D"]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
+shadow_enabled = true
 script = ExtResource("1_tbgi4")
 sun_angle_offset = 90.0
 
@@ -58,7 +57,6 @@ shape = SubResource("WorldBoundaryShape3D_sgp6g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_tbgi4")
 mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -81,3 +79,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.488806
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 script = ExtResource("5_tbgi4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BoxTest"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxTest/StaticBody3D"]
+shape = SubResource("BoxShape3D_jyhfs")

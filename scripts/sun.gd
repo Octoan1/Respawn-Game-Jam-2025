@@ -11,7 +11,7 @@ extends DirectionalLight3D
 	#rotation_degrees.x = fmod(rotation_degrees.x, 360)
 	
 # Maximum sun rotation (0° = sunrise, 180° = sunset)
-@export var sun_angle_offset : float  # Adjust so sun starts below horizon
+@export var sun_angle_offset : float = 180 # Adjust so sun starts below horizon
 
 func _process(delta: float) -> void:
 	# Map time_of_day (0-24) to rotation
