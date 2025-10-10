@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=16 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="Texture2D" uid="uid://qd3hwn6pphqa" path="res://assets/real icon.png" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/directional_light_3d.gd" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="ArrayMesh" uid="uid://ys7fals88ttl" path="res://assets/models/Obelisk.obj" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,12 +34,17 @@ albedo_color = Color(1, 0, 1, 1)
 metallic = 1.0
 metallic_specular = 0.4
 
+[sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+albedo_color = Color(0.003921569, 1, 1, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
-script = ExtResource("2_0wfyh")
-sun_speed = 10
+script = ExtResource("1_tbgi4")
+sun_angle_offset = 90.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sugp2")
@@ -69,3 +75,9 @@ mesh = ExtResource("2_sugp2")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9821639, 0)
+
+[node name="BoxTest" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
+mesh = SubResource("BoxMesh_jyhfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+script = ExtResource("5_tbgi4")
