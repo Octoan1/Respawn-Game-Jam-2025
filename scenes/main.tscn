@@ -1,8 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="ArrayMesh" uid="uid://ys7fals88ttl" path="res://Obelisk.obj" id="2_0wfyh"]
-[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scenes/directional_light_3d.gd" id="2_0wfyh"]
+[ext_resource type="Script" path="res://scenes/directional_light_3d.gd" id="2_0wfyh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,10 +54,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003112793, 2.1270142, -0.06
 shape = SubResource("BoxShape3D_0wfyh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = ExtResource("2_0wfyh")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
 script = ExtResource("2_0wfyh")
 sun_speed = 10
-

@@ -19,7 +19,7 @@ config/icon="uid://cfalcb7urqyyx"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
-window/size/mode=2
+window/size/mode=3
 
 [input]
 
