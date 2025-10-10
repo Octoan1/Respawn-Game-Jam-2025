@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=8 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scenes/directional_light_3d.gd" id="2_0wfyh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,3 +37,8 @@ transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 
 mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
+script = ExtResource("2_0wfyh")
+sun_speed = 10
