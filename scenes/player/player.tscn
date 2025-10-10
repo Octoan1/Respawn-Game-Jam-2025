@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://blehgd713ihr"]
+[gd_scene load_steps=5 format=3 uid="uid://blehgd713ihr"]
 
 [ext_resource type="Script" uid="uid://5501r4bdrrsj" path="res://scenes/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cbeij4ao0bemx" path="res://assets/crosshair.svg" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 
@@ -21,3 +22,24 @@ mesh = SubResource("CapsuleMesh_3vyb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+
+[node name="Control" type="Control" parent="Neck/Camera3D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Neck/Camera3D/Control"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_dovo2")
