@@ -15,3 +15,4 @@ func _process(delta: float) -> void:
 		material_override.albedo_color = day_color
 	else:
 		material_override.albedo_color = night_color
+	rotation_degrees.x = ((t / 24.0) * 360.0)
