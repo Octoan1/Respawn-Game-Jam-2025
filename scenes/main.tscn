@@ -36,5 +36,3 @@ transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 
 mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-
-[editable path="Player"]

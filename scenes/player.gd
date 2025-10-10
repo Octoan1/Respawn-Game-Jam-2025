@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
-@onready var camera := $Neck/Camera3d
+@onready var camera := $Neck/Camera3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
