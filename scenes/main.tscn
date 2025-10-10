@@ -1,7 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=10 format=3 uid="uid://b8k07vwbcoo4v"]
 
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/directional_light_3d.gd" id="2_0wfyh"]
+=======
+[ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="ArrayMesh" uid="uid://ys7fals88ttl" path="res://Obelisk.obj" id="2_0wfyh"]
+[ext_resource type="Script" path="res://scenes/directional_light_3d.gd" id="3_sugp2"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,11 +31,14 @@ size = Vector3(2.0081787, 5.2540283, 1.890564)
 
 [node name="Main" type="Node3D"]
 
+<<<<<<< Updated upstream
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 visible = false
 shadow_enabled = true
 
+=======
+>>>>>>> Stashed changes
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sugp2")
 
@@ -46,17 +55,29 @@ mesh = SubResource("PlaneMesh_o5qli")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Obelisk" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
 disable_mode = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obelisk"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003112793, 2.1270142, -0.060638428)
 shape = SubResource("BoxShape3D_0wfyh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obelisk"]
+mesh = ExtResource("2_0wfyh")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
-script = ExtResource("2_0wfyh")
+light_energy = 6.443
+light_volumetric_fog_energy = 2.42
+shadow_enabled = true
+shadow_transmittance_bias = -6.188
+directional_shadow_split_1 = 0.01
+directional_shadow_split_2 = 0.01
+directional_shadow_split_3 = 0.01
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.418
+directional_shadow_max_distance = 8192.0
+directional_shadow_pancake_size = 10.5
+script = ExtResource("3_sugp2")
 sun_speed = 10
