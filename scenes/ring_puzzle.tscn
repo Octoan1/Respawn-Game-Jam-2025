@@ -1,0 +1,154 @@
+[gd_scene load_steps=23 format=3 uid="uid://cu3rfiqjic5bc"]
+
+[ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player.tscn" id="1_35wsb"]
+[ext_resource type="Script" uid="uid://domm2vsot51tv" path="res://scenes/PuzzleRing.gd" id="2_j1khf"]
+[ext_resource type="Script" uid="uid://ky26ujb2dbwf" path="res://scenes/PuzzleRings.gd" id="3_70dx5"]
+[ext_resource type="Script" uid="uid://dclt2w38uvw8b" path="res://scenes/Button.gd" id="3_j1khf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_70dx5"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0wfyh"]
+sky_material = SubResource("ProceduralSkyMaterial_70dx5")
+
+[sub_resource type="Environment" id="Environment_4xiub"]
+background_mode = 2
+sky = SubResource("Sky_0wfyh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2rcan"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1l5ya"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fjb0c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6kog"]
+
+[sub_resource type="Gradient" id="Gradient_70dx5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4xiub"]
+gradient = SubResource("Gradient_70dx5")
+fill_from = Vector2(0.21428572, 0.104395606)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rcan"]
+albedo_color = Color(0.54102784, 0.94195384, 1, 1)
+albedo_texture = SubResource("GradientTexture2D_4xiub")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mt5j8"]
+
+[sub_resource type="Gradient" id="Gradient_1l5ya"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fjb0c"]
+gradient = SubResource("Gradient_1l5ya")
+fill_from = Vector2(0, 0.87362635)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6kog"]
+albedo_color = Color(1, 0, 0.83116233, 1)
+albedo_texture = SubResource("GradientTexture2D_fjb0c")
+
+[sub_resource type="Gradient" id="Gradient_mt5j8"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nil8p"]
+gradient = SubResource("Gradient_mt5j8")
+fill_from = Vector2(0.36263737, 0.32967034)
+fill_to = Vector2(0.9395604, 0.94505495)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lwba"]
+albedo_color = Color(0.32285678, 0.77412903, 0.42643794, 1)
+albedo_texture = SubResource("GradientTexture2D_nil8p")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_35wsb"]
+
+[node name="RingPuzzle" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4xiub")
+
+[node name="Floor" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_2rcan")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1l5ya")
+
+[node name="Player" parent="." instance=ExtResource("1_35wsb")]
+
+[node name="PuzzleWall" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 7, 0, 0, 0, 7, 6.799983, 3.5834022, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleWall"]
+mesh = SubResource("BoxMesh_fjb0c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PuzzleWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PuzzleWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_x6kog")
+
+[node name="PuzzleRings" type="Node3D" parent="."]
+script = ExtResource("3_70dx5")
+
+[node name="OuterRing" type="Node3D" parent="PuzzleRings"]
+transform = Transform3D(-2.1855695e-07, 0.2, -2.1855695e-07, 0, -8.742278e-09, -5, -5, -8.742278e-09, 9.553427e-15, 6.513748, 3.884973, 0)
+script = ExtResource("2_j1khf")
+ring_name = "Outer"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/OuterRing"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.0879678e-21, 0, -3.340749e-24, 1, -7.6733286e-10, 0.43886566, 0)
+material_override = SubResource("StandardMaterial3D_2rcan")
+mesh = SubResource("CylinderMesh_mt5j8")
+
+[node name="InnerRing" type="Node3D" parent="PuzzleRings"]
+transform = Transform3D(-4.371139e-08, 0.2, -4.371139e-08, 0, -8.742278e-09, -1, -1, -8.742278e-09, 1.9106855e-15, 5.66862, 3.884973, 0)
+script = ExtResource("2_j1khf")
+ring_name = "Inner"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/InnerRing"]
+transform = Transform3D(1, 0, -2.1175824e-22, 0, 1, -4.1759358e-22, -2.1175824e-22, -1.6703745e-23, 1, -3.0787447e-08, 3.5216713, 0)
+material_override = SubResource("StandardMaterial3D_x6kog")
+mesh = SubResource("CylinderMesh_mt5j8")
+
+[node name="MiddleRing" type="Node3D" parent="PuzzleRings"]
+transform = Transform3D(-1.3113414e-07, 0.2, -1.3113414e-07, 6.490924e-23, -8.742278e-09, -3, -3, -8.742278e-09, 5.7320566e-15, 6.4896975, 3.884973, -2.0650148e-14)
+script = ExtResource("2_j1khf")
+ring_name = "Middle"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/MiddleRing"]
+material_override = SubResource("StandardMaterial3D_3lwba")
+mesh = SubResource("CylinderMesh_mt5j8")
+
+[node name="Buttons" type="Node3D" parent="."]
+script = ExtResource("3_j1khf")
+
+[node name="Outer+MiddleButton" type="Node3D" parent="Buttons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 3.0983968, 0.09877014, -1.3552017)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Outer+MiddleButton"]
+mesh = SubResource("CylinderMesh_mt5j8")
+
+[node name="OuterMiddleArea" type="Area3D" parent="Buttons/Outer+MiddleButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Buttons/Outer+MiddleButton/OuterMiddleArea"]
+shape = SubResource("CylinderShape3D_35wsb")
+
+[node name="Inner+OuterButton" type="Node3D" parent="Buttons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 3.0983968, 0.09877014, 2.2904227)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Buttons/Inner+OuterButton"]
+mesh = SubResource("CylinderMesh_mt5j8")
+
+[node name="InnerOuterArea" type="Area3D" parent="Buttons/Inner+OuterButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Buttons/Inner+OuterButton/InnerOuterArea"]
+shape = SubResource("CylinderShape3D_35wsb")
+
+[connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Player" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Buttons" method="inner_button_pressed"]
+[connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Player" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons/Inner+OuterButton/InnerOuterArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons" method="outer_button_pressed"]
