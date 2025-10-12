@@ -2,10 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfalcb7urqyyx"
-path="res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"
 uid="uid://qd3hwn6pphqa"
-path.s3tc="res://.godot/imported/real icon.png-5151ee96fa66b91bf67a27ee36dc9b07.s3tc.ctex"
+path.s3tc="res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,9 +12,7 @@ metadata={
 [deps]
 
 source_file="res://assets/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"]
-source_file="res://real icon.png"
-dest_files=["res://.godot/imported/real icon.png-5151ee96fa66b91bf67a27ee36dc9b07.s3tc.ctex"]
+dest_files=["res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.s3tc.ctex"]
 
 [params]
 
@@ -46,4 +42,3 @@ detect_3d/compress_to=1
 svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false
-

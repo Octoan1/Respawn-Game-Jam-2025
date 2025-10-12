@@ -18,20 +18,20 @@ func set_state(input) -> void:
 
 func choose_rotation() -> void:
 	# choose target angle
-	target_angle_x = deg_to_rad(72 * state)
+	target_angle_x = deg_to_rad(72)
 	print("rotation angle: ", 72*state)
 	print("rotation radians: ", deg_to_rad(72 * state))
 	#snapping angle
 	#self.rotate_x(72*state)
-	self.rotate_x(target_angle_x)
+	self.rotate_x(deg_to_rad(72))
 
 func _physics_process(delta: float) -> void:
-	pass
+	
 	# this kinda works
-	#if target_angle_x:
+	if target_angle_x:
 		# Smoothly rotate towards the target_angle_x
 		# Calculate the difference in rotation
-		#var angle_diff = wrapf(target_angle_x - self.rotation.x, -PI, PI)
+		var angle_diff = wrapf(target_angle_x - self.rotation.x, -PI, PI)
 		# Apply a smooth rotation
-		#self.rotate_x(clamp(rotation_speed * delta, 0, abs(angle_diff)) * sign(angle_diff))
+		self.rotate_x(clamp(rotation_speed * delta, 0, abs(angle_diff)) * sign(angle_diff))
 		#self.rotation.x = lerp_angle(self.rotation.x, target_angle_x, rotation_speed*delta)
