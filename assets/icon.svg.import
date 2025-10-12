@@ -4,18 +4,23 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfalcb7urqyyx"
 path="res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"
+uid="uid://qd3hwn6pphqa"
+path.s3tc="res://.godot/imported/real icon.png-5151ee96fa66b91bf67a27ee36dc9b07.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/icon.svg"
 dest_files=["res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"]
+source_file="res://real icon.png"
+dest_files=["res://.godot/imported/real icon.png-5151ee96fa66b91bf67a27ee36dc9b07.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +28,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,3 +46,4 @@ detect_3d/compress_to=1
 svg/scale=1.0
 editor/scale_with_editor_scale=false
 editor/convert_colors_with_editor_theme=false
+
