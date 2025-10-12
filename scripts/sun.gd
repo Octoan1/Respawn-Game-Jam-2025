@@ -1,7 +1,7 @@
 extends DirectionalLight3D
 	
-@export var sunrise_time : float = 6.0
-@export var sunset_time : float = 18.0
+@export var sunrise_time : float = 0.0
+@export var sunset_time : float = 12.0
 @export var day_intensity : float = 1.0
 @export var night_intensity : float = 0.5
 
@@ -10,7 +10,7 @@ extends DirectionalLight3D
 @export var sunset_color : Color = Color(1.0, 0.4, 0.2)
 @export var night_color : Color = Color(0.1, 0.1, 0.2)
 
-@export var sun_angle_offset : float = 90
+@export var sun_angle_offset : float
 
 func _process(delta: float) -> void:
 	var t = GlobalTime.time_of_day
