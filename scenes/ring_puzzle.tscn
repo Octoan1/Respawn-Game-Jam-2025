@@ -98,6 +98,7 @@ mesh = SubResource("CylinderMesh_mt5j8")
 transform = Transform3D(-1.3113414e-07, 0.2, -1.3113414e-07, 6.490924e-23, -8.742278e-09, -3, -3, -8.742278e-09, 5.7320566e-15, 6.4896975, 3.884973, -2.0650148e-14)
 script = ExtResource("2_j1khf")
 ring_name = "Middle"
+state = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/MiddleRing"]
 material_override = SubResource("StandardMaterial3D_fjb0c")
