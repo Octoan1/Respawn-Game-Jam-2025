@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://blehgd713ihr"]
+[gd_scene load_steps=5 format=3 uid="uid://blehgd713ihr"]
 
 [ext_resource type="Script" uid="uid://5501r4bdrrsj" path="res://scenes/player/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dvivg84pq07tt" path="res://scenes/player/interaction_ray_cast.gd" id="2_dovo2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 
@@ -21,3 +22,11 @@ mesh = SubResource("CapsuleMesh_3vyb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
+fov = 80.0
+
+[node name="InteractionRayCast" type="RayCast3D" parent="Neck/Camera3D"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("2_dovo2")
+
+[connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
+[connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]
