@@ -47,10 +47,10 @@ func outer_middle_shift() -> void:
 	elif(MiddleRing.get_state() == 5):
 		MiddleRing.set_state(1)
 	
-	if(OuterRing.get_state() != 5):
-		OuterRing.set_state(OuterRing.get_state() + 1)
-	elif(OuterRing.get_state() == 5):
-		OuterRing.set_state(1)
+	if(OuterRing.get_state() != 0):
+		OuterRing.set_state(OuterRing.get_state() - 1)
+	elif(OuterRing.get_state() == 0):
+		OuterRing.set_state(5)
 	
 	#purely visual for the player
 	OuterRing.choose_rotation()
@@ -71,5 +71,5 @@ func check_correct() -> void:
 	var innerState = InnerRing.get_state()
 	var middleState = MiddleRing.get_state()
 	
-	if(outerState == 4 && middleState == 3 && innerState == 2):
+	if(outerState == 3 && middleState == 3 && innerState == 3):
 		print("Winner!")
