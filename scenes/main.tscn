@@ -1,16 +1,13 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=16 format=3 uid="uid://b8k07vwbcoo4v"]
 
+[ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://dhgqqndd5ch5s" path="res://scenes/pyramid.tscn" id="7_tipki"]
-
-[ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
-[ext_resource type="Script" path="res://scenes/reset_manager.gd" id="6_tipki"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -25,36 +22,6 @@ func _unhandled_input(event):
 	if sub_viewport:
 		sub_viewport.push_input(event)
 "
-
-[sub_resource type="SphereMesh" id="SphereMesh_tipki"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
-shading_mode = 0
-albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ProceduralSkyMaterial_o5qli")
-
-[sub_resource type="Environment" id="Environment_sugp2"]
-background_mode = 2
-sky = SubResource("Sky_0wfyh")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sgp6g"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
-albedo_color = Color(0.003921569, 1, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 
 [sub_resource type="Shader" id="Shader_tbgi4"]
 code = "shader_type canvas_item;
@@ -97,45 +64,6 @@ script = SubResource("GDScript_tbgi4")
 
 [node name="Objects" type="Node" parent="."]
 
-[node name="Sun" type="DirectionalLight3D" parent="Objects"]
-shadow_enabled = true
-script = ExtResource("1_tbgi4")
-sun_angle_offset = 180.0
-
-[node name="Moon" type="MeshInstance3D" parent="Objects"]
-mesh = SubResource("SphereMesh_tipki")
-surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
-script = ExtResource("3_o6xl0")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
-environment = SubResource("Environment_sugp2")
-
-[node name="Floor" type="Node3D" parent="Objects"]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Floor/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_sgp6g")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Floor"]
-transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 0)
-mesh = SubResource("PlaneMesh_o5qli")
-
-[node name="BoxTest" type="MeshInstance3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
-mesh = SubResource("BoxMesh_jyhfs")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
-script = ExtResource("5_tbgi4")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/BoxTest"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/BoxTest/StaticBody3D"]
-shape = SubResource("BoxShape3D_jyhfs")
-
-[node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
-
 [node name="PlayerPostProcess" type="TextureRect" parent="Objects"]
 material = SubResource("ShaderMaterial_o6xl0")
 anchors_preset = 15
@@ -148,7 +76,6 @@ texture = SubResource("ViewportTexture_tipki")
 expand_mode = 1
 
 [node name="PostProcessViewport" type="SubViewport" parent="Objects/PlayerPostProcess"]
-anisotropic_filtering_level = 4
 canvas_item_default_texture_filter = 0
 canvas_item_default_texture_repeat = 1
 size = Vector2i(320, 240)
@@ -198,7 +125,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Control" type="Control" parent="UI"]
+[node name="Crosshair" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,22 +134,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="ResetManager" type="Node" parent="UI/Control"]
-script = ExtResource("6_tipki")
-player_path = NodePath("../../../Objects/PlayerPostProcess/PostProcessViewport/Player")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="UI/Control/ResetManager"]
-
-[node name="FadeOverlay" type="ColorRect" parent="UI/Control/ResetManager/CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_bottom = 0.053000003
-offset_right = 1930.0
-offset_bottom = 1035.76
-color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="UI/Control/ResetManager/CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="UI/Crosshair"]
 self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
