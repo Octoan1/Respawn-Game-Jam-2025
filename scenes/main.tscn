@@ -1,9 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=18 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="ArrayMesh" uid="uid://ys7fals88ttl" path="res://assets/models/Obelisk.obj" id="2_sugp2"]
-[ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
+[ext_resource type="Script" path="res://scripts/sun.gd" id="1_tbgi4"]
+[ext_resource type="Script" path="res://scenes/box_test.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
+
+[sub_resource type="GDScript" id="GDScript_tbgi4"]
+resource_name = "GlobalInputs"
+script/source = "extends Node3D
+
+@onready var sub_viewport := $Objects/PlayerPostProcess/PostProcessViewport
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # optional for mouse look
+
+func _unhandled_input(event):
+	if sub_viewport:
+		sub_viewport.push_input(event)
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -22,14 +37,6 @@ glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
-albedo_color = Color(1, 0, 1, 1)
-metallic = 1.0
-metallic_specular = 0.4
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jyhfs"]
-data = PackedVector3Array(-0.7018, 3.8957999, 0.7, -1, 0, 1, -0.7018, 3.8957999, -0.7, -0.7018, 3.8957999, -0.7, -1, 0, 1, -1, 0, -1, -0.7018, 3.8957999, -0.7, -1, 0, -1, 0.6982, 3.8957999, -0.7, 0.6982, 3.8957999, -0.7, -1, 0, -1, 1, 0, -1, 0.6982, 3.8957999, -0.7, 1, 0, -1, 0.6982, 3.8957999, 0.7, 0.6982, 3.8957999, 0.7, 1, 0, -1, 1, 0, 1, 0.6982, 3.8957999, 0.7, 1, 0, 1, -0.7018, 3.8957999, 0.7, -0.7018, 3.8957999, 0.7, 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1, 1, 0, 1, 1, 0, 1, -1, 0, -1, -1, 0, 1, -0.7018, 3.8957999, -0.7, 0.6982, 3.8957999, -0.7, -0.0806, 4.7771, -0.0788, -0.0806, 4.7771, -0.0788, 0.6982, 3.8957999, -0.7, 0.077, 4.7771, -0.0788, -0.0806, 4.7771, -0.0788, 0.077, 4.7771, -0.0788, -0.0806, 4.7771, 0.0788, -0.0806, 4.7771, 0.0788, 0.077, 4.7771, -0.0788, 0.077, 4.7771, 0.0788, 0.6982, 3.8957999, -0.7, 0.6982, 3.8957999, 0.7, 0.077, 4.7771, -0.0788, 0.077, 4.7771, -0.0788, 0.6982, 3.8957999, 0.7, 0.077, 4.7771, 0.0788, -0.7018, 3.8957999, 0.7, -0.7018, 3.8957999, -0.7, -0.0806, 4.7771, 0.0788, -0.0806, 4.7771, 0.0788, -0.7018, 3.8957999, -0.7, -0.0806, 4.7771, -0.0788, 0.6982, 3.8957999, 0.7, -0.7018, 3.8957999, 0.7, 0.077, 4.7771, 0.0788, 0.077, 4.7771, 0.0788, -0.7018, 3.8957999, 0.7, -0.0806, 4.7771, 0.0788)
-
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
@@ -37,49 +44,130 @@ albedo_color = Color(0.003921569, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 
-[node name="Main" type="Node3D"]
+[sub_resource type="Shader" id="Shader_tbgi4"]
+code = "shader_type canvas_item;
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
+shader = SubResource("Shader_tbgi4")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
+viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
+
+[node name="Main" type="Node3D"]
+script = SubResource("GDScript_tbgi4")
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Sun" type="DirectionalLight3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
 shadow_enabled = true
 script = ExtResource("1_tbgi4")
 sun_angle_offset = 90.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
 environment = SubResource("Environment_sugp2")
 
-[node name="Floor" type="Node3D" parent="."]
+[node name="Floor" type="Node3D" parent="Objects"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Floor/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_sgp6g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Floor"]
 transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 0)
 mesh = SubResource("PlaneMesh_o5qli")
 
-[node name="Obelisk" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
-disable_mode = 1
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Obelisk"]
-material_override = SubResource("StandardMaterial3D_jyhfs")
-mesh = ExtResource("2_sugp2")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obelisk"]
-shape = SubResource("ConcavePolygonShape3D_jyhfs")
-
-[node name="Player" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9821639, 0)
-
-[node name="BoxTest" type="MeshInstance3D" parent="."]
+[node name="BoxTest" type="MeshInstance3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
 mesh = SubResource("BoxMesh_jyhfs")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
 script = ExtResource("5_tbgi4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="BoxTest"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/BoxTest"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BoxTest/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/BoxTest/StaticBody3D"]
 shape = SubResource("BoxShape3D_jyhfs")
+
+[node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
+
+[node name="PlayerPostProcess" type="TextureRect" parent="Objects"]
+material = SubResource("ShaderMaterial_o6xl0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_tipki")
+expand_mode = 1
+
+[node name="PostProcessViewport" type="SubViewport" parent="Objects/PlayerPostProcess"]
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9821639, 0)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Pause" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="UI/Pause"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Crosshair" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Crosshair"]
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_o6xl0")
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
