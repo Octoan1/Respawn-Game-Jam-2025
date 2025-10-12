@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=21 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://ckw1ey3smk26n" path="res://scenes/moon.gd" id="2_tefeu"]
-[ext_resource type="Script" uid="uid://cmht7dq75iv51" path="res://scenes/moon_2.gd" id="3_o6xl0"]
+[ext_resource type="Script" uid="uid://cmht7dq75iv51" path="res://scenes/moon.gd" id="3_o6xl0"]
 [ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
-[ext_resource type="PackedScene" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -85,13 +84,7 @@ transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9
 shadow_enabled = true
 script = ExtResource("1_tbgi4")
 
-[node name="Moon" type="DirectionalLight3D" parent="Objects"]
-visible = false
-light_color = Color(0.04804693, 0.22635236, 0.4226332, 1)
-light_energy = 0.3
-script = ExtResource("2_tefeu")
-
-[node name="Moon2" type="MeshInstance3D" parent="Objects"]
+[node name="Moon" type="MeshInstance3D" parent="Objects"]
 mesh = SubResource("SphereMesh_tipki")
 surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
 script = ExtResource("3_o6xl0")
