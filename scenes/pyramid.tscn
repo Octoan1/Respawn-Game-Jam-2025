@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhgqqndd5ch5s"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3aah01x20cpt" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4u2o7"]
+albedo_color = Color(1, 0.5686275, 0.28235295, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sw6ir"]
+data = PackedVector3Array(-75.269, 0, 75.269, -75.269, 0, -75.269, 0, 100, 0, -75.269, 0, 75.269, 0, 100, 0, 75.269, 0, 75.269, 75.269, 0, 75.269, 75.269, 0, 10, -75.269, 0, 75.269, -75.269, 0, 75.269, 75.269, 0, 10, -75.269, 0, -75.269, -75.269, 0, -75.269, 75.269, 0, 10, 75.269, 0, -75.269, 75.269, 0, -75.269, 75.269, 0, 10, 75.269, 0, -10, 75.269, 0, -10, 75.269, 0, 10, 56, 0, -10, 56, 0, -10, 75.269, 0, 10, 56, 0, 10, 75.269, 0, -75.269, 0, 100, 0, -75.269, 0, -75.269, 0, 100, 0, 75.269, 0, -75.269, 75.269, 0, 75.269, 75.269, 0, 75.269, 75.269, 0, -75.269, 75.269, 0, 10, 75.269, 0, 10, 75.269, 0, -75.269, 58.709797, 22, 10, 58.709797, 22, 10, 75.269, 0, -75.269, 58.709797, 22, -10, 58.709797, 22, -10, 75.269, 0, -75.269, 75.269, 0, -10, 56, 22, -10, 56, 0, -10, 56, 22, 10, 56, 22, 10, 56, 0, -10, 56, 0, 10, 56, 22, -10, 58.709797, 22, -10, 56, 0, -10, 56, 0, -10, 58.709797, 22, -10, 75.269, 0, -10, 75.269, 0, 10, 58.709797, 22, 10, 56, 0, 10, 56, 0, 10, 58.709797, 22, 10, 56, 22, 10, 56, 22, -10, 56, 22, 10, 58.709797, 22, -10, 58.709797, 22, -10, 56, 22, 10, 58.709797, 22, 10)
+
+[node name="Pyramid" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_4u2o7")
+surface_material_override/0 = SubResource("StandardMaterial3D_4u2o7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sw6ir")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=16 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" path="res://scenes/box_test.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://dhgqqndd5ch5s" path="res://scenes/pyramid.tscn" id="7_tipki"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -19,30 +22,6 @@ func _unhandled_input(event):
 	if sub_viewport:
 		sub_viewport.push_input(event)
 "
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ProceduralSkyMaterial_o5qli")
-
-[sub_resource type="Environment" id="Environment_sugp2"]
-background_mode = 2
-sky = SubResource("Sky_0wfyh")
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sgp6g"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_o5qli"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
-albedo_color = Color(0.003921569, 1, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 
 [sub_resource type="Shader" id="Shader_tbgi4"]
 code = "shader_type canvas_item;
@@ -67,45 +46,23 @@ shader = SubResource("Shader_tbgi4")
 [sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
 viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0wfyh"]
+sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 2
+sky = SubResource("Sky_0wfyh")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Main" type="Node3D"]
 script = SubResource("GDScript_tbgi4")
 
 [node name="Objects" type="Node" parent="."]
-
-[node name="Sun" type="DirectionalLight3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
-shadow_enabled = true
-script = ExtResource("1_tbgi4")
-sun_angle_offset = 90.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
-environment = SubResource("Environment_sugp2")
-
-[node name="Floor" type="Node3D" parent="Objects"]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Floor/StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_sgp6g")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Floor"]
-transform = Transform3D(7.5475836, 0, 0, 0, 1.0262191, 0, 0, 0, 9.095223, 0, 0, 0)
-mesh = SubResource("PlaneMesh_o5qli")
-
-[node name="BoxTest" type="MeshInstance3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
-mesh = SubResource("BoxMesh_jyhfs")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
-script = ExtResource("5_tbgi4")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/BoxTest"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/BoxTest/StaticBody3D"]
-shape = SubResource("BoxShape3D_jyhfs")
-
-[node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
 
 [node name="PlayerPostProcess" type="TextureRect" parent="Objects"]
 material = SubResource("ShaderMaterial_o6xl0")
@@ -125,7 +82,30 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9821639, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 139.13243, 26.361855)
+
+[node name="Sun" type="DirectionalLight3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
+shadow_enabled = true
+script = ExtResource("1_tbgi4")
+sun_angle_offset = 90.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
+environment = SubResource("Environment_sugp2")
+
+[node name="Map" parent="Objects" instance=ExtResource("6_tipki")]
+
+[node name="Floor" parent="Objects" instance=ExtResource("3_tipki")]
+
+[node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
+
+[node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
+visible = false
+
+[node name="Pyramid" parent="Objects" instance=ExtResource("7_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.227113, 0)
 
 [node name="UI" type="Node" parent="."]
 

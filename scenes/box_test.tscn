@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://la87aneavtp7"]
+
+[ext_resource type="Script" path="res://scenes/box_test.gd" id="1_usoff"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+albedo_color = Color(0.003921569, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
+
+[node name="BoxTest" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_jyhfs")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_tefeu")
+script = ExtResource("1_usoff")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jyhfs")
