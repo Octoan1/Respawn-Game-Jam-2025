@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cu3rfiqjic5bc"]
+[gd_scene load_steps=18 format=3 uid="uid://cu3rfiqjic5bc"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player.tscn" id="1_35wsb"]
 [ext_resource type="Script" uid="uid://domm2vsot51tv" path="res://scenes/PuzzleRing.gd" id="2_j1khf"]
 [ext_resource type="Script" uid="uid://ky26ujb2dbwf" path="res://scenes/PuzzleRings.gd" id="3_70dx5"]
 [ext_resource type="Script" uid="uid://dclt2w38uvw8b" path="res://scenes/Button.gd" id="3_j1khf"]
+[ext_resource type="Texture2D" uid="uid://qd3hwn6pphqa" path="res://real icon.png" id="4_4xiub"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_70dx5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,38 +27,16 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6kog"]
 
-[sub_resource type="Gradient" id="Gradient_70dx5"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_4xiub"]
-gradient = SubResource("Gradient_70dx5")
-fill_from = Vector2(0.21428572, 0.104395606)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rcan"]
-albedo_color = Color(0.54102784, 0.94195384, 1, 1)
-albedo_texture = SubResource("GradientTexture2D_4xiub")
+albedo_texture = ExtResource("4_4xiub")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mt5j8"]
 
-[sub_resource type="Gradient" id="Gradient_1l5ya"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1l5ya"]
+albedo_texture = ExtResource("4_4xiub")
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fjb0c"]
-gradient = SubResource("Gradient_1l5ya")
-fill_from = Vector2(0, 0.87362635)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6kog"]
-albedo_color = Color(1, 0, 0.83116233, 1)
-albedo_texture = SubResource("GradientTexture2D_fjb0c")
-
-[sub_resource type="Gradient" id="Gradient_mt5j8"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_nil8p"]
-gradient = SubResource("Gradient_mt5j8")
-fill_from = Vector2(0.36263737, 0.32967034)
-fill_to = Vector2(0.9395604, 0.94505495)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lwba"]
-albedo_color = Color(0.32285678, 0.77412903, 0.42643794, 1)
-albedo_texture = SubResource("GradientTexture2D_nil8p")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjb0c"]
+albedo_texture = ExtResource("4_4xiub")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_35wsb"]
 
@@ -112,7 +91,7 @@ state = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/InnerRing"]
 transform = Transform3D(1, 0, -2.1175824e-22, 0, 1, -4.1759358e-22, -2.1175824e-22, -1.6703745e-23, 1, -3.0787447e-08, 3.5216713, 0)
-material_override = SubResource("StandardMaterial3D_x6kog")
+material_override = SubResource("StandardMaterial3D_1l5ya")
 mesh = SubResource("CylinderMesh_mt5j8")
 
 [node name="MiddleRing" type="Node3D" parent="PuzzleRings"]
@@ -121,7 +100,7 @@ script = ExtResource("2_j1khf")
 ring_name = "Middle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PuzzleRings/MiddleRing"]
-material_override = SubResource("StandardMaterial3D_3lwba")
+material_override = SubResource("StandardMaterial3D_fjb0c")
 mesh = SubResource("CylinderMesh_mt5j8")
 
 [node name="Buttons" type="Node3D" parent="."]
@@ -150,15 +129,14 @@ mesh = SubResource("CylinderMesh_mt5j8")
 shape = SubResource("CylinderShape3D_35wsb")
 
 [node name="ButtonCooldown" type="Timer" parent="Buttons"]
-wait_time = 5.0
 one_shot = true
 autostart = true
 
 [connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Player" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Buttons" method="outer_middle_button_pressed"]
 [connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Buttons" method="inner_button_pressed"]
+[connection signal="body_entered" from="Buttons/Outer+MiddleButton/OuterMiddleArea" to="Buttons" method="outer_middle_button_pressed"]
 [connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Player" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons" method="inner_outer_button_pressed"]
 [connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons" method="outer_button_pressed"]
+[connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons" method="inner_outer_button_pressed"]
 [connection signal="body_entered" from="Buttons/Inner+OuterButton/InnerOuterArea" to="Buttons/Inner+OuterButton/InnerOuterArea" method="_on_body_entered"]
 [connection signal="timeout" from="Buttons/ButtonCooldown" to="Buttons" method="on_cooldown"]

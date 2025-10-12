@@ -1,6 +1,5 @@
 extends Node3D
 
-var state = 0;
 @onready
 var OuterRing = $OuterRing
 @onready
@@ -18,35 +17,47 @@ func _ready():
 		button.connect("OuterMiddleRotate", Callable(self, "outer_middle_shift"))
 
 func inner_outer_shift() -> void:
+	if(InnerRing.get_state() != 4):
+		InnerRing.set_state(InnerRing.get_state() + 1)
+	elif(InnerRing.get_state() == 4):
+		InnerRing.set_state(0)
 	
-	InnerRing.set_state(InnerRing.get_state() + 1)
-	OuterRing.set_state(OuterRing.get_state() + 1)
+	if(OuterRing.get_state() != 4):
+		OuterRing.set_state(OuterRing.get_state() + 1)
+	elif(OuterRing.get_state() == 4):
+		OuterRing.set_state(0)
+	
 	#purely visual for the player
-	InnerRing.rotation()
-	OuterRing.rotation()
+	InnerRing.choose_rotation()
+	OuterRing.choose_rotation()
+	
+	check_correct()
 	
 	print("Outer state: ", OuterRing.get_state())
 	print("Middle state: ", MiddleRing.get_state())
 	print("Inner state: ", InnerRing.get_state())
-	
-	check_correct()
-	check_overflow()
 
 func outer_middle_shift() -> void:
+	if(MiddleRing.get_state() != 4):
+		MiddleRing.set_state(MiddleRing.get_state() + 1)
+	elif(MiddleRing.get_state() == 4):
+		MiddleRing.set_state(0)
 	
-	OuterRing.set_state(OuterRing.get_state() - 1)
-	MiddleRing.set_state(MiddleRing.get_state() + 1)
+	if(OuterRing.get_state() != 4):
+		OuterRing.set_state(OuterRing.get_state() + 1)
+	elif(OuterRing.get_state() == 4):
+		OuterRing.set_state(0)
 	
 	#purely visual for the player
-	OuterRing.rotation()
-	MiddleRing.rotation()
+	OuterRing.choose_rotation()
+	MiddleRing.choose_rotation()
+	
+	check_correct()
+	
 	
 	print("Outer state: ", OuterRing.get_state())
 	print("Middle state: ", MiddleRing.get_state())
 	print("Inner state: ", InnerRing.get_state())
-	
-	check_correct()
-	check_overflow()
 
 # Starting states are: outer;2  inner;3  middle;0
 #
@@ -57,13 +68,3 @@ func check_correct() -> void:
 	
 	if(outerState == 4 && middleState == 3 && innerState == 2):
 		print("Winner!")
-
-func check_overflow() -> void:
-	if(OuterRing.get_state() >= 5):
-		OuterRing.set_state(0)
-	elif(OuterRing.get_state() <= 0):
-		OuterRing.set_state(5)
-	if(MiddleRing.get_state() >= 5):
-		MiddleRing.set_state(0)
-	if(InnerRing.get_state() >= 5):
-		InnerRing.set_state(0)
