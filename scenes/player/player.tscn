@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://blehgd713ihr"]
+[gd_scene load_steps=6 format=3 uid="uid://blehgd713ihr"]
 
 [ext_resource type="Script" uid="uid://5501r4bdrrsj" path="res://scenes/player/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://cjgpiqodxtm8j" path="res://scenes/player/pause_menu.gd" id="3_gmlin"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 
@@ -53,3 +54,19 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_dovo2")
+
+[node name="Pause" type="Control" parent="Neck/Camera3D"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+script = ExtResource("3_gmlin")
+
+[node name="ColorRect" type="ColorRect" parent="Neck/Camera3D/Pause"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
