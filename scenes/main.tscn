@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://cmht7dq75iv51" path="res://scenes/moon.gd" id="3_o6xl0"]
+[ext_resource type="Script" path="res://scenes/moon.gd" id="3_o6xl0"]
 [ext_resource type="Script" uid="uid://bfqiit3i4il1q" path="res://scenes/box_test.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
-[ext_resource type="Script" uid="uid://bb8ps6a8lrwj5" path="res://scenes/reset_manager.gd" id="6_tipki"]
+[ext_resource type="Script" path="res://scenes/reset_manager.gd" id="6_tipki"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -131,6 +131,7 @@ texture = SubResource("ViewportTexture_tipki")
 expand_mode = 1
 
 [node name="PostProcessViewport" type="SubViewport" parent="Objects/PlayerPostProcess"]
+anisotropic_filtering_level = 4
 canvas_item_default_texture_filter = 0
 canvas_item_default_texture_repeat = 1
 size = Vector2i(320, 240)

@@ -7,6 +7,8 @@ extends Node
 @export var player_path : NodePath
 @onready var player : Node = get_node_or_null(player_path)
 
+@export var start_position : Vector3
+
 var is_fading_out = false
 var is_fading_in = false
 var fade_progress = 0.0
@@ -49,7 +51,7 @@ func perform_reset() -> void:
 
 	# Reset player position
 	if player:
-		player.global_position = Vector3.ZERO
+		player.global_position = start_position
 		player.look_at(Vector3(0, 0, -1), Vector3.UP)
 		
 		var neck = player.get_node_or_null("Neck")
