@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal change_crosshair(albe_to_interact: bool)
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -31,6 +32,10 @@ func _physics_process(delta: float) -> void:
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	# Interaction Quick Test
+	if Input.is_action_just_pressed("interact"):
+		print("interacted with: ", target)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -44,3 +49,17 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+#@onready var crosshair: TextureRect = $Head/Camera3D/Control/Crosshair
+#@onready var crosshair_2: TextureRect = $Head/Camera3D/Control/Crosshair2
+var target
+func _on_interaction_ray_cast_looking_at(target: Variant) -> void:
+	#crosshair.visible = false
+	#crosshair_2.visible = true
+	self.target = target.get_parent()
+
+
+func _on_interaction_ray_cast_stopped_looking() -> void:
+	#crosshair.visible = true
+	#crosshair_2.visible = false
+	target = null
