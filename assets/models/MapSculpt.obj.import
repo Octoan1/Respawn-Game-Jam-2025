@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fcxfydakuxpk"
+path="res://.godot/imported/MapSculpt.obj-9937a032dd46b78a8b29bc5506a54c55.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MapSculpt.obj-9937a032dd46b78a8b29bc5506a54c55.mesh"]
+
+source_file="res://assets/models/MapSculpt.obj"
+dest_files=["res://.godot/imported/MapSculpt.obj-9937a032dd46b78a8b29bc5506a54c55.mesh", "res://.godot/imported/MapSculpt.obj-9937a032dd46b78a8b29bc5506a54c55.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
