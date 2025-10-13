@@ -29,7 +29,10 @@ func _process(delta: float) -> void:
 	global_position = Vector3(0, height, forward)
 
 	# Smoothly fade visibility based on sun position
-	var night_factor = clamp(abs(cos(deg_to_rad(sun_angle_deg))), 0.5, 1.0)
+	var night_factor = clamp(abs(cos(deg_to_rad(sun_angle_deg))), 0.8, 1.0)
 	material_override.albedo_color = base_color * night_factor * max_brightness
 	
-	visible = height > 0
+	if(t < 1 or t > 11):
+		visible = true
+	else:
+		visible = false

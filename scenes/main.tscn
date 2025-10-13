@@ -1,7 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=21 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
@@ -46,15 +48,15 @@ shader = SubResource("Shader_tbgi4")
 [sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
 viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+
 [sub_resource type="SphereMesh" id="SphereMesh_tipki"]
+material = SubResource("StandardMaterial3D_choun")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
 shading_mode = 0
 albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
-
-[sub_resource type="GDScript" id="GDScript_85g3d"]
-script/source = "extends MeshInstance3D
-"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -68,10 +70,6 @@ background_mode = 2
 sky = SubResource("Sky_o5qli")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="GDScript" id="GDScript_tipki"]
-script/source = "extends Node
-"
 
 [node name="Main" type="Node3D"]
 script = SubResource("GDScript_tbgi4")
@@ -96,18 +94,36 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 139.13243, 26.361855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00060248375, 139.12383, 26.361723)
+
+[node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
+script = ExtResource("2_85g3d")
+player_path = NodePath("../PostProcessViewport/Player")
+start_position = Vector3(0, 100, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Objects/PlayerPostProcess/ResetManager"]
+
+[node name="FadeOverlay" type="ColorRect" parent="Objects/PlayerPostProcess/ResetManager/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_bottom = 0.053000003
+offset_right = 1920.0
+offset_bottom = 1022.76
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Sun" type="DirectionalLight3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
 shadow_enabled = true
 script = ExtResource("1_tbgi4")
-sun_angle_offset = 90.0
+sun_angle_offset = 180.0
 
 [node name="Moon" type="MeshInstance3D" parent="Objects"]
 mesh = SubResource("SphereMesh_tipki")
 surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
-script = SubResource("GDScript_85g3d")
+script = ExtResource("3_o6xl0")
+moon_distance = 400.0
+moon_size = 50.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
 environment = SubResource("Environment_sugp2")
@@ -125,6 +141,7 @@ visible = false
 
 [node name="Pyramid" parent="Objects" instance=ExtResource("7_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.227113, 0)
+visible = false
 
 [node name="UI" type="Node" parent="."]
 
@@ -146,39 +163,28 @@ offset_bottom = 40.0
 
 [node name="Crosshair" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="ResetManager" type="Node" parent="UI/Crosshair"]
-script = SubResource("GDScript_tipki")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="UI/Crosshair/ResetManager"]
-
-[node name="FadeOverlay" type="ColorRect" parent="UI/Crosshair/ResetManager/CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = -1
-anchor_bottom = 0.053000003
-offset_right = 1930.0
-offset_bottom = 1035.76
-color = Color(0, 0, 0, 1)
-
-[node name="TextureRect" type="TextureRect" parent="UI/Crosshair/ResetManager/CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0.6666667)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 448.0
-offset_top = 172.0
-offset_right = 464.0
-offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Crosshair"]
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_o6xl0")
-stretch_mode = 3
-metadata/_edit_use_anchors_ = true
+stretch_mode = 1
