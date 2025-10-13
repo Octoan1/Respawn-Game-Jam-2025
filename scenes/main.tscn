@@ -1,13 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=17 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="3_tipki"]
-[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/floor.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
-[ext_resource type="PackedScene" uid="uid://dhgqqndd5ch5s" path="res://scenes/pyramid.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/pyramid.tscn" id="7_tipki"]
+[ext_resource type="Script" path="res://scenes/reset_manager.gd" id="8_85g3d"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -134,18 +135,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/Crosshair"]
+[node name="ResetManager" type="Node" parent="UI/Crosshair"]
+script = ExtResource("8_85g3d")
+player_path = NodePath("../../../Objects/PlayerPostProcess/PostProcessViewport/Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI/Crosshair/ResetManager"]
+
+[node name="FadeOverlay" type="ColorRect" parent="UI/Crosshair/ResetManager/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_bottom = 0.053000003
+offset_right = 1930.0
+offset_bottom = 1035.76
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI/Crosshair/ResetManager/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0.6666667)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 448.0
+offset_top = 172.0
+offset_right = 464.0
+offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_o6xl0")
