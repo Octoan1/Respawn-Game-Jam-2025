@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 signal change_crosshair(albe_to_interact: bool)
 
-const SPEED = 7.0
-const JUMP_VELOCITY = 4.5
+@export var SPEED: float = 10
+@export var JUMP_VELOCITY: float = 4.5
 
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
