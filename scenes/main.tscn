@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=20 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -45,6 +45,16 @@ shader = SubResource("Shader_tbgi4")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
 viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
+
+[sub_resource type="SphereMesh" id="SphereMesh_tipki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
+shading_mode = 0
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+
+[sub_resource type="GDScript" id="GDScript_85g3d"]
+script/source = "extends MeshInstance3D
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -93,6 +103,11 @@ transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9
 shadow_enabled = true
 script = ExtResource("1_tbgi4")
 sun_angle_offset = 90.0
+
+[node name="Moon" type="MeshInstance3D" parent="Objects"]
+mesh = SubResource("SphereMesh_tipki")
+surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
+script = SubResource("GDScript_85g3d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
 environment = SubResource("Environment_sugp2")
