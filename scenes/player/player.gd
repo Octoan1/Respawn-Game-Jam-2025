@@ -63,3 +63,9 @@ func _on_interaction_ray_cast_stopped_looking() -> void:
 	#crosshair.visible = true
 	#crosshair_2.visible = false
 	target = null
+signal area_entered(data)
+
+func _on_area_3d_body_entered(body: Node3D):
+	emit_signal("area_entered", body)
+	
+	
