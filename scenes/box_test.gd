@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var t = GlobalTime.time_of_day
 	# Simple mapping: 6-18 = day, else night
-	if t >= 6.0 and t < 18.0:
+	if t >= 0.0 and t < 12.0:
 		material_override.albedo_color = day_color
 	else:
 		material_override.albedo_color = night_color
