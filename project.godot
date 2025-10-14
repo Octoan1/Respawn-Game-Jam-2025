@@ -13,7 +13,7 @@ config_version=5
 config/name="Respawn Game Jam"
 run/main_scene="uid://b8k07vwbcoo4v"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="uid://cfalcb7urqyyx"
+config/icon="uid://qd3hwn6pphqa"
 
 [autoload]
 
@@ -23,6 +23,7 @@ UIManager="*res://scripts/ui_manager.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [input]

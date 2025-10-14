@@ -12,7 +12,7 @@ func _ready() -> void:
 	if material_override == null:
 		material_override = StandardMaterial3D.new()
 	material_override.albedo_color = base_color
-	material_override.unshaded = true
+	#material_override.unshaded = true
 
 func _process(_delta: float) -> void:
 	var t = GlobalTime.time_of_day
