@@ -8,7 +8,7 @@ func _ready() -> void:
 	if material_override == null:
 		material_override = StandardMaterial3D.new()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t = GlobalTime.time_of_day
 	# Simple mapping: 6-18 = day, else night
 	if t >= 0.0 and t < 12.0:

@@ -1,15 +1,16 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=22 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" path="res://scripts/reset_manager.gd" id="2_85g3d"]
-[ext_resource type="Script" path="res://scenes/moon.gd" id="3_o6xl0"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="3_tipki"]
 [ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
-[ext_resource type="PackedScene" path="res://scenes/pyramid.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -18,7 +19,8 @@ script/source = "extends Node3D
 @onready var sub_viewport := $Objects/PlayerPostProcess/PostProcessViewport
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # optional for mouse look
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # optional for mouse look
+	pass
 
 func _unhandled_input(event):
 	if sub_viewport:
@@ -97,6 +99,7 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00060248375, 13.224834, -0.8711028)
 SPEED = 15.0
 
@@ -149,9 +152,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.333717, -17.177734, -558.75714)
 
 [node name="UI" type="Node" parent="."]
+unique_name_in_owner = true
 
-[node name="Pause" type="Control" parent="UI"]
-visible = false
+[node name="PauseMenu" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -159,14 +162,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
-mouse_filter = 1
+mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="UI/Pause"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.6627451)
+
+[node name="Label" type="Label" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "PAUSED"
 
 [node name="Crosshair" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -177,7 +203,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/Crosshair"]
+[node name="DefaultCrosshair" type="TextureRect" parent="UI/Crosshair"]
 self_modulate = Color(1, 1, 1, 0.6666667)
 layout_mode = 1
 anchors_preset = 8
@@ -192,4 +218,23 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_o6xl0")
+stretch_mode = 1
+
+[node name="InteractionCrosshair" type="TextureRect" parent="UI/Crosshair"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_ya4ey")
 stretch_mode = 1

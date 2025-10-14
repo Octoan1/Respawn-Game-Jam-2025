@@ -1,10 +1,7 @@
 extends CharacterBody3D
 
-signal change_crosshair(albe_to_interact: bool)
-
 @export var SPEED: float = 10
 @export var JUMP_VELOCITY: float = 4.5
-
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -13,11 +10,13 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		UIManager.set_paused(false)
 	elif event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		UIManager.toggle_pause() 
+	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * Settings.MOUSE_X)
 			camera.rotate_x(-event.relative.y * Settings.MOUSE_Y)
@@ -35,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		
 	# Interaction Quick Test
 	if Input.is_action_just_pressed("interact"):
-		print("interacted with: ", target)
+		print("interacted with: ", interaction_target)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -52,17 +51,21 @@ func _physics_process(delta: float) -> void:
 
 #@onready var crosshair: TextureRect = $Head/Camera3D/Control/Crosshair
 #@onready var crosshair_2: TextureRect = $Head/Camera3D/Control/Crosshair2
-var target
+var interaction_target
 func _on_interaction_ray_cast_looking_at(target: Variant) -> void:
 	#crosshair.visible = false
 	#crosshair_2.visible = true
-	self.target = target.get_parent()
+	self.interaction_target = target.get_parent()
+	UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
 
 
 func _on_interaction_ray_cast_stopped_looking() -> void:
 	#crosshair.visible = true
 	#crosshair_2.visible = false
-	target = null
+	interaction_target = null
+	UIManager.update_crosshair(UIManager.CrosshairState.DEFAULT)
+
+
 signal area_entered(data)
 
 func _on_area_3d_body_entered(body: Node3D):

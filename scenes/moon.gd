@@ -14,7 +14,7 @@ func _ready() -> void:
 	material_override.albedo_color = base_color
 	material_override.unshaded = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t = GlobalTime.time_of_day
 	# Map time (0–24h) to full rotation
 	var sun_angle_deg = ((t / 24.0) * 360.0) + 180

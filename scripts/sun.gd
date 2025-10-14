@@ -12,7 +12,7 @@ extends DirectionalLight3D
 
 @export var sun_angle_offset : float
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t = GlobalTime.time_of_day
 
 	# Rotate based on time of day (same as before)
