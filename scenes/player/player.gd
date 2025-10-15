@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var SPEED: float = 10
 @export var JUMP_VELOCITY: float = 4.5
+var can_fly: bool = false
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -15,6 +16,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel"):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		UIManager.toggle_pause() 
+	elif event.is_action_pressed("secret_button"):
+		if SPEED == 10:
+			SPEED = 100
+			JUMP_VELOCITY = 20
+			can_fly = true
+		else:
+			SPEED = 10
+			JUMP_VELOCITY = 4.5
+			can_fly = false
 	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
@@ -29,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and (is_on_floor() or can_fly):
 		velocity.y = JUMP_VELOCITY
 		
 	# Interaction Quick Test
