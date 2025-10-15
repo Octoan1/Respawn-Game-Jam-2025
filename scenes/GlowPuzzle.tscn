@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dweembnlxyg7e"]
+[gd_scene load_steps=10 format=3 uid="uid://hws8fv1mmh2t"]
 
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_hvn1a"]
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="2_xdehj"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_5stq5"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="5_suv70"]
 [ext_resource type="FontFile" uid="uid://6rnqe57nmi7e" path="res://assets/models/Tonutsa-1jEB2.ttf" id="6_la06y"]
-[ext_resource type="Script" uid="uid://dgivkhyi1dgah" path="res://scenes/text.gd" id="7_5stq5"]
+[ext_resource type="Script" path="res://scenes/text.gd" id="7_5stq5"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="7_la06y"]
 
 [sub_resource type="TextMesh" id="TextMesh_6t14r"]
@@ -15,6 +15,9 @@ font = ExtResource("6_la06y")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la06y"]
 transparency = 1
 albedo_color = Color(0, 1, 0, 0.9764706)
+emission_enabled = true
+emission = Color(0, 0.84313726, 0, 1)
+emission_energy_multiplier = 3.31
 
 [node name="GlowPuzzle" type="Node3D"]
 
