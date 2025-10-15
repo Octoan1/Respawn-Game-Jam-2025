@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqll25w66cags"]
+[gd_scene load_steps=26 format=3 uid="uid://dqll25w66cags"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_0eweu"]
 [ext_resource type="Script" uid="uid://diet4phomu4ps" path="res://scenes/jump_puzzle.gd" id="1_82xs3"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="10_cqyv7"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="11_x2jte"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="12_x2jte"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="13_mx6vs"]
+[ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="14_tosrs"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="14_xu521"]
 
 [sub_resource type="Shader" id="Shader_tbgi4"]
@@ -50,6 +52,18 @@ background_mode = 2
 sky = SubResource("Sky_o5qli")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 106.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_qo154"]
+material = SubResource("StandardMaterial3D_choun")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oe6am"]
+shading_mode = 0
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
 
 [node name="Jump Puzzle" type="Node3D"]
 script = ExtResource("1_82xs3")
@@ -114,6 +128,18 @@ transform = Transform3D(-4.371139e-08, 0, 13, 0, 1, 0, -0.1, 0, -5.6824803e-08, 
 [node name="Wall3" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, 103.88183, -2.0860405, 4.0606213)
 
+[node name="PlatformerPillar3" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.91946, -19.902561, 47.022213)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar2" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.02815, -15.85199, 49.52084)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.01926, -14.552809, 56.641582)
+script = ExtResource("9_gxhel")
+
 [node name="PlatformingPuzzle" type="Node3D" parent="Objects"]
 transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
 
@@ -126,17 +152,29 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.02
 [node name="Arch2" parent="Objects/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("12_x2jte")]
 transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.372757, 9.652176, -0.2953987)
 
-[node name="PlatformerPillar3" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1293.2511, -17.410694, 80.76407)
-script = ExtResource("9_gxhel")
+[node name="ResetManager" type="Node" parent="Objects"]
+script = ExtResource("13_mx6vs")
+player_path = NodePath("../PostProcessViewport/Player")
+start_position = Vector3(0, 13, 0)
+on = true
 
-[node name="PlatformerPillar2" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1374.338, -13.360123, 83.262695)
-script = ExtResource("9_gxhel")
+[node name="CanvasLayer" type="CanvasLayer" parent="Objects/ResetManager"]
 
-[node name="PlatformerPillar" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1374.2491, -12.060942, 90.38344)
-script = ExtResource("9_gxhel")
+[node name="FadeOverlay" type="ColorRect" parent="Objects/ResetManager/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_bottom = 0.053000003
+offset_right = 1920.0
+offset_bottom = 1022.76
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Moon" type="MeshInstance3D" parent="Objects"]
+mesh = SubResource("SphereMesh_qo154")
+surface_material_override/0 = SubResource("StandardMaterial3D_oe6am")
+script = ExtResource("14_tosrs")
+moon_distance = 400.0
+moon_size = 50.0
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
