@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://bki56nonf5knw"]
+
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_s6xvl"]
+[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="2_qh8n0"]
+[ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="3_oae73"]
+[ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="4_y6it1"]
+[ext_resource type="ArrayMesh" uid="uid://dwjbr265hfbio" path="res://assets/models/Pillar.obj" id="5_uh8t4"]
+
+[sub_resource type="TextMesh" id="TextMesh_uh8t4"]
+text = "4"
+
+[sub_resource type="TextMesh" id="TextMesh_j28p2"]
+text = "2"
+
+[sub_resource type="TextMesh" id="TextMesh_wj11y"]
+text = "7"
+
+[node name="ShadowPuzzle" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("1_s6xvl")]
+
+[node name="LongRock" parent="." instance=ExtResource("2_qh8n0")]
+transform = Transform3D(0.67033786, -9.593308, -0.8547665, 8.156234, 0.89053005, -0.85688084, 0.92011327, -0.9049112, 8.218445, 2.797113, -11.222023, 182.84834)
+
+[node name="FlatRock" parent="." instance=ExtResource("3_oae73")]
+transform = Transform3D(-1.7963562e-07, 1.3461457e-07, -5.1354413, 3.4859424, 3.7710707, -2.3086269e-08, 3.7710707, -3.4859424, -2.2328696e-07, -3.9807038, -0.21777391, 166.32112)
+
+[node name="Key Pad" parent="." instance=ExtResource("3_oae73")]
+transform = Transform3D(-4.2977724e-10, -6.97079e-09, 0.113034, -0.06599714, 0.0963198, 2.4704367e-09, -0.04945666, -0.12853336, -4.2789217e-09, -1.8781244, 12.890181, 180.622)
+
+[node name="Key" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058078095, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, 0.85370356)
+
+[node name="Key2" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077946, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, -0.044940487)
+
+[node name="Key3" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077946, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, -0.9342646)
+
+[node name="Key4" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35021973, 0.33642578, 0.85370356)
+
+[node name="Key5" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35025024, 0.33641052, -0.045847774)
+
+[node name="Key6" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35025024, 0.33641052, -0.90861195)
+
+[node name="Key8" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33587646, -0.0879429)
+
+[node name="Key9" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33589172, 0.8451276)
+
+[node name="Key10" parent="Key Pad" instance=ExtResource("4_y6it1")]
+transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33589172, -0.9724328)
+
+[node name="Pillar" parent="." instance=ExtResource("4_y6it1")]
+transform = Transform3D(0.21477717, 0, 0, 0, 0.21477717, 0, 0, 0, 0.21477717, -1.875054, 11.417967, 180.6122)
+
+[node name="Pillar_Shadow_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, -15.687166, -9.427385, 141.92839)
+mesh = ExtResource("5_uh8t4")
+
+[node name="4" type="MeshInstance3D" parent="Pillar_Shadow_1"]
+transform = Transform3D(17.656132, 0, 0, 0, 24.65153, 0, 0, 0, 0.9999997, -0.17642307, 3.768642, 1.5237198)
+cast_shadow = 3
+mesh = SubResource("TextMesh_uh8t4")
+
+[node name="Pillar_Shadow_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, -3.6841574, -9.7140045, 141.92839)
+mesh = ExtResource("5_uh8t4")
+
+[node name="2" type="MeshInstance3D" parent="Pillar_Shadow_2"]
+transform = Transform3D(19.582535, 0, 0, 0, 25.765587, 0, 0, 0, 0.9999997, 0, 3.4841633, 1.4334259)
+cast_shadow = 3
+mesh = SubResource("TextMesh_j28p2")
+
+[node name="Pillar_Shadow_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, 6.631691, -9.801849, 141.92839)
+mesh = ExtResource("5_uh8t4")
+
+[node name="7" type="MeshInstance3D" parent="Pillar_Shadow_3"]
+transform = Transform3D(18.14883, 0, 0, 0, 25.496614, 0, 0, 0, 0.9999997, 0.10099912, 3.075623, 1.6752853)
+cast_shadow = 3
+mesh = SubResource("TextMesh_wj11y")
