@@ -29,5 +29,6 @@ func _on_gem_interacted() -> void:
 	GameManager.add_gem(self)
 	particles.find_child("GPUParticles3D").emitting = true
 	mesh.visible = false
+	find_child("StaticBody3D").find_child("CollisionShape3D").disabled = true
 	await get_tree().create_timer(1).timeout
 	queue_free()

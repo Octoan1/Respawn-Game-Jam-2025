@@ -148,7 +148,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 visible = false
 
 [node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
+transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.8138437, 0.5258244, -435.7407)
 
 [node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.470493)
@@ -205,6 +205,42 @@ color = Color(0.97411424, 0.58859926, 0.88071537, 1)
 
 [node name="Gem3" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7801743, -5.6442876, -53.69524)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem4" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7801743, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem5" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.977664, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem6" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.044881, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem7" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.237375, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem8" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.35017, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem9" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.214355, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem10" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.291265, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem11" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.198328, -18.364363, 27.478273)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem12" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.271912, -18.364363, 27.478273)
 color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
 
 [node name="UI" type="Node" parent="."]
