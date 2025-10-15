@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var SPEED: float = 10
+@export var SPEED: float = 15
 @export var JUMP_VELOCITY: float = 4.5
 var can_fly: bool = false
 
@@ -17,12 +17,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		UIManager.toggle_pause() 
 	elif event.is_action_pressed("secret_button"):
-		if SPEED == 10:
+		if SPEED == 15:
 			SPEED = 100
 			JUMP_VELOCITY = 20
 			can_fly = true
 		else:
-			SPEED = 10
+			SPEED = 15
 			JUMP_VELOCITY = 4.5
 			can_fly = false
 	
@@ -65,8 +65,9 @@ var interaction_target
 func _on_interaction_ray_cast_looking_at(target: Variant) -> void:
 	#crosshair.visible = false
 	#crosshair_2.visible = true
-	self.interaction_target = target.get_parent()
-	UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
+	self.interaction_target = target
+	if interaction_target.find_child("Interactable"):
+		UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
 
 
 func _on_interaction_ray_cast_stopped_looking() -> void:
