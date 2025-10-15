@@ -21,7 +21,7 @@ var t := 0.0
 func _process(delta: float) -> void:
 	t += delta
 	position.y += sin(t) * 0.001
-	rotate_y(PI/4 * delta)
+	$MeshInstance3D.rotate_y(PI/4 * delta)
 
 
 func _on_gem_interacted() -> void:
