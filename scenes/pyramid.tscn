@@ -1,7 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7cfmo3tbto5t"]
+[gd_scene load_steps=10 format=3 uid="uid://b7cfmo3tbto5t"]
 
 [ext_resource type="ArrayMesh" uid="uid://caya73uwxw2xq" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
 [ext_resource type="ArrayMesh" uid="uid://cpdda50mehdbe" path="res://assets/models/PyramidDoor.obj" id="2_sw6ir"]
+
+[sub_resource type="GDScript" id="GDScript_sw6ir"]
+resource_name = "Pyramid"
+script/source = "extends Node3D
+
+@onready var cyl := $LightCylinder
+@onready var door := $DoorMesh
+
+
+
+func _ready() -> void:
+	_pyramid_effect()
+
+	
+#func _process(delta: float) -> void:
+
+
+#func _pyramid_door_open() -> void:
+
+func _pyramid_effect() -> void:
+	cyl.scale = Vector3(20,500,20)
+	#cyl.position = lerp(Vector3(0,1000,0), Vector3(0,-1000,0), sin(delta))
+	#print(sin(30 * delta))
+	for i in 100:
+		cyl.position = lerp(Vector3(0,1000,0), Vector3(0,-1000,0), i * .01)
+		get_tree().create_timer(.1).timeout
+
+	
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw6ir"]
 albedo_color = Color(0.726652, 0.47119534, 1.92523e-07, 1)
@@ -16,24 +45,35 @@ metallic_specular = 0.0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvq63"]
 points = PackedVector3Array(54, -0.21527, -15.2, 54, 24.258102, -15.2, 56, -0.21527, -15.2, 54, -0.21527, 15.197024, 56, 24.258102, -15.2, 54, 24.258102, 15.197024, 56, -0.21527, 15.197024, 56, 24.258102, 15.197024)
 
-[node name="Pyramid" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifwva"]
+shading_mode = 0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[sub_resource type="CylinderMesh" id="CylinderMesh_m8ubx"]
+material = SubResource("StandardMaterial3D_ifwva")
+
+[node name="Pyramid" type="Node3D"]
+script = SubResource("GDScript_sw6ir")
+
+[node name="PyramidMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("1_4u2o7")
 surface_material_override/0 = SubResource("StandardMaterial3D_sw6ir")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="PyramidMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PyramidMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4u2o7")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="DoorMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("2_sw6ir")
 surface_material_override/0 = SubResource("StandardMaterial3D_yvq63")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yvq63")
+
+[node name="LightCylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 95, 0)
+mesh = SubResource("CylinderMesh_m8ubx")
