@@ -11,7 +11,7 @@ metallic = 0.75
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4yqmr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b77ts"]
-size = Vector3(1.6624107, 1.3903809, 1.6122131)
+size = Vector3(1.7453146, 1.2578125, 1.7369156)
 
 [node name="Gem" type="Node3D"]
 script = ExtResource("1_oywcy")
@@ -24,7 +24,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 physics_material_override = SubResource("PhysicsMaterial_4yqmr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002313614, 0.69480515, 0.030899048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024123192, 0.62852097, -0.0044517517)
 shape = SubResource("BoxShape3D_b77ts")
 
 [node name="Interactable" type="Node3D" parent="."]
