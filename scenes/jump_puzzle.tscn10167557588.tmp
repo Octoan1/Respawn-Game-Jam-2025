@@ -275,7 +275,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.12449, -9.620807, 47.341
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 2.032412, -20.223457, -29.739864)
 
 [node name="SpawnButtons" type="Node3D" parent="Objects"]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1516304, 0, -29.15672)
 script = ExtResource("16_qo154")
 
