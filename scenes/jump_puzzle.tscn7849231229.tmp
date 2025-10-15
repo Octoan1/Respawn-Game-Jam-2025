@@ -11,13 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="8_103d5"]
 [ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="9_gxhel"]
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="10_cqyv7"]
-[ext_resource type="Script" uid="uid://cm87n4at3odmy" path="res://scenes/SpawnRoomScript.gd" id="11_sqylo"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="11_x2jte"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="12_x2jte"]
 [ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="13_mx6vs"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="14_tosrs"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="14_xu521"]
 [ext_resource type="Script" uid="uid://doc5f5yb856ij" path="res://scenes/SymbolButtonPuzzle.gd" id="16_qo154"]
+[ext_resource type="Script" uid="uid://bdylw2osgrab5" path="res://scenes/SymbolButtonMotion.gd" id="17_oe6am"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="17_tosrs"]
 
 [sub_resource type="Shader" id="Shader_tbgi4"]
@@ -136,7 +136,7 @@ albedo_color = Color(4.0048027, 3.8538947, 0, 1)
 material = SubResource("StandardMaterial3D_w56by")
 text = "☼"
 
-[node name="jump_puzzle" type="Node3D"]
+[node name="Jump Puzzle" type="Node3D"]
 script = ExtResource("1_82xs3")
 
 [node name="Objects" type="Node" parent="."]
@@ -210,7 +210,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.227113, -217.86906)
 
 [node name="SpawnRoom" type="Node3D" parent="Objects"]
 transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
-script = ExtResource("11_sqylo")
 
 [node name="Wall" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, -76.56123, 0.08602047, 4.3652534)
@@ -275,12 +274,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.12449, -9.620807, 47.341
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 2.032412, -20.223457, -29.739864)
 
 [node name="SpawnButtons" type="Node3D" parent="Objects"]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1516304, 0, -29.15672)
 script = ExtResource("16_qo154")
 
 [node name="MoonButton" type="Node3D" parent="Objects/SpawnButtons"]
 transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
+script = ExtResource("17_oe6am")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/MoonButton"]
 mesh = SubResource("CylinderMesh_oe6am")
