@@ -4,6 +4,7 @@ extends Node3D
 @export var color: Color
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var particles = $CoolParticle
 
 func _ready() -> void:
 	# set start position 
@@ -12,6 +13,8 @@ func _ready() -> void:
 	if mesh.material_override == null:
 		mesh.material_override = StandardMaterial3D.new()
 	mesh.material_override.albedo_color = color
+	
+	#particles.find_child("GPUParticles3D").material_override.albedo_color = color
 
 
 var t := 0.0
@@ -24,4 +27,7 @@ func _process(delta: float) -> void:
 func _on_gem_interacted() -> void:
 	#print("-- gem interacted")
 	GameManager.add_gem(self)
+	particles.find_child("GPUParticles3D").emitting = true
+	mesh.visible = false
+	await get_tree().create_timer(1).timeout
 	queue_free()
