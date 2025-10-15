@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=24 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://dhgqqndd5ch5s" path="res://scenes/pyramid.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://dweembnlxyg7e" path="res://scenes/GlowPuzzle.tscn" id="10_eb6dy"]
+[ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -153,6 +154,11 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.333717, -17.177734, -558.7
 
 [node name="GlowPuzzle" parent="Objects" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -6.8002286, -6.3860087, -52.23876)
+script = ExtResource("11_trceg")
+player_path = NodePath("../PlayerPostProcess/PostProcessViewport/Player")
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
