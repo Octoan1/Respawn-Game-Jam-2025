@@ -152,6 +152,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 14.333717, -17.177734, -558.75714)
 
 [node name="GlowPuzzle" parent="Objects" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
