@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dqll25w66cags"]
+[gd_scene load_steps=52 format=3 uid="uid://dqll25w66cags"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_0eweu"]
 [ext_resource type="Script" uid="uid://diet4phomu4ps" path="res://scenes/jump_puzzle.gd" id="1_82xs3"]
@@ -17,8 +17,12 @@
 [ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="13_mx6vs"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="14_tosrs"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="14_xu521"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="15_sqylo"]
 [ext_resource type="Script" uid="uid://doc5f5yb856ij" path="res://scenes/SymbolButtonPuzzle.gd" id="16_qo154"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="17_tosrs"]
+[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="19_1b831"]
+[ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="20_pwiou"]
+[ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="21_w56by"]
 
 [sub_resource type="Shader" id="Shader_tbgi4"]
 code = "shader_type canvas_item;
@@ -136,6 +140,8 @@ albedo_color = Color(4.0048027, 3.8538947, 0, 1)
 material = SubResource("StandardMaterial3D_w56by")
 text = "☼"
 
+[sub_resource type="BoxMesh" id="BoxMesh_8ol3g"]
+
 [node name="jump_puzzle" type="Node3D"]
 script = ExtResource("1_82xs3")
 
@@ -159,7 +165,7 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_0eweu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.178112, -32.163784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.34929, -5.629232, 154.3014)
 
 [node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
 script = ExtResource("13_mx6vs")
@@ -195,6 +201,7 @@ moon_size = 50.0
 environment = SubResource("Environment_oe6am")
 
 [node name="Map" parent="Objects" instance=ExtResource("3_gxhel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.167632, 0.05260086, 0.05239296)
 
 [node name="Floor" parent="Objects" instance=ExtResource("4_rt3sg")]
 
@@ -209,7 +216,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.227113, -217.86906)
 
 [node name="SpawnRoom" type="Node3D" parent="Objects"]
-transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6558981, -2.4918666, -33.741856)
 script = ExtResource("11_sqylo")
 
 [node name="Wall" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
@@ -240,21 +247,80 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, 108.882225, -0.05857992, 4.
 transform = Transform3D(-6.5567116e-07, 0, -15, 0, 16.5, 0, 15, 0, -6.556708e-07, -5.9565125, 5.3163185, 0)
 mesh = SubResource("TextMesh_8ol3g")
 
-[node name="PlatformerPillar3" parent="Objects" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.13739, -18.500608, 49.942116)
-script = ExtResource("9_gxhel")
+[node name="SpawnRoomFloor" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(18, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.267605, -17.73159, 4.0019913)
 
-[node name="PlatformerPillar4" parent="Objects" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.66682, -19.38229, 51.738033)
-script = ExtResource("9_gxhel")
+[node name="SpawnButtons" type="Node3D" parent="Objects/SpawnRoom"]
+unique_name_in_owner = true
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -2.5402126, 2.4918666, 4.5851364)
+script = ExtResource("16_qo154")
 
-[node name="PlatformerPillar2" parent="Objects" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.94829, -17.415009, 52.828987)
-script = ExtResource("9_gxhel")
+[node name="MoonButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
 
-[node name="PlatformerPillar" parent="Objects" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.42819, -16.608677, 56.641582)
-script = ExtResource("9_gxhel")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="MoonArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+transform = Transform3D(5.5235887, 3.4399972, 1.8795882e-07, 0, -2.4478376e-07, 7, 4.2999964, -4.418871, -2.4144373e-07, 0.007692337, 1.0657678, -0.008927822)
+mesh = SubResource("TextMesh_1b831")
+
+[node name="HourglassButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.94, -2.45, -7.79)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="HourglassArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+transform = Transform3D(-4.1445985, 2.8924513, 1.5804132e-07, 0, -1.9233012e-07, 5.5, 3.615564, 3.3156788, 1.8116616e-07, -0.04931259, 1.0657678, -0.058962345)
+mesh = SubResource("TextMesh_pwiou")
+
+[node name="StarButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.533, -2.45, 5.82)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="StarArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+transform = Transform3D(6.9998293, -0.04886882, 0, -2.136124e-09, -3.0597226e-07, 7, -0.04886882, -6.9998293, -3.059797e-07, 0.037815094, 1.0657678, -0.13945532)
+mesh = SubResource("TextMesh_w56by")
+
+[node name="SunButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.764, -2.45, 5.762)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="SunArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+transform = Transform3D(5.9998536, -0.04188756, -1.8309634e-09, 0, -2.6226832e-07, 6, -0.04188756, -5.9998536, -2.6226195e-07, 0.002667427, 1.0069346, -0.061526775)
+mesh = SubResource("TextMesh_gobuc")
+
+[node name="ButtonCooldown" type="Timer" parent="Objects/SpawnRoom/SpawnButtons"]
+one_shot = true
+autostart = true
+
+[node name="Gem" parent="Objects/SpawnRoom" instance=ExtResource("15_sqylo")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 18.843277, 12.7198715, 4.192116)
 
 [node name="PlatformingPuzzle" type="Node3D" parent="Objects"]
 transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
@@ -268,80 +334,109 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.02
 [node name="Arch2" parent="Objects/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("12_x2jte")]
 transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.372757, 9.652176, -0.2953987)
 
+[node name="PlatformerPillar3" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1315.4304, -16.008741, 83.683975)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar4" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1270.7247, -16.890423, 85.47989)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar2" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1363.5394, -14.9231415, 86.57085)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar" parent="Objects/PlatformingPuzzle" instance=ExtResource("11_x2jte")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1368.3385, -14.11681, 90.38344)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerGem1" parent="Objects/PlatformingPuzzle" instance=ExtResource("15_sqylo")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1472.4569, -2.4592152, 97.04364)
+
 [node name="FlatRockPlatformer" parent="Objects" instance=ExtResource("17_tosrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.12449, -9.620807, 47.341145)
 
-[node name="SpawnRoomFloor" parent="Objects" instance=ExtResource("10_cqyv7")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 2.032412, -20.223457, -29.739864)
+[node name="InvisiblePathPuzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.52248, 0, 152.35835)
 
-[node name="SpawnButtons" type="Node3D" parent="Objects"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1516304, 0, -29.15672)
-script = ExtResource("16_qo154")
+[node name="tiles" type="Node3D" parent="InvisiblePathPuzzle"]
 
-[node name="MoonButton" type="Node3D" parent="Objects/SpawnButtons"]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
+[node name="SafeTile" type="Node3D" parent="InvisiblePathPuzzle/tiles"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16.280136, -5.766219, -4.4533997)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/MoonButton"]
-mesh = SubResource("CylinderMesh_oe6am")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/tiles/SafeTile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+mesh = SubResource("BoxMesh_8ol3g")
 
-[node name="MoonArea" type="Area3D" parent="Objects/SpawnButtons/MoonButton"]
+[node name="Wall" parent="InvisiblePathPuzzle" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 3.5, 22.63977, -9.823987, -4.9829865)
 
-[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/MoonButton/MoonArea"]
-shape = SubResource("CylinderShape3D_sqylo")
+[node name="FinishPlatform" parent="InvisiblePathPuzzle" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.203674, -9.823989, -1.4280548)
 
-[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/MoonButton"]
-transform = Transform3D(5.5235887, 3.4399972, 1.8795882e-07, 0, -2.4478376e-07, 7, 4.2999964, -4.418871, -2.4144373e-07, 0.007692337, 1.0657678, -0.008927822)
-mesh = SubResource("TextMesh_1b831")
+[node name="Decorations" type="Node" parent="InvisiblePathPuzzle"]
 
-[node name="HourglassButton" type="Node3D" parent="Objects/SpawnButtons"]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.94, -2.45, -7.79)
+[node name="LongRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
+transform = Transform3D(1.3, 0, 0, 0, 1.051722, 0.7641208, 0, -0.7641208, 1.051722, -123.31307, -9.193111, 127.72901)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/HourglassButton"]
-mesh = SubResource("CylinderMesh_oe6am")
+[node name="LongRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
+transform = Transform3D(1.7, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -118.62293, -9.825367, 135.82886)
 
-[node name="HourglassArea" type="Area3D" parent="Objects/SpawnButtons/HourglassButton"]
+[node name="FlatRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
+transform = Transform3D(1.9024326, -1.3353864, -0.002932152, 2.0544436, 1.2365831, 3.41057e-10, 0.003320375, -0.002330692, 1.6799973, -142.75516, -5.3946767, 122.55138)
 
-[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/HourglassButton/HourglassArea"]
-shape = SubResource("CylinderShape3D_sqylo")
+[node name="FlatRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
+transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, -114.85572, -9.485428, 150.17783)
 
-[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/HourglassButton"]
-transform = Transform3D(-4.1445985, 2.8924513, 1.5804132e-07, 0, -1.9233012e-07, 5.5, 3.615564, 3.3156788, 1.8116616e-07, -0.04931259, 1.0657678, -0.058962345)
-mesh = SubResource("TextMesh_pwiou")
+[node name="TallRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, -93.958916, -10.453514, 158.13837)
 
-[node name="StarButton" type="Node3D" parent="Objects/SpawnButtons"]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.533, -2.45, 5.82)
+[node name="TallRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.40739, -11.063232, 123.288124)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/StarButton"]
-mesh = SubResource("CylinderMesh_oe6am")
+[node name="Obelisk" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(1.7, 0, 0, 0, -0.17431153, 1.9923894, 0, -1.9923894, -0.17431153, -115.125824, -7.8161807, 134.15785)
 
-[node name="StarArea" type="Area3D" parent="Objects/SpawnButtons/StarButton"]
+[node name="Obelisk2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(-6.556708e-08, -2.0459952, 1.0970305, 0, 2.194061, 1.0229976, -1.5, 8.9433286e-08, -4.795273e-08, -122.42107, -8.85748, 158.82193)
 
-[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/StarButton/StarArea"]
-shape = SubResource("CylinderShape3D_sqylo")
+[node name="Pillar" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, -0.1754018, -0.1471796, 0, 0.7713452, -0.91925335, 0.22897081, 0.9023641, 0.7571734, -123.73082, -9.758626, 132.01686)
 
-[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/StarButton"]
-transform = Transform3D(6.9998293, -0.04886882, 0, -2.136124e-09, -3.0597226e-07, 7, -0.04886882, -6.9998293, -3.059797e-07, 0.037815094, 1.0657678, -0.13945532)
-mesh = SubResource("TextMesh_w56by")
+[node name="Pillar5" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1276312, 0.3856725, -0.14037333, 0, 0.41042417, 1.1276312, 0.41042417, -1.0596266, 0.3856726, -127.62288, -8.41441, 134.50615)
 
-[node name="SunButton" type="Node3D" parent="Objects/SpawnButtons"]
-transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.764, -2.45, 5.762)
+[node name="Pillar2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -128.929, -9.695705, 166.18047)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/SunButton"]
-mesh = SubResource("CylinderMesh_oe6am")
+[node name="RoundRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -98.2228, -10.328095, 151.59718)
 
-[node name="SunArea" type="Area3D" parent="Objects/SpawnButtons/SunButton"]
+[node name="RoundRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, -125.719025, -10.051438, 148.72067)
 
-[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/SunButton/SunArea"]
-shape = SubResource("CylinderShape3D_sqylo")
+[node name="Pillar3" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, 0, -0.22897081, 0, 1.2, 0, 0.22897081, 0, 1.1779526, -125.34166, -9.75863, 144.77048)
 
-[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/SunButton"]
-transform = Transform3D(5.9998536, -0.04188756, -1.8309634e-09, 0, -2.6226832e-07, 6, -0.04188756, -5.9998536, -2.6226195e-07, 0.002667427, 1.0069346, -0.061526775)
-mesh = SubResource("TextMesh_gobuc")
+[node name="Pillar4" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, -0.16190681, -0.16190681, 0, 0.84852815, -0.84852815, 0.22897081, 0.8329383, 0.8329383, -124.60753, -8.921141, 137.57455)
 
-[node name="ButtonCooldown" type="Timer" parent="Objects/SpawnButtons"]
-one_shot = true
-autostart = true
+[node name="TallRock3" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(3, 0, 0, 0, 6, 0, 0, 0, 3, -98.70456, -12.1734, 114.59484)
+
+[node name="Platform" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -118.43203, -9.823993, 129.2187)
+
+[node name="Obelisk3" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(0.6794413, -0.7337298, 0, 0.7337298, 0.6794413, 0, 0, 0, 1, -127.837875, -9.219504, 145.21797)
+
+[node name="LongRock3" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
+transform = Transform3D(0.91636276, 0, 0.40034902, 0, 1, 0, -0.40034902, 0, 0.91636276, -138.73862, 0.23881578, 126.404106)
+
+[node name="Gems" type="Node" parent="InvisiblePathPuzzle"]
+
+[node name="Gem" parent="InvisiblePathPuzzle" instance=ExtResource("15_sqylo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.123688, -8.823994, -22.870468)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
@@ -431,16 +526,16 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_xu521")
 stretch_mode = 1
 
-[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="inner_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="outer_middle_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="_on_moon_area_body_entered"]
-[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="moon_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnButtons" method="hourglass_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="outer_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="inner_outer_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="star_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
-[connection signal="body_entered" from="Objects/SpawnButtons/SunButton/SunArea" to="Objects/SpawnButtons" method="sun_button_pressed"]
-[connection signal="body_entered" from="Objects/SpawnButtons/SunButton/SunArea" to="Objects/SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
-[connection signal="timeout" from="Objects/SpawnButtons/ButtonCooldown" to="Objects/SpawnButtons" method="on_cooldown"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="_on_moon_area_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="moon_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="inner_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="outer_middle_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnRoom/SpawnButtons" method="hourglass_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="star_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="inner_outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" to="Objects/SpawnRoom/SpawnButtons" method="sun_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" to="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
+[connection signal="timeout" from="Objects/SpawnRoom/SpawnButtons/ButtonCooldown" to="Objects/SpawnRoom/SpawnButtons" method="on_cooldown"]
