@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+#signal interact(target)
+
 @export var SPEED: float = 15
 @export var JUMP_VELOCITY: float = 4.5
 var can_fly: bool = false
@@ -42,9 +44,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and (is_on_floor() or can_fly):
 		velocity.y = JUMP_VELOCITY
 		
-	# Interaction Quick Test
-	if Input.is_action_just_pressed("interact"):
-		print("interacted with: ", interaction_target)
+	# Interaction 
+	if Input.is_action_just_pressed("interact") and interaction_target != null:
+		var interactable : Interactable = interaction_target.find_child("Interactable")
+		if interactable:
+			#print("interacted with: ", interaction_target.name)
+			interactable.interact()
+		else:
+			print("CANNOT interact with: ", interaction_target)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,7 +69,7 @@ func _physics_process(delta: float) -> void:
 #@onready var crosshair: TextureRect = $Head/Camera3D/Control/Crosshair
 #@onready var crosshair_2: TextureRect = $Head/Camera3D/Control/Crosshair2
 var interaction_target
-func _on_interaction_ray_cast_looking_at(target: Variant) -> void:
+func _on_interaction_ray_cast_looking_at(target: Node3D) -> void:
 	#crosshair.visible = false
 	#crosshair_2.visible = true
 	self.interaction_target = target

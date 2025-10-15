@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://chric61ueb3o"]
+[gd_scene load_steps=7 format=3 uid="uid://chric61ueb3o"]
 
 [ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="1_4yqmr"]
+[ext_resource type="Script" uid="uid://mq5ccd6pxiri" path="res://scenes/environment/props/interactables/gem.gd" id="1_oywcy"]
 [ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_lutik"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yqmr"]
@@ -12,6 +13,7 @@ metallic = 0.75
 points = PackedVector3Array(-0.5450724, 1.3493843, -0.48463586, 0.9665901, 1.0153822, 0.513381, 0.92467135, 0.94385785, 0.49111545, -0.5133137, 1.0153984, 0.9666363, -0.029317642, 0.03901041, -0.029197972, 0.5134043, 1.0153775, -0.9665728, -0.9665292, 1.015403, -0.51341474, 0.48746368, 1.384, 0.48762223, -0.9665292, 1.015403, 0.51341474, 0.9665901, 1.0153822, -0.513381, -0.5133137, 1.0153984, -0.9666363, 0.5134043, 1.0153775, 0.9665728, 0.48746368, 1.384, -0.48762223, -0.48743486, 1.384, 0.48752683, 0.029260015, 0.038973093, 0.029199624, -0.7324665, 0.74223065, 0.38087946, -0.48743486, 1.384, -0.48752683, 0.4911352, 0.94385165, -0.92464226, -0.49106917, 0.9438808, 0.92475206, 0.92467135, 0.94385785, -0.49111545, -0.49106917, 0.9438808, -0.92475206, -0.92465675, 0.943887, -0.4911738, 0.4911352, 0.94385165, 0.92464226, 0.029260015, 0.038973093, -0.029199624, -0.029317642, 0.03901041, 0.029197972, 0.20779282, 0.7131404, 0.7131404, 0.20779282, 0.7131404, -0.7131404, 0.54508007, 1.3493785, -0.48453215, -0.4845108, 1.3493397, 0.5451305, -0.4847119, 1.0466667, -0.9392359, -0.92465675, 0.943887, 0.4911738, -0.93919706, 1.0466967, 0.4848453)
 
 [node name="Gem" type="Node3D"]
+script = ExtResource("1_oywcy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_4yqmr")
@@ -26,3 +28,5 @@ shape = SubResource("ConvexPolygonShape3D_lutik")
 [node name="Interactable" type="Node3D" parent="."]
 script = ExtResource("2_lutik")
 metadata/_custom_type_script = "uid://culihtv734n8p"
+
+[connection signal="interacted" from="Interactable" to="." method="_on_gem_interacted"]

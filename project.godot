@@ -20,10 +20,10 @@ config/icon="uid://qd3hwn6pphqa"
 GlobalTime="*res://scripts/GlobalTime.gd"
 Settings="*res://scripts/Settings.gd"
 UIManager="*res://scripts/ui_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [input]

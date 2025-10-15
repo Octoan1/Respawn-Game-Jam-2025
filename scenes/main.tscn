@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/gem.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -141,6 +141,7 @@ environment = SubResource("Environment_sugp2")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Floor" parent="Objects" instance=ExtResource("3_tipki")]
+visible = false
 
 [node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
@@ -151,8 +152,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 [node name="Pyramid" parent="Objects" instance=ExtResource("7_tipki")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16, -23.320759, -563.77527)
 
-[node name="Gem" parent="Objects" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.978755, -7.0152874, -41.531334)
+[node name="GemContainer" type="Node" parent="Objects"]
+
+[node name="Gem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.601067, -4.935496, -44.59222)
+color = Color(0.62352943, 0.8235294, 0, 1)
+
+[node name="Gem2" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.601067, -3.5328946, -57.132687)
+color = Color(0.97411424, 0.58859926, 0.88071537, 1)
+
+[node name="Gem3" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7801743, -3.7638316, -53.69524)
+color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true

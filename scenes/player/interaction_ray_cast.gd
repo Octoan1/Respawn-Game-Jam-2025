@@ -5,9 +5,10 @@ signal stopped_looking()
 
 var wasLooking : bool = false
 func _process(_delta: float) -> void:
-	if is_colliding():
+	var collider = get_collider()
+	if collider:
 		wasLooking = true
-		var new_target = get_collider().get_owner()
+		var new_target : Node3D = collider.get_owner()
 		looking_at.emit(new_target)
 		#print("Looking at: ",new_target)
 	elif wasLooking:
