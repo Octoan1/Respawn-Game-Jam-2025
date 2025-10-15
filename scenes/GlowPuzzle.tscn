@@ -17,7 +17,6 @@ transparency = 1
 albedo_color = Color(0, 1, 0, 0.9764706)
 
 [node name="GlowPuzzle" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06315327, -0.062236786, -21.832623)
 
 [node name="FlatRock" parent="." instance=ExtResource("5_suv70")]
 transform = Transform3D(-1.5449429e-07, -5.8288717, 3.3653011, 3.2081584e-07, 3.3653004, 5.828872, -6.730602, 2.9420386e-07, 2.0058754e-07, 165.53041, 1.2657814, -123.26978)
