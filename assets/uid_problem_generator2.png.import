@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qd3hwn6pphqa"
-path.s3tc="res://.godot/imported/uid_problem_generator.png-89fbf57b759023b47f5685a7e611bc8d.s3tc.ctex"
+uid="uid://ccws5sjjyix7c"
+path.s3tc="res://.godot/imported/uid_problem_generator2.png-48685800da8eb07e07ee05c6ea68e65a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/uid_problem_generator.png"
-dest_files=["res://.godot/imported/uid_problem_generator.png-89fbf57b759023b47f5685a7e611bc8d.s3tc.ctex"]
+source_file="res://assets/uid_problem_generator2.png"
+dest_files=["res://.godot/imported/uid_problem_generator2.png-48685800da8eb07e07ee05c6ea68e65a.s3tc.ctex"]
 
 [params]
 
