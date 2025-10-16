@@ -1,4 +1,5 @@
 extends Node3D
+class_name Gem
 
 #@export var spawn_coords : Vector3 
 @export var color: Color
