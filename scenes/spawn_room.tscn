@@ -1,0 +1,195 @@
+[gd_scene load_steps=23 format=3 uid="uid://c8k25itnq8soa"]
+
+[ext_resource type="Script" uid="uid://cm87n4at3odmy" path="res://scenes/SpawnRoomScript.gd" id="1_orhc3"]
+[ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="2_8whbu"]
+[ext_resource type="Script" uid="uid://doc5f5yb856ij" path="res://scenes/SymbolButtonPuzzle.gd" id="3_bdx0g"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="4_oahmm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuf3a"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_pibwh"]
+material = SubResource("StandardMaterial3D_fuf3a")
+text = "☼"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6pm6"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_5he1u"]
+material = SubResource("StandardMaterial3D_c6pm6")
+text = "☾     ☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5poiv"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_2cjbq"]
+material = SubResource("StandardMaterial3D_5poiv")
+text = "☆      ☆
+☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chjal"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_cjqg0"]
+material = SubResource("StandardMaterial3D_chjal")
+text = "⏳ ⏳
+⏳ ⏳"
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vchkt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_txyw0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vc5cj"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_nvyfr"]
+material = SubResource("StandardMaterial3D_vc5cj")
+text = "☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ty1g6"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_j2jfr"]
+material = SubResource("StandardMaterial3D_ty1g6")
+text = "⏳"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjg73"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_bu4jf"]
+material = SubResource("StandardMaterial3D_bjg73")
+text = "☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ddy"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_0loja"]
+material = SubResource("StandardMaterial3D_o7ddy")
+text = "☼"
+
+[node name="SpawnRoom" type="Node3D"]
+transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.4169984, -5.33, -66.476)
+script = ExtResource("1_orhc3")
+
+[node name="Wall" parent="." instance=ExtResource("2_8whbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, -76.56123, 0.08602047, 4.3652534)
+
+[node name="SunSymbol" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(-6.556709e-07, 0, 15, 0, 16.5, 0, -15, 0, -6.556708e-07, 5.6304398, 5.357463, 0)
+mesh = SubResource("TextMesh_pibwh")
+
+[node name="Wall2" parent="." instance=ExtResource("2_8whbu")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 18.197332, 0.2268138, -5.2469482)
+
+[node name="MoonSymbol" type="MeshInstance3D" parent="Wall2"]
+transform = Transform3D(-6.556709e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, -5.801697, 5.357463, 0)
+mesh = SubResource("TextMesh_5he1u")
+
+[node name="Wall4" parent="." instance=ExtResource("2_8whbu")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 19.741932, 0.15242243, 13.24361)
+
+[node name="StarSymbol" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(-6.556711e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, 5.9892883, 5.357463, 0)
+mesh = SubResource("TextMesh_2cjbq")
+
+[node name="Wall3" parent="." instance=ExtResource("2_8whbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, 108.882225, -0.05857992, 4.0606213)
+
+[node name="HourglassSymbol" type="MeshInstance3D" parent="Wall3"]
+transform = Transform3D(-6.5567116e-07, 0, -15, 0, 16.5, 0, 15, 0, -6.556708e-07, -5.9565125, 5.3163185, 0)
+mesh = SubResource("TextMesh_cjqg0")
+
+[node name="SpawnRoomFloor" parent="." instance=ExtResource("2_8whbu")]
+transform = Transform3D(18, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.267605, -17.73159, 4.0019913)
+
+[node name="SpawnButtons" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -2.5402126, 2.4918666, 4.5851364)
+script = ExtResource("3_bdx0g")
+
+[node name="MoonButton" type="Node3D" parent="SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnButtons/MoonButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="MoonArea" type="Area3D" parent="SpawnButtons/MoonButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="SpawnButtons/MoonButton/MoonArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="SpawnButtons/MoonButton"]
+transform = Transform3D(5.5235887, 3.4399972, 1.8795882e-07, 0, -2.4478376e-07, 7, 4.2999964, -4.418871, -2.4144373e-07, 0.007692337, 1.0657678, -0.008927822)
+mesh = SubResource("TextMesh_nvyfr")
+
+[node name="HourglassButton" type="Node3D" parent="SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.94, -2.45, -7.79)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnButtons/HourglassButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="HourglassArea" type="Area3D" parent="SpawnButtons/HourglassButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="SpawnButtons/HourglassButton/HourglassArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="SpawnButtons/HourglassButton"]
+transform = Transform3D(-4.1445985, 2.8924513, 1.5804132e-07, 0, -1.9233012e-07, 5.5, 3.615564, 3.3156788, 1.8116616e-07, -0.04931259, 1.0657678, -0.058962345)
+mesh = SubResource("TextMesh_j2jfr")
+
+[node name="StarButton" type="Node3D" parent="SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.533, -2.45, 5.82)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnButtons/StarButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="StarArea" type="Area3D" parent="SpawnButtons/StarButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="SpawnButtons/StarButton/StarArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="SpawnButtons/StarButton"]
+transform = Transform3D(6.9998293, -0.04886882, 0, -2.136124e-09, -3.0597226e-07, 7, -0.04886882, -6.9998293, -3.059797e-07, 0.037815094, 1.0657678, -0.13945532)
+mesh = SubResource("TextMesh_bu4jf")
+
+[node name="SunButton" type="Node3D" parent="SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.764, -2.45, 5.762)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnButtons/SunButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="SunArea" type="Area3D" parent="SpawnButtons/SunButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="SpawnButtons/SunButton/SunArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="SpawnButtons/SunButton"]
+transform = Transform3D(5.9998536, -0.04188756, -1.8309634e-09, 0, -2.6226832e-07, 6, -0.04188756, -5.9998536, -2.6226195e-07, 0.002667427, 1.0069346, -0.061526775)
+mesh = SubResource("TextMesh_0loja")
+
+[node name="ButtonCooldown" type="Timer" parent="SpawnButtons"]
+one_shot = true
+autostart = true
+
+[node name="Gem" parent="." instance=ExtResource("4_oahmm")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 18.843277, 7.068308, 4.192116)
+
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="outer_middle_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="inner_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="_on_moon_area_body_entered"]
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="moon_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons" method="hourglass_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
+[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="inner_outer_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="outer_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="star_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
+[connection signal="body_entered" from="SpawnButtons/SunButton/SunArea" to="SpawnButtons" method="sun_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/SunButton/SunArea" to="SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
+[connection signal="timeout" from="SpawnButtons/ButtonCooldown" to="SpawnButtons" method="on_cooldown"]
