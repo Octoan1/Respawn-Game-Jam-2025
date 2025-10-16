@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://1ndcwe0bworj"]
+[gd_scene load_steps=12 format=3 uid="uid://1ndcwe0bworj"]
 
-[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_s6xvl"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="2_qh8n0"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="3_oae73"]
 [ext_resource type="PackedScene" uid="uid://dscfidquql0su" path="res://scenes/environment/props/interactables/ButtonKeyPad.tscn" id="4_j28p2"]
@@ -26,8 +25,6 @@ text = "7"
 [node name="Gem" parent="." instance=ExtResource("8_km1ug")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.878, 11.246, 180.62)
 color = Color(0.827451, 0.6862745, 0.21568628, 1)
-
-[node name="Map" parent="." instance=ExtResource("1_s6xvl")]
 
 [node name="LongRock" parent="." instance=ExtResource("2_qh8n0")]
 transform = Transform3D(0.67033786, -9.593308, -0.8547665, 8.156234, 0.89053005, -0.85688084, 0.92011327, -0.9049112, 8.218445, 2.797113, -11.8661, 182.84834)
