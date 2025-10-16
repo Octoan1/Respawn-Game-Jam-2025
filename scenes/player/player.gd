@@ -72,8 +72,8 @@ var interaction_target
 func _on_interaction_ray_cast_looking_at(target: Node3D) -> void:
 	#crosshair.visible = false
 	#crosshair_2.visible = true
-	self.interaction_target = target
-	if interaction_target.find_child("Interactable"):
+	if target.find_child("Interactable"):
+		self.interaction_target = target
 		UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
 
 
