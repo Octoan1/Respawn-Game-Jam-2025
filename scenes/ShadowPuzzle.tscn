@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bki56nonf5knw"]
+[gd_scene load_steps=10 format=3 uid="uid://b01xxsx848y44"]
 
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_s6xvl"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="2_qh8n0"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="3_oae73"]
+[ext_resource type="PackedScene" uid="uid://dscfidquql0su" path="res://scenes/environment/props/interactables/ButtonKeyPad.tscn" id="4_j28p2"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="4_y6it1"]
 [ext_resource type="ArrayMesh" uid="uid://dwjbr265hfbio" path="res://assets/models/Pillar.obj" id="5_uh8t4"]
 
@@ -28,32 +29,32 @@ transform = Transform3D(-1.7963562e-07, 1.3461457e-07, -5.1354413, 3.4859424, 3.
 [node name="Key Pad" parent="." instance=ExtResource("3_oae73")]
 transform = Transform3D(-4.2977724e-10, -6.97079e-09, 0.113034, -0.06599714, 0.0963198, 2.4704367e-09, -0.04945666, -0.12853336, -4.2789217e-09, -1.8781244, 12.890181, 180.622)
 
-[node name="Key" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058078095, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, 0.85370356)
+[node name="ButtonKeyPad" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 0, 1.7763568e-15, 0, 0.6384615, -8.881784e-16, -2.6645353e-15, 1.2434498e-14, 0.6384615, -1.8504639, 0.39263916, 0.85090923)
 
-[node name="Key2" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077946, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, -0.044940487)
+[node name="ButtonKeyPad2" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 0, 5.3290705e-15, 0, 0.6384616, 8.881784e-16, -4.440892e-15, 1.7763568e-14, 0.63846153, -1.8504639, 0.39276123, -0.027208328)
 
-[node name="Key3" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077946, 0.29150763, -1.1795118e-05, -0.0025722827, -1.9122925, 0.36895752, -0.9342646)
+[node name="ButtonKeyPad3" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 5.9604645e-08, 3.5527137e-15, 0, 0.63846153, -8.881784e-16, -3.5527137e-15, 1.5987212e-14, 0.63846153, -1.8504639, 0.3927002, -0.943964)
 
-[node name="Key4" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35021973, 0.33642578, 0.85370356)
+[node name="ButtonKeyPad4" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 0, 5.3290705e-15, 0, 0.63846177, 7.1054274e-15, -7.1054274e-15, 2.842171e-14, 0.63846153, -0.20861816, 0.37670898, 0.8509226)
 
-[node name="Key5" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35025024, 0.33641052, -0.045847774)
+[node name="ButtonKeyPad5" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 0, 5.3290705e-15, 0, 0.6384618, 9.769963e-15, -7.993606e-15, 2.6645353e-14, 0.63846153, -0.2084961, 0.37670898, -0.022975922)
 
-[node name="Key6" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, -0.35025024, 0.33641052, -0.90861195)
+[node name="ButtonKeyPad6" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, 0, 5.3290705e-15, 0, 0.6384618, 9.769963e-15, -7.993606e-15, 2.6645353e-14, 0.63846153, -0.2084961, 0.37670898, -0.98379326)
 
-[node name="Key8" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33587646, -0.0879429)
+[node name="ButtonKeyPad7" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, -5.9604645e-08, 1.0658141e-14, 0, 0.6384621, 2.3092639e-14, -1.2434498e-14, 2.6645353e-14, 0.63846153, 1.6748047, 0.38110352, 0.8509388)
 
-[node name="Key9" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33589172, 0.8451276)
+[node name="ButtonKeyPad8" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, -5.9604645e-08, 1.0658141e-14, 0, 0.6384621, 2.3092639e-14, -1.2434498e-14, 2.6645353e-14, 0.63846153, 1.7166748, 0.40985107, -0.11144829)
 
-[node name="Key10" parent="Key Pad" instance=ExtResource("4_y6it1")]
-transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168, 0.0144139975, -0.0058077797, 0.29150763, -1.1795118e-05, -0.0025722827, 1.4627686, 0.33589172, -0.9724328)
+[node name="ButtonKeyPad9" parent="Key Pad" instance=ExtResource("4_j28p2")]
+transform = Transform3D(0.6384611, -5.9604645e-08, 1.0658141e-14, 0, 0.6384621, 2.3092639e-14, -1.2434498e-14, 2.6645353e-14, 0.63846153, 1.7111816, 0.4060669, -1.0010281)
 
 [node name="Pillar" parent="." instance=ExtResource("4_y6it1")]
 transform = Transform3D(0.21477717, 0, 0, 0, 0.21477717, 0, 0, 0, 0.21477717, -1.875054, 11.417967, 180.6122)
