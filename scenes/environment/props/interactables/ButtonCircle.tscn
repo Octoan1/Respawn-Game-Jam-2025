@@ -5,7 +5,8 @@
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_61nk8"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_t7tgo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7tgo"]
+size = Vector3(1, 1.9941711, 1)
 
 [node name="ButtonCircle" type="Node3D"]
 script = ExtResource("1_t7tgo")
@@ -17,7 +18,8 @@ mesh = SubResource("CylinderMesh_61nk8")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("CylinderShape3D_t7tgo")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0049286005, 0)
+shape = SubResource("BoxShape3D_t7tgo")
 
 [node name="Interactable" type="Node3D" parent="."]
 script = ExtResource("2_pvx3c")

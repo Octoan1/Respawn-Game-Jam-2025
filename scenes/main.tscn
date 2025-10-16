@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=25 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -248,9 +247,6 @@ color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
 [node name="Gem12" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.271912, -18.364363, 27.478273)
 color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="CodePuzzle" parent="Objects" instance=ExtResource("12_a8y0u")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bc30qdnv660xy"]
+[gd_scene load_steps=11 format=3 uid="uid://bc30qdnv660xy"]
 
-[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_bokus"]
+[ext_resource type="Script" uid="uid://lfucjibrj0au" path="res://scenes/code_puzzle.gd" id="1_vg53r"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="2_hsdbb"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="2_s536q"]
 [ext_resource type="Script" uid="uid://ccffqgwv86wvy" path="res://scenes/environment/props/obelisk_code.gd" id="3_hsdbb"]
 [ext_resource type="PackedScene" uid="uid://bu6mjckmlx5bj" path="res://scenes/environment/props/interactables/ButtonCircle.tscn" id="4_r3jns"]
 [ext_resource type="PackedScene" uid="uid://cl8chnd7s8q24" path="res://scenes/environment/props/interactables/ButtonSquare.tscn" id="5_vg53r"]
@@ -17,11 +18,14 @@ text = "▲"
 text = "●"
 
 [node name="CodePuzzle" type="Node3D"]
+script = ExtResource("1_vg53r")
 
-[node name="Map" parent="." instance=ExtResource("1_bokus")]
+[node name="Gem" parent="." instance=ExtResource("2_s536q")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -161.32816, -7.240053, -122.95498)
+color = Color(0.47058824, 0.9764706, 0, 1)
 
 [node name="Obelisk_Square" parent="." instance=ExtResource("2_hsdbb")]
-transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -134.01015, -14.319643, -166.58444)
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 20.50113, -15.722626, 67.50032)
 script = ExtResource("3_hsdbb")
 rise_time = 18
 sink_time = 20
@@ -59,7 +63,7 @@ transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08
 mesh = SubResource("TextMesh_s12g7")
 
 [node name="Obelisk_Tri" parent="." instance=ExtResource("2_hsdbb")]
-transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -142.1, -14.08, -166.3)
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -114.22306, -16.009, -36.636032)
 script = ExtResource("3_hsdbb")
 rise_time = 12
 sink_time = 14
@@ -135,10 +139,13 @@ transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08
 mesh = SubResource("TextMesh_hmx58")
 
 [node name="ButtonCircle" parent="." instance=ExtResource("4_r3jns")]
-transform = Transform3D(1.7320454, 5.039825, 0, -2.9999907, 2.9097438, 0, 0, 0, 3.464091, -172.78647, -7.3042383, -126.81767)
+transform = Transform3D(1.7320454, 5.039825, 0, -2.9999907, 2.9097438, 0, 0, 0, 3.464091, -172.65726, -7.454601, -126.81767)
+num = 1
 
 [node name="ButtonSquare" parent="." instance=ExtResource("5_vg53r")]
-transform = Transform3D(-1.6109275, -4.894324, 0, 2.790208, -2.8257396, 0, 0, 0, 3.2218547, -172.72102, -7.0367665, -121.57422)
+transform = Transform3D(-1.6109275, -4.894324, 0, 2.790208, -2.8257396, 0, 0, 0, 3.2218547, -172.48543, -7.249918, -121.57422)
+num = 3
 
 [node name="ButtonTri" parent="." instance=ExtResource("6_s536q")]
-transform = Transform3D(-8.0391565e-08, 4.405165, -1.8391451, 1.3924229e-07, 2.543323, 3.1854928, 3.6782904, -7.8992593e-22, -1.6078315e-07, -172.51085, -7.111577, -116.849884)
+transform = Transform3D(-8.0391565e-08, 4.405165, -1.8391451, 1.3924229e-07, 2.543323, 3.1854928, 3.6782904, -7.8992593e-22, -1.6078315e-07, -172.27525, -7.4098854, -116.849884)
+num = 2
