@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu6mjckmlx5bj"]
+[gd_scene load_steps=5 format=3 uid="uid://bu6mjckmlx5bj"]
 
 [ext_resource type="Script" uid="uid://ddfsxi0hqht8k" path="res://scenes/environment/props/interactables/button_code.gd" id="1_t7tgo"]
 [ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_pvx3c"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_61nk8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t7tgo"]
 
 [node name="ButtonCircle" type="Node3D"]
 script = ExtResource("1_t7tgo")
@@ -11,6 +13,11 @@ script = ExtResource("1_t7tgo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0724684, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_61nk8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("CylinderShape3D_t7tgo")
 
 [node name="Interactable" type="Node3D" parent="."]
 script = ExtResource("2_pvx3c")

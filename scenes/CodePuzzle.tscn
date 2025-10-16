@@ -135,7 +135,10 @@ transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08
 mesh = SubResource("TextMesh_hmx58")
 
 [node name="ButtonCircle" parent="." instance=ExtResource("4_r3jns")]
+transform = Transform3D(1.7320454, 5.039825, 0, -2.9999907, 2.9097438, 0, 0, 0, 3.464091, -172.78647, -7.3042383, -126.81767)
 
 [node name="ButtonSquare" parent="." instance=ExtResource("5_vg53r")]
+transform = Transform3D(-1.6109275, -4.894324, 0, 2.790208, -2.8257396, 0, 0, 0, 3.2218547, -172.72102, -7.0367665, -121.57422)
 
 [node name="ButtonTri" parent="." instance=ExtResource("6_s536q")]
+transform = Transform3D(-8.0391565e-08, 4.405165, -1.8391451, 1.3924229e-07, 2.543323, 3.1854928, 3.6782904, -7.8992593e-22, -1.6078315e-07, -172.51085, -7.111577, -116.849884)
