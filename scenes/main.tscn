@@ -145,7 +145,7 @@ moon_size = 200.0
 environment = SubResource("Environment_sugp2")
 
 [node name="Map" parent="Objects" instance=ExtResource("6_tipki")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
 transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.8138437, 0.5258244, -435.7407)
@@ -154,7 +154,7 @@ transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.813843
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.470493)
 
 [node name="Pyramid" parent="Objects" instance=ExtResource("7_tipki")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16, -23.320759, -563.77527)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -23.321, -563.775)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
 transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -6.8002286, -6.3860087, -52.23876)

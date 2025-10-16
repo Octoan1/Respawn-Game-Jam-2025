@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bw8komx66owcc"]
+
+[ext_resource type="Texture2D" uid="uid://cmkym57fs65gp" path="res://assets/textures/sand.png" id="1_ya5nx"]
+
+[resource]
+specular_mode = 2
+albedo_texture = ExtResource("1_ya5nx")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(20, 20, 20)
+texture_filter = 0

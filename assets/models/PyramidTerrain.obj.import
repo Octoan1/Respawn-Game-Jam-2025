@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cg5gt45pa1w7"
+path="res://.godot/imported/PyramidTerrain.obj-3021ee72f3adbe2e6faf8cdcbb312976.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PyramidTerrain.obj-3021ee72f3adbe2e6faf8cdcbb312976.mesh"]
+
+source_file="res://assets/models/PyramidTerrain.obj"
+dest_files=["res://.godot/imported/PyramidTerrain.obj-3021ee72f3adbe2e6faf8cdcbb312976.mesh", "res://.godot/imported/PyramidTerrain.obj-3021ee72f3adbe2e6faf8cdcbb312976.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
