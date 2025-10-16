@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://udesrlmps4m4"]
 
 [ext_resource type="ArrayMesh" uid="uid://fcxfydakuxpk" path="res://assets/models/MapSculpt.obj" id="1_w3537"]
-[ext_resource type="Texture2D" uid="uid://beyx4ts2twbyb" path="res://assets/textures/Sand.png" id="2_x8440"]
+[ext_resource type="Texture2D" uid="uid://cmkym57fs65gp" path="res://assets/textures/sand.png" id="2_x8440"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3537"]
 specular_mode = 2
