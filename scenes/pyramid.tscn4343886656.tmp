@@ -1,10 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://b7cfmo3tbto5t"]
 
 [ext_resource type="ArrayMesh" uid="uid://caya73uwxw2xq" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
-[ext_resource type="Texture2D" uid="uid://cagyg4ypnlu5v" path="res://assets/textures/pryamid2.png" id="2_m8ubx"]
 [ext_resource type="ArrayMesh" uid="uid://cpdda50mehdbe" path="res://assets/models/PyramidDoor.obj" id="2_sw6ir"]
 [ext_resource type="AudioStream" uid="uid://dyg3nhxwpu5wj" path="res://assets/sounds/sfx/laser.wav" id="3_yvq63"]
-[ext_resource type="Texture2D" uid="uid://jquqbbhpsa4k" path="res://assets/textures/sandstone.png" id="4_70q3q"]
 [ext_resource type="AudioStream" uid="uid://owvk0h886g00" path="res://assets/sounds/sfx/explosion.wav" id="4_ifwva"]
 [ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="5_m8ubx"]
 
@@ -25,50 +23,34 @@ func _ready() -> void:
 
 func _on_display_gem(target: Gem):
 	var color: Color = target.color
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = color
-	
-	var gem_mesh: MeshInstance3D = null
-	
 	match current_gem_index:
 		1:
-			gem_mesh = $\"GemWall/TopRow/Spawn1/GemMesh\"
+			$\"GemWall/TopRow/Spawn1/GemMesh\".material_override.albedo_color = color
+			$\"GemWall/TopRow/Spawn1/GemMesh\".visible = true
 		2:
-			gem_mesh = $\"GemWall/TopRow/Spawn2/GemMesh\"
+			pass
 		3:
-			gem_mesh = $\"GemWall/TopRow/Spawn3/GemMesh\"
+			pass
 		4:
-			gem_mesh = $\"GemWall/TopRow/Spawn4/GemMesh\"
+			pass
 		5:
-			gem_mesh = $\"GemWall/H Middle Room/Spawn1/GemMesh\"
+			pass
 		6: 
-			gem_mesh = $\"GemWall/H Middle Room/Spawn2/GemMesh\"
+			pass
 		7: 
-			gem_mesh = $\"GemWall/H Middle Room/Spawn3/GemMesh\"
+			pass
 		8: 
-			gem_mesh = $\"GemWall/H Middle Room/Spawn4/GemMesh\"
+			pass
 		9: 
-			gem_mesh = $\"GemWall/L Middle Room/Spawn1/GemMesh\"
+			pass
 		10: 
-			gem_mesh = $\"GemWall/L Middle Room/Spawn2/GemMesh\"
+			pass
 		11:
-			gem_mesh = $\"GemWall/L Middle Room/Spawn3/GemMesh\"
+			pass
 		12:
-			gem_mesh = $\"GemWall/L Middle Room/Spawn4/GemMesh\"
-		13: 
-			gem_mesh = $\"GemWall/Bottom Row/Spawn1/GemMesh\"
-		14:
-			gem_mesh = $\"GemWall/Bottom Row/Spawn2/GemMesh\"
-		15:
-			gem_mesh = $\"GemWall/Bottom Row/Spawn3/GemMesh\"
+			pass
 		16: 
-			gem_mesh = $\"GemWall/Bottom Row/Spawn4/GemMesh\"
-	
-	if gem_mesh != null:
-		gem_mesh.material_override = mat
-		gem_mesh.visible = true
-	else:
-		push_error(\"GemMesh not found for index: \" + str(current_gem_index))
+			pass
 		
 	current_gem_index += 1
 
@@ -93,21 +75,14 @@ func _on_display_gem(target: Gem):
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw6ir"]
-albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
-albedo_texture = ExtResource("2_m8ubx")
-albedo_texture_force_srgb = true
-uv1_scale = Vector3(10, 10, 10)
-texture_filter = 0
+albedo_color = Color(0.726652, 0.47119534, 1.92523e-07, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4u2o7"]
 data = PackedVector3Array(-75.269, 0, -75.269, -0.0011999999, 100, -0.0011999999, -75.269, 0, 75.269, -75.269, 0, 75.269, -0.0011999999, 100, -0.0011999999, 75.269, 0, 75.269, -75.269, 0, -75.269, -75.269, 0, 75.269, -17.3922, 0, 14.8356, 75.269, 0, 75.269, -17.3922, 0, 14.8356, -75.269, 0, 75.269, 75.269, 0, 14.8356, -17.3922, 0, 14.8356, 75.269, 0, 75.269, -17.3922, 0, -14.837899, -75.269, 0, -75.269, -17.3922, 0, 14.8356, 75.269, 0, -75.269, -75.269, 0, -75.269, -17.3922, 0, -14.837899, 75.269, 0, -14.837899, 75.269, 0, -75.269, -17.3922, 0, -14.837899, 75.269, 0, -75.269, -0.0011999999, 100, -0.0011999999, -75.269, 0, -75.269, 58.7095, 21.9989, 14.8356, -0.0011999999, 100, -0.0011999999, 58.7095, 21.9989, -14.837899, 75.269, 0, -75.269, 58.7095, 21.9989, -14.837899, -0.0011999999, 100, -0.0011999999, 75.269, 0, -14.837899, 58.7095, 21.9989, -14.837899, 75.269, 0, -75.269, 75.269, 0, 75.269, -0.0011999999, 100, -0.0011999999, 58.7095, 21.9989, 14.8356, 75.269, 0, 14.8356, 75.269, 0, 75.269, 58.7095, 21.9989, 14.8356, -17.3922, 0, 14.8356, -17.3922, 21.9989, -14.837899, -17.3922, 0, -14.837899, -17.3922, 0, -14.837899, 58.7095, 21.9989, -14.837899, 75.269, 0, -14.837899, 58.7095, 21.9989, 14.8356, -17.3922, 0, 14.8356, 75.269, 0, 14.8356, -17.3922, 21.9989, -14.837899, 58.7095, 21.9989, 14.8356, 58.7095, 21.9989, -14.837899, -17.3922, 21.9989, 14.8356, 58.7095, 21.9989, 14.8356, -17.3922, 21.9989, -14.837899, -17.3922, 21.9989, 14.8356, -17.3922, 21.9989, -14.837899, -17.3922, 0, 14.8356, -17.3922, 21.9989, -14.837899, 58.7095, 21.9989, -14.837899, -17.3922, 0, -14.837899, -17.3922, 21.9989, 14.8356, -17.3922, 0, 14.8356, 58.7095, 21.9989, 14.8356)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvq63"]
 albedo_color = Color(1, 0.7694398, 0.49347115, 1)
-albedo_texture = ExtResource("4_70q3q")
-albedo_texture_force_srgb = true
 metallic_specular = 0.0
-texture_filter = 0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvq63"]
 points = PackedVector3Array(54, -0.21527, -15.2, 54, 24.258102, -15.2, 56, -0.21527, -15.2, 54, -0.21527, 15.197024, 56, 24.258102, -15.2, 54, 24.258102, 15.197024, 56, -0.21527, 15.197024, 56, 24.258102, 15.197024)
@@ -327,8 +302,6 @@ libraries = {
 script = SubResource("GDScript_yvq63")
 
 [node name="LightCylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2000, 0)
-cast_shadow = 0
 mesh = SubResource("CylinderMesh_m8ubx")
 
 [node name="laser" type="AudioStreamPlayer3D" parent="."]
@@ -350,7 +323,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9, 15.65, 55.1)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/TopRow/Spawn1"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -389,7 +361,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/H Middle Room/Spawn1"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -398,7 +369,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.6, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/H Middle Room/Spawn2"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -407,7 +377,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 9.2, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/H Middle Room/Spawn3"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -416,7 +385,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.8, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/H Middle Room/Spawn4"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -428,7 +396,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/L Middle Room/Spawn1"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -437,7 +404,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.6, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/L Middle Room/Spawn2"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -446,7 +412,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 9.2, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/L Middle Room/Spawn3"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -455,7 +420,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.8, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/L Middle Room/Spawn4"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -467,7 +431,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/Bottom Row/Spawn1"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -476,7 +439,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4.6, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/Bottom Row/Spawn2"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -485,7 +447,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 9.2, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/Bottom Row/Spawn3"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
@@ -494,7 +455,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.8, 0, 0)
 
 [node name="GemMesh" type="MeshInstance3D" parent="GemWall/Bottom Row/Spawn4"]
-visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" path="res://scripts/reset_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
 [ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
@@ -240,6 +240,26 @@ color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
 [node name="Gem12" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.271912, -18.364363, 27.478273)
 color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
+
+[node name="Gem13" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6984076, -18.364363, 32.507973)
+color = Color(0.99705714, 0.62329054, 0.60385305, 1)
+
+[node name="Gem14" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.228548, -18.364363, 32.507973)
+color = Color(0.99705714, 0.62329054, 0.60385305, 1)
+
+[node name="Gem15" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.581253, -18.364363, 32.507973)
+color = Color(0.99705714, 0.62329054, 0.60385305, 1)
+
+[node name="Gem16" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 32.507973)
+color = Color(0.99705714, 0.62329054, 0.60385305, 1)
+
+[node name="Gem17" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 27.147034)
+color = Color(0.99705714, 0.62329054, 0.60385305, 1)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
