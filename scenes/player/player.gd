@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 #signal interact(target)
 
-@export var SPEED: float = 15
+@export var SPEED: float = 12
 @export var JUMP_VELOCITY: float = 4.5
 var can_fly: bool = false
 
@@ -24,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			JUMP_VELOCITY = 20
 			can_fly = true
 		else:
-			SPEED = 15
+			SPEED = 12
 			JUMP_VELOCITY = 4.5
 			can_fly = false
 	
