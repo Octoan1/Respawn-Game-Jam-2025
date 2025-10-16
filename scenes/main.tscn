@@ -1,17 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=27 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://hws8fv1mmh2t" path="res://scenes/GlowPuzzle.tscn" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -161,7 +164,7 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 177.0003, -19.680122, 126.100
 color = Color(0.827451, 0.6862745, 0.21568628, 1)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 177.0003, -20.410683, 126.10027)
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 163, -20.411, 126.1)
 script = ExtResource("11_trceg")
 player_path = NodePath("../PlayerPostProcess/PostProcessViewport/Player")
 gem_path = NodePath("../Gem_R")
@@ -267,6 +270,15 @@ color = Color(0.99705714, 0.62329054, 0.60385305, 1)
 [node name="Gem17" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 27.147034)
 color = Color(0.99705714, 0.62329054, 0.60385305, 1)
+
+[node name="GlowPuzzle" parent="Objects" instance=ExtResource("11_jkv2x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
+[node name="ShadowPuzzle" parent="Objects" instance=ExtResource("12_jbj1t")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
+[node name="CodePuzzle" parent="Objects" instance=ExtResource("12_a8y0u")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
