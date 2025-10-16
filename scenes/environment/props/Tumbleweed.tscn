@@ -59,7 +59,6 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("1_3hfcc")
 
 [node name="inside" type="MeshInstance3D" parent="RigidBody3D/outside"]
-visible = false
 cast_shadow = 0
 mesh = ExtResource("1_egvqs")
 surface_material_override/0 = SubResource("StandardMaterial3D_leb2a")
