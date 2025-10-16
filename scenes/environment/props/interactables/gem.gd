@@ -3,9 +3,11 @@ class_name Gem
 
 #@export var spawn_coords : Vector3 
 @export var color: Color
-
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var particles = $CoolParticle
+@onready var gemCollect = $gemCollect
+const GEM_COLLECT = preload("uid://llpnbhibew7j")
+
 
 func _ready() -> void:
 	# set start position 
@@ -31,5 +33,7 @@ func _on_gem_interacted() -> void:
 	particles.find_child("GPUParticles3D").emitting = true
 	mesh.visible = false
 	find_child("StaticBody3D").find_child("CollisionShape3D").disabled = true
+	gemCollect.stream = GEM_COLLECT
+	gemCollect.play()
 	await get_tree().create_timer(1).timeout
 	queue_free()

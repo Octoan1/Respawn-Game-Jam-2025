@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://chric61ueb3o"]
+[gd_scene load_steps=9 format=3 uid="uid://chric61ueb3o"]
 
 [ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="1_4yqmr"]
 [ext_resource type="Script" uid="uid://mq5ccd6pxiri" path="res://scenes/environment/props/interactables/gem.gd" id="1_oywcy"]
 [ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_lutik"]
 [ext_resource type="PackedScene" uid="uid://bmlo241pqftl2" path="res://scenes/CoolParticle.tscn" id="4_b77ts"]
+[ext_resource type="AudioStream" uid="uid://llpnbhibew7j" path="res://assets/sounds/sfx/gemCollect.wav" id="5_7kxro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yqmr"]
 metallic = 0.75
@@ -33,5 +34,11 @@ metadata/_custom_type_script = "uid://culihtv734n8p"
 
 [node name="CoolParticle" parent="." instance=ExtResource("4_b77ts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0376818, 0)
+
+[node name="gemCollect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_7kxro")
+max_polyphony = 16
+bus = &"SFX"
+playback_type = 1
 
 [connection signal="interacted" from="Interactable" to="." method="_on_gem_interacted"]
