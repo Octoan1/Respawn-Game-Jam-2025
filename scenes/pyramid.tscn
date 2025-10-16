@@ -269,6 +269,7 @@ script = SubResource("GDScript_yvq63")
 
 [node name="LightCylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2000, 0)
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_m8ubx")
 
 [node name="laser" type="AudioStreamPlayer3D" parent="."]
