@@ -1,0 +1,445 @@
+[gd_scene load_steps=47 format=3 uid="uid://dqll25w66cags"]
+
+[ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_0eweu"]
+[ext_resource type="Script" uid="uid://diet4phomu4ps" path="res://scenes/jump_puzzle.gd" id="1_82xs3"]
+[ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="2_82xs3"]
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="3_gxhel"]
+[ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="4_rt3sg"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="5_cqyv7"]
+[ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="6_x2jte"]
+[ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_xu521"]
+[ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="8_103d5"]
+[ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="9_gxhel"]
+[ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="10_cqyv7"]
+[ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="11_x2jte"]
+[ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="12_x2jte"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="13_mx6vs"]
+[ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="14_tosrs"]
+[ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="14_xu521"]
+[ext_resource type="Script" uid="uid://doc5f5yb856ij" path="res://scenes/SymbolButtonPuzzle.gd" id="16_qo154"]
+[ext_resource type="Script" uid="uid://bdylw2osgrab5" path="res://scenes/SymbolButtonMotion.gd" id="17_oe6am"]
+[ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="17_tosrs"]
+
+[sub_resource type="Shader" id="Shader_tbgi4"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mx6vs"]
+shader = SubResource("Shader_tbgi4")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tosrs"]
+viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 106.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_qo154"]
+material = SubResource("StandardMaterial3D_choun")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oe6am"]
+shading_mode = 0
+albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qo154"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_qo154")
+
+[sub_resource type="Environment" id="Environment_oe6am"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tosrs"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_qo154"]
+material = SubResource("StandardMaterial3D_tosrs")
+text = "☼"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqylo"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_tosrs"]
+material = SubResource("StandardMaterial3D_sqylo")
+text = "☾     ☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo154"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_oe6am"]
+material = SubResource("StandardMaterial3D_qo154")
+text = "☆      ☆
+☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh2dg"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_8ol3g"]
+material = SubResource("StandardMaterial3D_kh2dg")
+text = "⏳ ⏳
+⏳ ⏳"
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oe6am"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sqylo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ol3g"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_1b831"]
+material = SubResource("StandardMaterial3D_8ol3g")
+text = "☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b831"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_pwiou"]
+material = SubResource("StandardMaterial3D_1b831")
+text = "⏳"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwiou"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_w56by"]
+material = SubResource("StandardMaterial3D_pwiou")
+text = "☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w56by"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_gobuc"]
+material = SubResource("StandardMaterial3D_w56by")
+text = "☼"
+
+[node name="Jump Puzzle" type="Node3D"]
+script = ExtResource("1_82xs3")
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="PlayerPostProcess" type="TextureRect" parent="Objects"]
+material = SubResource("ShaderMaterial_mx6vs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_tosrs")
+expand_mode = 1
+
+[node name="PostProcessViewport" type="SubViewport" parent="Objects/PlayerPostProcess"]
+canvas_item_default_texture_filter = 0
+canvas_item_default_texture_repeat = 1
+size = Vector2i(320, 240)
+render_target_update_mode = 4
+
+[node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_0eweu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.178112, -32.163784)
+
+[node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
+script = ExtResource("13_mx6vs")
+player_path = NodePath("../PostProcessViewport/Player")
+start_position = Vector3(0, 13, 0)
+on = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Objects/PlayerPostProcess/ResetManager"]
+
+[node name="FadeOverlay" type="ColorRect" parent="Objects/PlayerPostProcess/ResetManager/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_bottom = 0.053000003
+offset_right = 1920.0
+offset_bottom = 1022.76
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sun" type="DirectionalLight3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
+shadow_enabled = true
+script = ExtResource("2_82xs3")
+sun_angle_offset = 90.0
+
+[node name="Moon" type="MeshInstance3D" parent="Objects"]
+mesh = SubResource("SphereMesh_qo154")
+surface_material_override/0 = SubResource("StandardMaterial3D_oe6am")
+script = ExtResource("14_tosrs")
+moon_distance = 400.0
+moon_size = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
+environment = SubResource("Environment_oe6am")
+
+[node name="Map" parent="Objects" instance=ExtResource("3_gxhel")]
+
+[node name="Floor" parent="Objects" instance=ExtResource("4_rt3sg")]
+
+[node name="BoxTest" parent="Objects" instance=ExtResource("5_cqyv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.30316, 0.5258244, -0.48880672)
+
+[node name="Obelisk" parent="Objects" instance=ExtResource("6_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, 0, 2.2867012)
+visible = false
+
+[node name="Pyramid" parent="Objects" instance=ExtResource("7_xu521")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.227113, -217.86906)
+
+[node name="SpawnRoom" type="Node3D" parent="Objects"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
+
+[node name="Wall" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, -76.56123, 0.08602047, 4.3652534)
+
+[node name="SunSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall"]
+transform = Transform3D(-6.556709e-07, 0, 15, 0, 16.5, 0, -15, 0, -6.556708e-07, 5.6304398, 5.357463, 0)
+mesh = SubResource("TextMesh_qo154")
+
+[node name="Wall2" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 18.197332, 0.2268138, -5.2469482)
+
+[node name="MoonSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall2"]
+transform = Transform3D(-6.556709e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, -5.801697, 5.357463, 0)
+mesh = SubResource("TextMesh_tosrs")
+
+[node name="Wall4" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 19.741932, 0.15242243, 13.24361)
+
+[node name="StarSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall4"]
+transform = Transform3D(-6.556711e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, 5.9892883, 5.357463, 0)
+mesh = SubResource("TextMesh_oe6am")
+
+[node name="Wall3" parent="Objects/SpawnRoom" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, 108.882225, -0.05857992, 4.0606213)
+
+[node name="HourglassSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall3"]
+transform = Transform3D(-6.5567116e-07, 0, -15, 0, 16.5, 0, 15, 0, -6.556708e-07, -5.9565125, 5.3163185, 0)
+mesh = SubResource("TextMesh_8ol3g")
+
+[node name="PlatformerPillar3" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.13739, -18.500608, 49.942116)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar4" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.66682, -19.38229, 51.738033)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar2" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.94829, -17.415009, 52.828987)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformerPillar" parent="Objects" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.42819, -16.608677, 56.641582)
+script = ExtResource("9_gxhel")
+
+[node name="PlatformingPuzzle" type="Node3D" parent="Objects"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40565142, -2.4918666, -33.741856)
+
+[node name="EndOfPlatoformer" parent="Objects/PlatformingPuzzle" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1478.2156, -12.61463, 97.82042)
+
+[node name="Arch" parent="Objects/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("12_x2jte")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.026901245, 9.652176, 4.3464355)
+
+[node name="Arch2" parent="Objects/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("12_x2jte")]
+transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.372757, 9.652176, -0.2953987)
+
+[node name="FlatRockPlatformer" parent="Objects" instance=ExtResource("17_tosrs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.12449, -9.620807, 47.341145)
+
+[node name="SpawnRoomFloor" parent="Objects" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 2.032412, -20.223457, -29.739864)
+
+[node name="SpawnButtons" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1516304, 0, -29.15672)
+script = ExtResource("16_qo154")
+
+[node name="MoonButton" type="Node3D" parent="Objects/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
+script = ExtResource("17_oe6am")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/MoonButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="MoonArea" type="Area3D" parent="Objects/SpawnButtons/MoonButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/MoonButton/MoonArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/MoonButton"]
+transform = Transform3D(5.5235887, 3.4399972, 1.8795882e-07, 0, -2.4478376e-07, 7, 4.2999964, -4.418871, -2.4144373e-07, 0.007692337, 1.0657678, -0.008927822)
+mesh = SubResource("TextMesh_1b831")
+
+[node name="HourglassButton" type="Node3D" parent="Objects/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.94, -2.45, -7.79)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/HourglassButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="HourglassArea" type="Area3D" parent="Objects/SpawnButtons/HourglassButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/HourglassButton/HourglassArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/HourglassButton"]
+transform = Transform3D(-4.1445985, 2.8924513, 1.5804132e-07, 0, -1.9233012e-07, 5.5, 3.615564, 3.3156788, 1.8116616e-07, -0.04931259, 1.0657678, -0.058962345)
+mesh = SubResource("TextMesh_pwiou")
+
+[node name="StarButton" type="Node3D" parent="Objects/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.533, -2.45, 5.82)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/StarButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="StarArea" type="Area3D" parent="Objects/SpawnButtons/StarButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/StarButton/StarArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/StarButton"]
+transform = Transform3D(6.9998293, -0.04886882, 0, -2.136124e-09, -3.0597226e-07, 7, -0.04886882, -6.9998293, -3.059797e-07, 0.037815094, 1.0657678, -0.13945532)
+mesh = SubResource("TextMesh_w56by")
+
+[node name="SunButton" type="Node3D" parent="Objects/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.764, -2.45, 5.762)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnButtons/SunButton"]
+mesh = SubResource("CylinderMesh_oe6am")
+
+[node name="SunArea" type="Area3D" parent="Objects/SpawnButtons/SunButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnButtons/SunButton/SunArea"]
+shape = SubResource("CylinderShape3D_sqylo")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnButtons/SunButton"]
+transform = Transform3D(5.9998536, -0.04188756, -1.8309634e-09, 0, -2.6226832e-07, 6, -0.04188756, -5.9998536, -2.6226195e-07, 0.002667427, 1.0069346, -0.061526775)
+mesh = SubResource("TextMesh_gobuc")
+
+[node name="ButtonCooldown" type="Timer" parent="Objects/SpawnButtons"]
+one_shot = true
+autostart = true
+
+[node name="UI" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="PauseMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.6627451)
+
+[node name="Label" type="Label" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "PAUSED"
+
+[node name="Crosshair" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="DefaultCrosshair" type="TextureRect" parent="UI/Crosshair"]
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_103d5")
+stretch_mode = 1
+
+[node name="InteractionCrosshair" type="TextureRect" parent="UI/Crosshair"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_xu521")
+stretch_mode = 1
+
+[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="inner_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="outer_middle_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="_on_moon_area_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnButtons" method="moon_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnButtons" method="hourglass_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="inner_outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons" method="star_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/StarButton/StarArea" to="Objects/SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnButtons/SunButton/SunArea" to="Objects/SpawnButtons" method="sun_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnButtons/SunButton/SunArea" to="Objects/SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
+[connection signal="timeout" from="Objects/SpawnButtons/ButtonCooldown" to="Objects/SpawnButtons" method="on_cooldown"]

@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
-@export var SPEED: float = 10
+#signal interact(target)
+
+@export var SPEED: float = 15
 @export var JUMP_VELOCITY: float = 4.5
 var can_fly: bool = false
 
@@ -17,12 +19,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		UIManager.toggle_pause() 
 	elif event.is_action_pressed("secret_button"):
-		if SPEED == 10:
+		if SPEED == 15:
 			SPEED = 100
 			JUMP_VELOCITY = 20
 			can_fly = true
 		else:
-			SPEED = 10
+			SPEED = 15
 			JUMP_VELOCITY = 4.5
 			can_fly = false
 	
@@ -42,9 +44,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and (is_on_floor() or can_fly):
 		velocity.y = JUMP_VELOCITY
 		
-	# Interaction Quick Test
-	if Input.is_action_just_pressed("interact"):
-		print("interacted with: ", interaction_target)
+	# Interaction 
+	if Input.is_action_just_pressed("interact") and interaction_target != null:
+		var interactable : Interactable = interaction_target.find_child("Interactable")
+		if interactable:
+			#print("interacted with: ", interaction_target.name)
+			interactable.interact()
+		else:
+			print("CANNOT interact with: ", interaction_target)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,11 +69,12 @@ func _physics_process(delta: float) -> void:
 #@onready var crosshair: TextureRect = $Head/Camera3D/Control/Crosshair
 #@onready var crosshair_2: TextureRect = $Head/Camera3D/Control/Crosshair2
 var interaction_target
-func _on_interaction_ray_cast_looking_at(target: Variant) -> void:
+func _on_interaction_ray_cast_looking_at(target: Node3D) -> void:
 	#crosshair.visible = false
 	#crosshair_2.visible = true
-	self.interaction_target = target.get_parent()
-	UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
+	self.interaction_target = target
+	if interaction_target.find_child("Interactable"):
+		UIManager.update_crosshair(UIManager.CrosshairState.CAN_INTERACT)
 
 
 func _on_interaction_ray_cast_stopped_looking() -> void:

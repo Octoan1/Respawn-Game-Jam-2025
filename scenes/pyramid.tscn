@@ -1,7 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7cfmo3tbto5t"]
+[gd_scene load_steps=16 format=3 uid="uid://b7cfmo3tbto5t"]
 
 [ext_resource type="ArrayMesh" uid="uid://caya73uwxw2xq" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
 [ext_resource type="ArrayMesh" uid="uid://cpdda50mehdbe" path="res://assets/models/PyramidDoor.obj" id="2_sw6ir"]
+[ext_resource type="AudioStream" uid="uid://dyg3nhxwpu5wj" path="res://assets/sounds/sfx/laser.wav" id="3_yvq63"]
+[ext_resource type="AudioStream" uid="uid://owvk0h886g00" path="res://assets/sounds/sfx/explosion.wav" id="4_ifwva"]
+
+[sub_resource type="GDScript" id="GDScript_sw6ir"]
+resource_name = "Pyramid"
+script/source = "extends Node3D
+
+@onready var cyl := $LightCylinder
+@onready var door := $DoorMesh
+
+
+
+#func _ready() -> void:
+	#_pyramid_effect()
+#
+	#
+##func _process(delta: float) -> void:
+#
+#
+##func _pyramid_door_open() -> void:
+#
+#func _pyramid_effect() -> void:
+	#cyl.scale = Vector3(20,500,20)
+	##cyl.position = lerp(Vector3(0,1000,0), Vector3(0,-1000,0), sin(delta))
+	##print(sin(30 * delta))
+	#for i in 100:
+		#cyl.position = lerp(Vector3(0,1000,0), Vector3(0,-1000,0), i * .01)
+		#get_tree().create_timer(.1).timeout
+
+	
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw6ir"]
 albedo_color = Color(0.726652, 0.47119534, 1.92523e-07, 1)
@@ -16,24 +47,227 @@ metallic_specular = 0.0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvq63"]
 points = PackedVector3Array(54, -0.21527, -15.2, 54, 24.258102, -15.2, 56, -0.21527, -15.2, 54, -0.21527, 15.197024, 56, 24.258102, -15.2, 54, 24.258102, 15.197024, 56, -0.21527, 15.197024, 56, 24.258102, 15.197024)
 
-[node name="Pyramid" type="Node3D"]
+[sub_resource type="Animation" id="Animation_yvq63"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightCylinder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightCylinder:transparency")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[sub_resource type="Animation" id="Animation_sw6ir"]
+resource_name = "pyramidEffect"
+length = 30.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightCylinder")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.016666658, 1, 0, 0, 0, 0.10861313, 1, 0, 2000, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightCylinder")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.016666658, 1, 1, 1, 1, 0.108333334, 1, 20, 0, 20, 1.9906795, 1, 20, 4000, 20, 2.0333333, 1, 20, 0, 20, 3.5945606, 1, 20, 4000, 20, 3.6372144, 1, 20, 0, 20, 4.6000004, 1, 20, 4000, 20, 4.6426544, 1, 20, 0, 20, 5.0162296, 1, 20, 4000, 20, 5.0588837, 1, 20, 0, 20, 5.2000003, 1, 20, 4000, 20, 5.242654, 1, 20, 0, 20, 5.3012176, 1, 20, 4000, 20, 5.7995634, 1, 20, 4000, 20, 6.225613, 1, 80, 4000, 80, 6.733333, 1, 10, 4000, 10, 7.9666667, 1, 10, 4000, 10, 9.333333, 1, 1000, 4000, 1000)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightCylinder:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.3333335, 5.366667, 5.392902, 5.426235, 5.4662557, 5.499589, 5.53961, 5.572943, 5.6000004, 5.6333337, 5.6557536, 5.689087, 5.7046566, 5.73799, 5.745481, 5.752411, 5.755392, 5.7575703, 5.7605515, 5.7633033, 5.7662845, 5.7696095, 5.7725906, 5.775342, 5.778323, 5.7806926, 5.783674),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("laser")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.108,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2729,
+"start_offset": 0.0961,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}, {
+"end_offset": 0.2882,
+"start_offset": 0.1153,
+"stream": ExtResource("3_yvq63")
+}],
+"times": PackedFloat32Array(0.93333334, 2.6666667, 4.2, 4.766667, 5.0333333, 5.2, 5.3333335, 5.366667, 5.4333334, 5.5, 5.5333333, 5.548611, 5.6, 5.6666665, 5.733333, 5.740201, 5.748749, 5.757276, 5.7631783, 5.767816, 5.771189)
+}
+tracks/3/use_blend = false
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0687,
+"start_offset": 0.0,
+"stream": ExtResource("4_ifwva")
+}],
+"times": PackedFloat32Array(7.8333335)
+}
+tracks/4/use_blend = false
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ifwva"]
+_data = {
+&"RESET": SubResource("Animation_yvq63"),
+&"pyramidEffect": SubResource("Animation_sw6ir")
+}
+
+[sub_resource type="GDScript" id="GDScript_yvq63"]
+resource_name = "pyramidAnimation"
+script/source = "extends AnimationPlayer
+
+func _ready() -> void:
+	play(\"pyramidEffect\")
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifwva"]
+shading_mode = 0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m8ubx"]
+material = SubResource("StandardMaterial3D_ifwva")
+
+[node name="Pyramid" type="Node3D"]
+script = SubResource("GDScript_sw6ir")
+
+[node name="PyramidMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("1_4u2o7")
 surface_material_override/0 = SubResource("StandardMaterial3D_sw6ir")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="PyramidMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PyramidMesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4u2o7")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="DoorMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = ExtResource("2_sw6ir")
 surface_material_override/0 = SubResource("StandardMaterial3D_yvq63")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yvq63")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ifwva")
+}
+script = SubResource("GDScript_yvq63")
+
+[node name="LightCylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2000, 0)
+mesh = SubResource("CylinderMesh_m8ubx")
+
+[node name="laser" type="AudioStreamPlayer3D" parent="."]
+volume_db = 29.63
+max_distance = 4096.0
+max_polyphony = 32
+
+[node name="Explosion" type="AudioStreamPlayer3D" parent="."]
+volume_db = 23.704
+max_distance = 4096.0
+max_polyphony = 32

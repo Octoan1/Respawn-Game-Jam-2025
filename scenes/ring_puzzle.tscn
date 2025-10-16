@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://domm2vsot51tv" path="res://scenes/PuzzleRing.gd" id="2_j1khf"]
 [ext_resource type="Script" uid="uid://ky26ujb2dbwf" path="res://scenes/PuzzleRings.gd" id="3_70dx5"]
 [ext_resource type="Script" uid="uid://dclt2w38uvw8b" path="res://scenes/Button.gd" id="3_j1khf"]
-[ext_resource type="Texture2D" uid="uid://qd3hwn6pphqa" path="res://assets/real icon.png" id="4_4xiub"]
+[ext_resource type="Texture2D" uid="uid://qd3hwn6pphqa" path="res://assets/uid_problem_generator.png" id="4_4xiub"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_70dx5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://chric61ueb3o"]
+
+[ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="1_4yqmr"]
+[ext_resource type="Script" uid="uid://mq5ccd6pxiri" path="res://scenes/environment/props/interactables/gem.gd" id="1_oywcy"]
+[ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_lutik"]
+[ext_resource type="PackedScene" uid="uid://bmlo241pqftl2" path="res://scenes/CoolParticle.tscn" id="4_b77ts"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4yqmr"]
+metallic = 0.75
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4yqmr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b77ts"]
+size = Vector3(1.7453146, 1.2578125, 1.7369156)
+
+[node name="Gem" type="Node3D"]
+script = ExtResource("1_oywcy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_4yqmr")
+surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_4yqmr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024123192, 0.62852097, -0.0044517517)
+shape = SubResource("BoxShape3D_b77ts")
+
+[node name="Interactable" type="Node3D" parent="."]
+script = ExtResource("2_lutik")
+metadata/_custom_type_script = "uid://culihtv734n8p"
+
+[node name="CoolParticle" parent="." instance=ExtResource("4_b77ts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0376818, 0)
+
+[connection signal="interacted" from="Interactable" to="." method="_on_gem_interacted"]
