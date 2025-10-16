@@ -158,14 +158,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16, -23.320759, -563.77527)
 
 [node name="Gem_R" parent="Objects" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 177.0003, -19.680122, 126.10027)
-color = Color(0.827451, 0.6862745, 0.21568628, 1)
+transform = Transform3D(1.5, 0, 0, 0, 1.31, 0, 0, 0, 1.462, 177.0003, -19.680122, 126.10027)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
 transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 177.0003, -20.410683, 126.10027)
 script = ExtResource("11_trceg")
 player_path = NodePath("../PlayerPostProcess/PostProcessViewport/Player")
-gem_path = NodePath("../Gem_R")
 
 [node name="Star" type="MeshInstance3D" parent="Objects/Obelisk_R"]
 transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.89838743, 1.5940764, 0)
