@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=66 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -15,6 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
+[ext_resource type="Script" uid="uid://cm87n4at3odmy" path="res://scenes/SpawnRoomScript.gd" id="14_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="15_vxglm"]
+[ext_resource type="Script" uid="uid://doc5f5yb856ij" path="res://scenes/SymbolButtonPuzzle.gd" id="16_2f3dj"]
+[ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="17_yq6so"]
+[ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="18_fv21b"]
+[ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="19_tel4y"]
+[ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="20_qkpxi"]
+[ext_resource type="Material" uid="uid://bgw8aqfaifdlg" path="res://scenes/minty_green.tres" id="21_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="22_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="23_j8jky"]
+[ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="24_kmb1v"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -85,6 +96,106 @@ glow_enabled = true
 [sub_resource type="TextMesh" id="TextMesh_trceg"]
 text = "☆"
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuf3a"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_pibwh"]
+material = SubResource("StandardMaterial3D_fuf3a")
+text = "☼"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6pm6"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_5he1u"]
+material = SubResource("StandardMaterial3D_c6pm6")
+text = "☾     ☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5poiv"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_2cjbq"]
+material = SubResource("StandardMaterial3D_5poiv")
+text = "☆      ☆
+☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chjal"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_cjqg0"]
+material = SubResource("StandardMaterial3D_chjal")
+text = "⏳ ⏳
+⏳ ⏳"
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vchkt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_txyw0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vc5cj"]
+albedo_color = Color(0, 1.7894205, 4.45484, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_nvyfr"]
+material = SubResource("StandardMaterial3D_vc5cj")
+text = "☾"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ty1g6"]
+albedo_color = Color(0, 0, 3.7307422, 1)
+emission_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_j2jfr"]
+material = SubResource("StandardMaterial3D_ty1g6")
+text = "⏳"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjg73"]
+albedo_color = Color(0.14973895, 3.7307422, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_bu4jf"]
+material = SubResource("StandardMaterial3D_bjg73")
+text = "☆"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7ddy"]
+albedo_color = Color(4.0048027, 3.8538947, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_0loja"]
+material = SubResource("StandardMaterial3D_o7ddy")
+text = "☼"
+
+[sub_resource type="BoxMesh" id="BoxMesh_ids8r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnhof"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1v6qk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_augu2"]
+albedo_color = Color(0.9647059, 0.96862745, 0.60784316, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tm6hj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kf5aa"]
+albedo_color = Color(0.7164928, 0.5948627, 0.9329554, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_t5ykj"]
+material = SubResource("StandardMaterial3D_kf5aa")
+text = "☐☐☐☐☐
+☐☐☐☐☐
+☐☐☐☐☐
+☐☐☐☐☐
+☐☐☐☐☐
+"
+font_size = 18
+line_spacing = -7.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_e755i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro3en"]
+albedo_color = Color(0.972549, 0.09803922, 0.20392157, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_od4ux"]
+
 [node name="Main" type="Node3D"]
 script = SubResource("GDScript_tbgi4")
 
@@ -110,7 +221,9 @@ render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6938272, -3.5668142, -52.17606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198.27225, -18.746315, 74.105125)
+SPEED = 15.0
+JUMP_VELOCITY = 5.0
 
 [node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
 script = ExtResource("2_85g3d")
@@ -280,6 +393,711 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 [node name="CodePuzzle" parent="Objects" instance=ExtResource("12_a8y0u")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
+[node name="SpawnRoom" type="Node3D" parent="Objects"]
+transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.4169984, -5.33, -66.476)
+script = ExtResource("14_2wyq8")
+
+[node name="Wall" parent="Objects/SpawnRoom" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, -76.56123, 0.08602047, 4.3652534)
+
+[node name="SunSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall"]
+transform = Transform3D(-6.556709e-07, 0, 15, 0, 16.5, 0, -15, 0, -6.556708e-07, 5.6304398, 5.357463, 0)
+mesh = SubResource("TextMesh_pibwh")
+
+[node name="Wall2" parent="Objects/SpawnRoom" instance=ExtResource("15_vxglm")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 18.197332, 0.2268138, -5.2469482)
+
+[node name="MoonSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall2"]
+transform = Transform3D(-6.556709e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, -5.801697, 5.357463, 0)
+mesh = SubResource("TextMesh_5he1u")
+
+[node name="Wall4" parent="Objects/SpawnRoom" instance=ExtResource("15_vxglm")]
+transform = Transform3D(-4.371139e-08, 0, 13.000001, 0, 1, 0, -0.1, 0, -5.6824803e-08, 19.741932, 0.15242243, 13.24361)
+
+[node name="StarSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall4"]
+transform = Transform3D(-6.556711e-07, 0, -15, 0, 16.5, 0, 15.000001, 0, -6.556708e-07, 5.9892883, 5.357463, 0)
+mesh = SubResource("TextMesh_2cjbq")
+
+[node name="Wall3" parent="Objects/SpawnRoom" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.3, 108.882225, -0.05857992, 4.0606213)
+
+[node name="HourglassSymbol" type="MeshInstance3D" parent="Objects/SpawnRoom/Wall3"]
+transform = Transform3D(-6.5567116e-07, 0, -15, 0, 16.5, 0, 15, 0, -6.556708e-07, -5.9565125, 5.3163185, 0)
+mesh = SubResource("TextMesh_cjqg0")
+
+[node name="SpawnRoomFloor" parent="Objects/SpawnRoom" instance=ExtResource("15_vxglm")]
+transform = Transform3D(18, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 16.267605, -17.73159, 4.0019913)
+
+[node name="SpawnButtons" type="Node3D" parent="Objects/SpawnRoom"]
+unique_name_in_owner = true
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -2.5402126, 2.4918666, 4.5851364)
+script = ExtResource("16_2f3dj")
+
+[node name="MoonButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.851, -2.45, -7.376)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="MoonArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/MoonButton"]
+transform = Transform3D(5.5235887, 3.4399972, 1.8795882e-07, 0, -2.4478376e-07, 7, 4.2999964, -4.418871, -2.4144373e-07, 0.007692337, 1.0657678, -0.008927822)
+mesh = SubResource("TextMesh_nvyfr")
+
+[node name="HourglassButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.94, -2.45, -7.79)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="HourglassArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/HourglassButton"]
+transform = Transform3D(-4.1445985, 2.8924513, 1.5804132e-07, 0, -1.9233012e-07, 5.5, 3.615564, 3.3156788, 1.8116616e-07, -0.04931259, 1.0657678, -0.058962345)
+mesh = SubResource("TextMesh_j2jfr")
+
+[node name="StarButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, 8.533, -2.45, 5.82)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="StarArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/StarButton"]
+transform = Transform3D(6.9998293, -0.04886882, 0, -2.136124e-09, -3.0597226e-07, 7, -0.04886882, -6.9998293, -3.059797e-07, 0.037815094, 1.0657678, -0.13945532)
+mesh = SubResource("TextMesh_bu4jf")
+
+[node name="SunButton" type="Node3D" parent="Objects/SpawnRoom/SpawnButtons"]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 0.4, 0, -2, 0, -8.742278e-08, -4.764, -2.45, 5.762)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+mesh = SubResource("CylinderMesh_vchkt")
+
+[node name="SunArea" type="Area3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+
+[node name="ButtonTrigger" type="CollisionShape3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea"]
+shape = SubResource("CylinderShape3D_txyw0")
+
+[node name="ButtonText" type="MeshInstance3D" parent="Objects/SpawnRoom/SpawnButtons/SunButton"]
+transform = Transform3D(5.9998536, -0.04188756, -1.8309634e-09, 0, -2.6226832e-07, 6, -0.04188756, -5.9998536, -2.6226195e-07, 0.002667427, 1.0069346, -0.061526775)
+mesh = SubResource("TextMesh_0loja")
+
+[node name="ButtonCooldown" type="Timer" parent="Objects/SpawnRoom/SpawnButtons"]
+one_shot = true
+autostart = true
+
+[node name="Gem" parent="Objects/SpawnRoom" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 18.843277, 7.068308, 4.192116)
+
+[node name="Conner\'s Branch" type="Node3D" parent="Objects"]
+
+[node name="PlatformingPuzzle" type="Node3D" parent="Objects/Conner\'s Branch"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 1, -164.6054, -12.444735, 10.720684)
+
+[node name="EndOfPlatoformer" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("15_vxglm")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1478.2156, -12.61463, 97.82042)
+
+[node name="Arch" parent="Objects/Conner\'s Branch/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("17_yq6so")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.026901245, 9.652176, 4.3464355)
+
+[node name="Arch2" parent="Objects/Conner\'s Branch/PlatformingPuzzle/EndOfPlatoformer" instance=ExtResource("17_yq6so")]
+transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.372757, 9.652176, -0.2953987)
+
+[node name="PlatformerPillar3" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("18_fv21b")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1315.4304, -16.008741, 83.683975)
+script = ExtResource("19_tel4y")
+
+[node name="PlatformerPillar4" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("18_fv21b")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1270.7247, -16.890423, 85.47989)
+script = ExtResource("19_tel4y")
+
+[node name="PlatformerPillar2" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("18_fv21b")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1363.5394, -14.9231415, 86.57085)
+script = ExtResource("19_tel4y")
+
+[node name="PlatformerPillar" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("18_fv21b")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1368.3385, -14.11681, 90.38344)
+script = ExtResource("19_tel4y")
+
+[node name="PlatformerGem1" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1472.4569, -2.4592152, 97.04364)
+
+[node name="FlatRockPlatformer" parent="Objects/Conner\'s Branch/PlatformingPuzzle" instance=ExtResource("20_qkpxi")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1235.3014, -7.12894, 81.083)
+
+[node name="InvisiblePathPuzzle" type="Node3D" parent="Objects/Conner\'s Branch"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -307.89737, -1.0094681, 303.76788)
+
+[node name="tiles" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle"]
+
+[node name="Row1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles"]
+
+[node name="BadTile1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/BadTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/BadTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="SafeTile3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/SafeTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/SafeTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/SafeTile3/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="BadTile4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -14)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/BadTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row1/BadTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="Row2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="BadTile1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/BadTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/BadTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/BadTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="SafeTile4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -14)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.900406, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile4/StaticBody3D"]
+shape = SubResource("BoxShape3D_1v6qk")
+
+[node name="SafeTile5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.900406, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row2/SafeTile5/StaticBody3D"]
+shape = SubResource("BoxShape3D_1v6qk")
+
+[node name="Row3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="SafeTile1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile1/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="SafeTile2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile2/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="BadTile3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/BadTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -14)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/BadTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="SafeTile5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row3/SafeTile5/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="Row4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 0)
+
+[node name="BadTile2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/BadTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="SafeTile3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile3/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="SafeTile1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile1/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="SafeTile4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -14)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile4/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="SafeTile5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row4/SafeTile5/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="Row5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+
+[node name="SafeTile1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 13)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/SafeTile1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8915324, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/SafeTile1/StaticBody3D"]
+shape = SubResource("BoxShape3D_dnhof")
+
+[node name="BadTile2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/BadTile2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/BadTile3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -14)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/BadTile4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="BadTile5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 16, -6, -23)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/tiles/Row5/BadTile5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.901182, 0)
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_ids8r")
+
+[node name="Wall" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle" instance=ExtResource("15_vxglm")]
+transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 3.5, 22.63977, -9.823987, -4.9829865)
+
+[node name="FinishPlatform" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle" instance=ExtResource("15_vxglm")]
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 3.1, -20.95195, -10.05274, -5.443344)
+
+[node name="PuzzleKey" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9478455, 3.1406808, -2.4882813)
+
+[node name="PuzzleKeyWall" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 3, 15.634476, 0, 25.65512)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
+material_override = SubResource("StandardMaterial3D_augu2")
+mesh = SubResource("BoxMesh_tm6hj")
+
+[node name="text" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5122032)
+mesh = SubResource("TextMesh_t5ykj")
+
+[node name="PuzzlePartialKey" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.624619, -1.9311664, 24.182617)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/PuzzlePartialKey"]
+material_override = ExtResource("21_5q0nq")
+mesh = SubResource("BoxMesh_e755i")
+
+[node name="PuzzlePartialKey2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.868698, -1.9311664, 24.182617)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/PuzzlePartialKey2"]
+material_override = SubResource("StandardMaterial3D_ro3en")
+mesh = SubResource("BoxMesh_e755i")
+
+[node name="Shadows" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7456088, 2.379181)
+
+[node name="Row2Shadow1" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.828995, 0.5, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/Row2Shadow1"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="Row2Shadow2" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 0.5, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/Row2Shadow2"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow3" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 1.2999997, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow3"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow4" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 2.1, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow4"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow5" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.850006, 2.1, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow5"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow6" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.600006, 2.1, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow6"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow7" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.395996, 1.2999997, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow7"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow8" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 1.2999997, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow8"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow9" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 2.1, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow9"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="PuzzleKeyShadow10" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 3, 20.959)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow10"]
+cast_shadow = 3
+mesh = SubResource("BoxMesh_od4ux")
+
+[node name="Decorations" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle"]
+
+[node name="LongRock" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(1.3, 0, 0, 0, 1.051722, 0.7641208, 0, -0.7641208, 1.051722, 33.209404, -9.193111, -24.629341)
+
+[node name="LongRock2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(1.7, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 37.899544, -9.825367, -16.529495)
+
+[node name="FlatRock" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_qkpxi")]
+transform = Transform3D(2.7032018, -1.2303215, 0, 1.8928022, 1.7570812, 0, 0, 0, 1.98, 13.767319, -5.805724, 17.754501)
+
+[node name="FlatRock3" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_qkpxi")]
+transform = Transform3D(-1.207687e-07, 4.5871495e-08, -1.92, 1.6144885, 1.7958627, 5.5198633e-16, 2.7628658, -1.0494174, -8.392586e-08, -28.327072, -6.466961, 4.8987274)
+
+[node name="FlatRock2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_qkpxi")]
+transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 41.666756, -9.485428, -2.1805267)
+
+[node name="TallRock" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, 62.56356, -10.453514, 5.780014)
+
+[node name="TallRock2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.11509, -11.063232, -29.070229)
+
+[node name="Obelisk" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(1.7, 0, 0, 0, -0.17431153, 1.9923894, 0, -1.9923894, -0.17431153, 41.396652, -7.8161807, -18.2005)
+
+[node name="Obelisk2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(-6.556708e-08, -2.0459952, 1.0970305, 0, 2.194061, 1.0229976, -1.5, 8.9433286e-08, -4.795273e-08, 34.10141, -8.85748, 6.4635773)
+
+[node name="Pillar" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.1779526, -0.1754018, -0.1471796, 0, 0.7713452, -0.91925335, 0.22897081, 0.9023641, 0.7571734, 32.791656, -9.758626, -20.341492)
+
+[node name="Pillar5" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(0.9396926, 0.3213938, -0.11697777, 0, 0.34202015, 0.9396926, 0.34202012, -0.8830222, 0.32139382, 28.899597, -8.41441, -18.387756)
+
+[node name="Pillar2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 27.593475, -9.695705, 13.822113)
+
+[node name="RoundRock" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("24_kmb1v")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 58.299675, -10.328095, -0.76116943)
+
+[node name="RoundRock2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("24_kmb1v")]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 30.803452, -10.051438, -3.63768)
+
+[node name="Pillar3" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.1779526, 0, -0.22897081, 0, 1.2, 0, 0.22897081, 0, 1.1779526, 31.180817, -9.75863, -7.5878754)
+
+[node name="Pillar4" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.1779526, -0.16190681, -0.16190681, 0, 0.84852815, -0.84852815, 0.22897081, 0.8329383, 0.8329383, 31.914948, -8.921141, -14.783798)
+
+[node name="TallRock3" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(3, 0, 0, 0, 6, 0, 0, 0, 3, 55.423195, -12.1734, -37.76351)
+
+[node name="TallRock4" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(2.1186893, -5.384748, 0.71573615, 2.7504992, 4.328859, 0, -0.44261724, 1.1249324, 3.426036, 92.03342, -9.969722, -46.30751)
+
+[node name="Platform" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 38.090446, -9.823993, -23.139648)
+
+[node name="Platform2" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -27.584106, -9.703847, 8.891556)
+
+[node name="Obelisk3" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Decorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(0.6794413, -0.7337298, 0, 0.7337298, 0.6794413, 0, 0, 0, 1, 28.6846, -9.219504, -7.140381)
+
+[node name="Gems" type="Node3D" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle"]
+
+[node name="GemByDebris" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Gems" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 38.123688, -8.823994, -23.138763)
+
+[node name="GemBehindPuzzle" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Gems" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.57164, -8.703848, 8.875137)
+
+[node name="InvisPathGem" parent="Objects/Conner\'s Branch/InvisiblePathPuzzle/Gems" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.975983, 0.008854628, -5.669403)
+
+[node name="BranchDecorations" type="Node3D" parent="Objects/Conner\'s Branch"]
+
+[node name="Obelisk2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -315.95636, -19.772453, 166.98956)
+
+[node name="Obelisk3" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -322.80005, -19.772453, 151.97638)
+
+[node name="Obelisk4" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -317.28708, -19.772453, 137.84871)
+
+[node name="Obelisk5" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -301.39957, -19.772453, 133.8612)
+
+[node name="Obelisk6" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -289.5436, -19.772453, 145.60742)
+
+[node name="Obelisk7" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -290.04883, -19.772453, 160.6156)
+
+[node name="Obelisk8" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("5_tefeu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -301.4397, -19.772453, 168.57828)
+
+[node name="Arch" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("17_yq6so")]
+transform = Transform3D(8.809807, 0, 2.2494564, 0, 10, 0, -1.8404644, 0, 10.767542, -167.15881, -19.77246, 45.221363)
+
+[node name="LongRock" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(0.12879564, 0, -0.99167114, 0, 1, 0, 0.99167114, 0, 0.12879564, -196.85858, -16.196356, 98.68575)
+
+[node name="LongRock3" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(0.12879564, 0, -0.99167114, 0, 1, 0, 0.99167114, 0, 0.12879564, -202.55417, -15.963064, 98.85428)
+
+[node name="FlatRock2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("20_qkpxi")]
+transform = Transform3D(1.2226918, -0.57928115, 0, 0.8689218, 0.8151278, 0, 0, 0, 1, -192.26602, -17.207722, 84.99947)
+
+[node name="LongRock2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(0.91636276, 0, -0.40034902, 0, 1, 0, 0.40034902, 0, 0.91636276, -189.37798, -16.242405, 94.746605)
+
+[node name="RoundRock" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("24_kmb1v")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -185.64041, -19.987026, 87.12943)
+
+[node name="RoundRock2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("24_kmb1v")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -211.97446, -20.083607, 100.54701)
+
+[node name="TallRock" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 2, -206.33601, -19.74715, 98.686775)
+
+[node name="TallRock2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("23_j8jky")]
+transform = Transform3D(7, 0, 0, 0, 8.75, 0, 0, 0, 7, -201.92773, -22.544815, 60.872944)
+
+[node name="LongRock4" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -201.60458, -19.778719, 215.43552)
+
+[node name="Platform" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.18881, -19.957087, 79.876114)
+
+[node name="Platform2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -247.71391, -19.957087, 44.56138)
+
+[node name="Platform3" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.63997, -19.957087, 30.959702)
+
+[node name="Pillar" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(-5.7485437e-08, -3.9453404, 2.696382, 3, -3.934025e-07, 0, 1.17862605e-07, 8.089147, 1.3151133, -214.22186, -5.9756813, 32.60982)
+
+[node name="Pillar2" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -303.75134, -20.275312, 111.131546)
+
+[node name="LongRock5" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("22_dgi5k")]
+transform = Transform3D(-9.389431, 10.91653, -4.092686, 0, 4.0172205, 14.265847, 17.658949, 5.8044224, -2.17612, -257.97528, 6.8698244, 177.1861)
+
+[node name="Platform4" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("15_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180.2865, -19.76282, 167.69566)
+
+[node name="Pillar5" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -171.86874, -19.697456, 176.32224)
+
+[node name="Pillar6" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -188.88997, -19.697456, 176.22417)
+
+[node name="Pillar7" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -188.76517, -19.697456, 159.09134)
+
+[node name="Pillar8" parent="Objects/Conner\'s Branch/BranchDecorations" instance=ExtResource("18_fv21b")]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -171.69032, -19.697456, 159.17102)
+
+[node name="Gems" type="Node3D" parent="Objects/Conner\'s Branch/BranchDecorations"]
+
+[node name="Gem2" parent="Objects/Conner\'s Branch/BranchDecorations/Gems" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.041, -15.669535, 100.75372)
+
+[node name="Gem" parent="Objects/Conner\'s Branch/BranchDecorations/Gems" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.35678, -19.772457, 167.64372)
+
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
 
@@ -367,3 +1185,23 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_ya4ey")
 stretch_mode = 1
+
+[node name="Arch" parent="." instance=ExtResource("17_yq6so")]
+transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 2.7, -170.78247, -8.307723, 167.64507)
+
+[node name="Arch2" parent="." instance=ExtResource("17_yq6so")]
+transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 2.7, -189.95363, -8.307723, 167.64507)
+
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="_on_moon_area_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="moon_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="inner_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/MoonButton/MoonArea" to="Objects/SpawnRoom/SpawnButtons" method="outer_middle_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnRoom/SpawnButtons" method="hourglass_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" to="Objects/SpawnRoom/SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="star_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons" method="inner_outer_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" to="Objects/SpawnRoom/SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" to="Objects/SpawnRoom/SpawnButtons" method="sun_button_pressed"]
+[connection signal="body_entered" from="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" to="Objects/SpawnRoom/SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
+[connection signal="timeout" from="Objects/SpawnRoom/SpawnButtons/ButtonCooldown" to="Objects/SpawnRoom/SpawnButtons" method="on_cooldown"]

@@ -73,37 +73,37 @@ sky = SubResource("Sky_o5qli")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tosrs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwiou"]
 albedo_color = Color(4.0048027, 3.8538947, 0, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_qo154"]
-material = SubResource("StandardMaterial3D_tosrs")
+material = SubResource("StandardMaterial3D_pwiou")
 text = "☼"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqylo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w56by"]
 albedo_color = Color(0, 1.7894205, 4.45484, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_tosrs"]
-material = SubResource("StandardMaterial3D_sqylo")
+material = SubResource("StandardMaterial3D_w56by")
 text = "☾     ☾"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo154"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkcfw"]
 albedo_color = Color(0.14973895, 3.7307422, 0, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_oe6am"]
-material = SubResource("StandardMaterial3D_qo154")
+material = SubResource("StandardMaterial3D_kkcfw")
 text = "☆      ☆
 ☆"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh2dg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhqlv"]
 albedo_color = Color(0, 0, 3.7307422, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_8ol3g"]
-material = SubResource("StandardMaterial3D_kh2dg")
+material = SubResource("StandardMaterial3D_vhqlv")
 text = "⏳ ⏳
 ⏳ ⏳"
 
@@ -111,34 +111,34 @@ text = "⏳ ⏳
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sqylo"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ol3g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7io0r"]
 albedo_color = Color(0, 1.7894205, 4.45484, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_1b831"]
-material = SubResource("StandardMaterial3D_8ol3g")
+material = SubResource("StandardMaterial3D_7io0r")
 text = "☾"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b831"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7cjm"]
 albedo_color = Color(0, 0, 3.7307422, 1)
 emission_enabled = true
 
 [sub_resource type="TextMesh" id="TextMesh_pwiou"]
-material = SubResource("StandardMaterial3D_1b831")
+material = SubResource("StandardMaterial3D_x7cjm")
 text = "⏳"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwiou"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_irma5"]
 albedo_color = Color(0.14973895, 3.7307422, 0, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_w56by"]
-material = SubResource("StandardMaterial3D_pwiou")
+material = SubResource("StandardMaterial3D_irma5")
 text = "☆"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w56by"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc6oo"]
 albedo_color = Color(4.0048027, 3.8538947, 0, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_gobuc"]
-material = SubResource("StandardMaterial3D_w56by")
+material = SubResource("StandardMaterial3D_pc6oo")
 text = "☼"
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ol3g"]
@@ -152,11 +152,11 @@ albedo_color = Color(0.9647059, 0.96862745, 0.60784316, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_06jph"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkcfw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gf2wm"]
 albedo_color = Color(0.7164928, 0.5948627, 0.9329554, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_vhqlv"]
-material = SubResource("StandardMaterial3D_kkcfw")
+material = SubResource("StandardMaterial3D_gf2wm")
 text = "☐☐☐☐☐
 ☐☐☐☐☐
 ☐☐☐☐☐
@@ -196,8 +196,7 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_0eweu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -179.27495, 1.2333941, 149.5857)
-SPEED = 12.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.26615, 1.2333941, 149.5857)
 
 [node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
 script = ExtResource("13_mx6vs")
@@ -679,79 +678,6 @@ transform = Transform3D(0.4, 0, 0, 0, 1, 0, 0, 0, 3.5, 22.63977, -9.823987, -4.9
 [node name="FinishPlatform" parent="Objects/InvisiblePathPuzzle" instance=ExtResource("10_cqyv7")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 3.1, -20.95195, -10.05274, -5.443344)
 
-[node name="Decorations" type="Node" parent="Objects/InvisiblePathPuzzle"]
-
-[node name="LongRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
-transform = Transform3D(1.3, 0, 0, 0, 1.051722, 0.7641208, 0, -0.7641208, 1.051722, -123.31307, -9.193111, 127.72901)
-
-[node name="LongRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
-transform = Transform3D(1.7, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -118.62293, -9.825367, 135.82886)
-
-[node name="FlatRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
-transform = Transform3D(2.2268019, -1.3066984, -0.003129033, 2.0103087, 1.447423, 0.0002806347, 0.0035575458, -0.0024971704, 1.7999973, -142.75516, -3.8890264, 122.55138)
-
-[node name="FlatRock3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
-transform = Transform3D(0.44978136, -0.17084013, -1.7726539, 1.5135831, 1.6836213, 0, 2.550836, -0.96888226, 0.31256682, -186.21799, -6.466961, 157.25708)
-
-[node name="FlatRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
-transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, -114.85572, -9.485428, 150.17783)
-
-[node name="TallRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
-transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, -93.958916, -10.453514, 158.13837)
-
-[node name="TallRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.40739, -11.063232, 123.288124)
-
-[node name="Obelisk" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
-transform = Transform3D(1.7, 0, 0, 0, -0.17431153, 1.9923894, 0, -1.9923894, -0.17431153, -115.125824, -7.8161807, 134.15785)
-
-[node name="Obelisk2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
-transform = Transform3D(-6.556708e-08, -2.0459952, 1.0970305, 0, 2.194061, 1.0229976, -1.5, 8.9433286e-08, -4.795273e-08, -122.42107, -8.85748, 158.82193)
-
-[node name="Pillar" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1.1779526, -0.1754018, -0.1471796, 0, 0.7713452, -0.91925335, 0.22897081, 0.9023641, 0.7571734, -123.73082, -9.758626, 132.01686)
-
-[node name="Pillar5" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1.1276312, 0.3856725, -0.14037333, 0, 0.41042417, 1.1276312, 0.41042417, -1.0596266, 0.3856726, -127.62288, -8.41441, 134.50615)
-
-[node name="Pillar2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -128.929, -9.695705, 166.18047)
-
-[node name="RoundRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -98.2228, -10.328095, 151.59718)
-
-[node name="RoundRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, -125.719025, -10.051438, 148.72067)
-
-[node name="Pillar3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1.1779526, 0, -0.22897081, 0, 1.2, 0, 0.22897081, 0, 1.1779526, -125.34166, -9.75863, 144.77048)
-
-[node name="Pillar4" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
-transform = Transform3D(1.1779526, -0.16190681, -0.16190681, 0, 0.84852815, -0.84852815, 0.22897081, 0.8329383, 0.8329383, -124.60753, -8.921141, 137.57455)
-
-[node name="TallRock3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
-transform = Transform3D(3, 0, 0, 0, 6, 0, 0, 0, 3, -98.70456, -12.1734, 114.59484)
-
-[node name="Platform" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("10_cqyv7")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -118.43203, -9.823993, 129.2187)
-
-[node name="Platform2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("10_cqyv7")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -184.10658, -9.703847, 161.24991)
-
-[node name="Obelisk3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
-transform = Transform3D(0.6794413, -0.7337298, 0, 0.7337298, 0.6794413, 0, 0, 0, 1, -127.837875, -9.219504, 145.21797)
-
-[node name="Gems" type="Node" parent="Objects/InvisiblePathPuzzle"]
-
-[node name="GemByDebris" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.39879, -8.823994, 129.21959)
-
-[node name="GemBehindPuzzle" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -184.09412, -8.703848, 161.23349)
-
-[node name="InvisPathGem" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.49846, 0.008854628, 146.68895)
-
 [node name="PuzzleKey" type="Node3D" parent="Objects/InvisiblePathPuzzle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9478455, 3.1406808, -2.4882813)
 
@@ -852,6 +778,79 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 3, 20.959)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow10"]
 cast_shadow = 3
 mesh = SubResource("BoxMesh_w56by")
+
+[node name="Decorations" type="Node3D" parent="Objects/InvisiblePathPuzzle"]
+
+[node name="LongRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
+transform = Transform3D(1.3, 0, 0, 0, 1.051722, 0.7641208, 0, -0.7641208, 1.051722, 33.209404, -9.193111, -24.629341)
+
+[node name="LongRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("19_1b831")]
+transform = Transform3D(1.7, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 37.899544, -9.825367, -16.529495)
+
+[node name="FlatRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
+transform = Transform3D(2.2268019, -1.3066984, -0.003129033, 2.0103087, 1.447423, 0.0002806347, 0.0035575458, -0.0024971704, 1.7999973, 13.767319, -3.8890264, -29.806976)
+
+[node name="FlatRock3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
+transform = Transform3D(0.44978136, -0.17084013, -1.7726539, 1.5135831, 1.6836213, 0, 2.550836, -0.96888226, 0.31256682, -29.69551, -6.466961, 4.8987274)
+
+[node name="FlatRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("17_tosrs")]
+transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 41.666756, -9.485428, -2.1805267)
+
+[node name="TallRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, 62.56356, -10.453514, 5.780014)
+
+[node name="TallRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.11509, -11.063232, -29.070229)
+
+[node name="Obelisk" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(1.7, 0, 0, 0, -0.17431153, 1.9923894, 0, -1.9923894, -0.17431153, 41.396652, -7.8161807, -18.2005)
+
+[node name="Obelisk2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(-6.556708e-08, -2.0459952, 1.0970305, 0, 2.194061, 1.0229976, -1.5, 8.9433286e-08, -4.795273e-08, 34.10141, -8.85748, 6.4635773)
+
+[node name="Pillar" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, -0.1754018, -0.1471796, 0, 0.7713452, -0.91925335, 0.22897081, 0.9023641, 0.7571734, 32.791656, -9.758626, -20.341492)
+
+[node name="Pillar5" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1276312, 0.3856725, -0.14037333, 0, 0.41042417, 1.1276312, 0.41042417, -1.0596266, 0.3856726, 28.899597, -8.41441, -17.852203)
+
+[node name="Pillar2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 27.593475, -9.695705, 13.822113)
+
+[node name="RoundRock" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 58.299675, -10.328095, -0.76116943)
+
+[node name="RoundRock2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("21_w56by")]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1.4, 30.803452, -10.051438, -3.63768)
+
+[node name="Pillar3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, 0, -0.22897081, 0, 1.2, 0, 0.22897081, 0, 1.1779526, 31.180817, -9.75863, -7.5878754)
+
+[node name="Pillar4" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("11_x2jte")]
+transform = Transform3D(1.1779526, -0.16190681, -0.16190681, 0, 0.84852815, -0.84852815, 0.22897081, 0.8329383, 0.8329383, 31.914948, -8.921141, -14.783798)
+
+[node name="TallRock3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("20_pwiou")]
+transform = Transform3D(3, 0, 0, 0, 6, 0, 0, 0, 3, 57.817917, -12.1734, -37.76351)
+
+[node name="Platform" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 38.090446, -9.823993, -23.139648)
+
+[node name="Platform2" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("10_cqyv7")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -27.584106, -9.703847, 8.891556)
+
+[node name="Obelisk3" parent="Objects/InvisiblePathPuzzle/Decorations" instance=ExtResource("6_x2jte")]
+transform = Transform3D(0.6794413, -0.7337298, 0, 0.7337298, 0.6794413, 0, 0, 0, 1, 28.6846, -9.219504, -7.140381)
+
+[node name="Gems" type="Node3D" parent="Objects/InvisiblePathPuzzle"]
+
+[node name="GemByDebris" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.123688, -8.823994, -23.138763)
+
+[node name="GemBehindPuzzle" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.57164, -8.703848, 8.875137)
+
+[node name="InvisPathGem" parent="Objects/InvisiblePathPuzzle/Gems" instance=ExtResource("15_sqylo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.975983, 0.008854628, -5.669403)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
