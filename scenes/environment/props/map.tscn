@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://udesrlmps4m4"]
+[gd_scene load_steps=11 format=3 uid="uid://udesrlmps4m4"]
 
 [ext_resource type="ArrayMesh" uid="uid://fcxfydakuxpk" path="res://assets/models/MapSculpt.obj" id="1_w3537"]
 [ext_resource type="Material" uid="uid://bw8komx66owcc" path="res://assets/Materials/map.tres" id="2_ymt3c"]
@@ -16,6 +16,9 @@ albedo_texture = ExtResource("4_ymt3c")
 albedo_texture_force_srgb = true
 uv1_scale = Vector3(20, 20, 20)
 texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dbgr8"]
+size = Vector3(200, 2, 338.29834)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbgr8"]
 albedo_color = Color(0.734882, 0.31022802, 0.12225299, 1)
@@ -42,6 +45,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, -3)
 mesh = ExtResource("4_dbgr8")
 skeleton = NodePath("../outmap")
 surface_material_override/0 = ExtResource("2_ymt3c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pyramidterrain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pyramidterrain/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.872, -356.635)
+shape = SubResource("BoxShape3D_dbgr8")
 
 [node name="mesa" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.9743818, 0, 0.22490004, 0, 1, 0, -0.22490004, 0, 0.9743818, -740.8107, 87.44618, 144.21799)
