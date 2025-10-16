@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://blehgd713ihr"]
+[gd_scene load_steps=7 format=3 uid="uid://blehgd713ihr"]
 
 [ext_resource type="Script" uid="uid://5501r4bdrrsj" path="res://scenes/player/player.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dvivg84pq07tt" path="res://scenes/player/interaction_ray_cast.gd" id="2_dovo2"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dovo2"]
+size = Vector3(0.8, 2, 0.8)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dovo2"]
+emission_shape_offset = Vector3(0, -0.62, 0)
+emission_shape_scale = Vector3(0.5, 0.2, 0.5)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dovo2"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Player" type="CharacterBody3D"]
 disable_mode = 2
@@ -13,9 +26,10 @@ floor_stop_on_slope = false
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_u8vuu")
+shape = SubResource("BoxShape3D_dovo2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("CapsuleMesh_3vyb7")
 
@@ -28,6 +42,15 @@ fov = 80.0
 [node name="InteractionRayCast" type="RayCast3D" parent="Neck/Camera3D"]
 target_position = Vector3(0, 0, -2)
 script = ExtResource("2_dovo2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14619458, 0)
+transparency = 1.0
+amount = 300
+lifetime = 0.09999999999999999
+fixed_fps = 120
+process_material = SubResource("ParticleProcessMaterial_dovo2")
+draw_pass_1 = SubResource("BoxMesh_dovo2")
 
 [connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
 [connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]
