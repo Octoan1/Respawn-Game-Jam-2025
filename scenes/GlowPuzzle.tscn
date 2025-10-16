@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://hws8fv1mmh2t"]
+[gd_scene load_steps=9 format=3 uid="uid://hws8fv1mmh2t"]
 
-[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_hvn1a"]
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="2_xdehj"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_5stq5"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="5_suv70"]
@@ -55,8 +54,6 @@ transform = Transform3D(-3.312104, 0, 0, 0, 3.0110033, 0, 0, 0, 3.0110033, 122.9
 
 [node name="TallRock4" parent="Rocks" instance=ExtResource("2_xdehj")]
 transform = Transform3D(3.216553, 0, 0.71802056, 0, 3.011003, 0, 0.78982264, 0, -2.9241385, 90.98848, -7.4687786, -146.47618)
-
-[node name="Map" parent="." instance=ExtResource("1_hvn1a")]
 
 [node name="Obelisk" parent="." instance=ExtResource("7_la06y")]
 transform = Transform3D(2.6248126, 0.49268532, 0.63384384, 0.26051915, 1.527124, -2.2658675, -0.75935864, 2.2269466, 1.4135842, 150.94307, -12.114874, -119.10295)

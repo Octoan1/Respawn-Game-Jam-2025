@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu6mjckmlx5bj"]
+
+[ext_resource type="Script" uid="uid://ddfsxi0hqht8k" path="res://scenes/environment/props/interactables/button_code.gd" id="1_t7tgo"]
+[ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_pvx3c"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_61nk8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7tgo"]
+size = Vector3(1, 1.9941711, 1)
+
+[node name="ButtonCircle" type="Node3D"]
+script = ExtResource("1_t7tgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0724684, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_61nk8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0049286005, 0)
+shape = SubResource("BoxShape3D_t7tgo")
+
+[node name="Interactable" type="Node3D" parent="."]
+script = ExtResource("2_pvx3c")
+metadata/_custom_type_script = "uid://culihtv734n8p"
+
+[connection signal="interacted" from="Interactable" to="." method="_on_button_code_interacted"]

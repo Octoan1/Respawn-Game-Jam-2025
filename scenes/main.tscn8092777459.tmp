@@ -1,17 +1,19 @@
-[gd_scene load_steps=24 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=26 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://dahvt5a4dd1gh" path="res://scenes/floor.tscn" id="3_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="13_trceg"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -73,9 +75,7 @@ sky_material = SubResource("ProceduralSkyMaterial_o5qli")
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 2
-background_camera_feed_id = 3
 sky = SubResource("Sky_o5qli")
-reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
 
@@ -129,8 +129,6 @@ color = Color(0, 0, 0, 1)
 [node name="Sun" type="DirectionalLight3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
 shadow_enabled = true
-directional_shadow_mode = 1
-directional_shadow_max_distance = 500.0
 script = ExtResource("1_tbgi4")
 sun_angle_offset = 180.0
 
@@ -138,14 +136,17 @@ sun_angle_offset = 180.0
 mesh = SubResource("SphereMesh_tipki")
 surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
 script = ExtResource("3_o6xl0")
-moon_distance = 1150.0
-moon_size = 200.0
+moon_distance = 400.0
+moon_size = 50.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
 environment = SubResource("Environment_sugp2")
 
 [node name="Map" parent="Objects" instance=ExtResource("6_tipki")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Floor" parent="Objects" instance=ExtResource("3_tipki")]
+visible = false
 
 [node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
 transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.8138437, 0.5258244, -435.7407)
@@ -154,17 +155,15 @@ transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.813843
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.470493)
 
 [node name="Pyramid" parent="Objects" instance=ExtResource("7_tipki")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -23.321, -563.775)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 16, -23.320759, -563.77527)
 
 [node name="Gem_R" parent="Objects" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 177.0003, -19.680122, 126.10027)
-color = Color(0.827451, 0.6862745, 0.21568628, 1)
+transform = Transform3D(1.5, 0, 0, 0, 1.31, 0, 0, 0, 1.462, 177.0003, -19.680122, 126.10027)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
 transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 177.0003, -20.410683, 126.10027)
 script = ExtResource("11_trceg")
 player_path = NodePath("../PlayerPostProcess/PostProcessViewport/Player")
-gem_path = NodePath("../Gem_R")
 
 [node name="Star" type="MeshInstance3D" parent="Objects/Obelisk_R"]
 transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.89838743, 1.5940764, 0)
@@ -247,26 +246,6 @@ color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
 [node name="Gem12" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.271912, -18.364363, 27.478273)
 color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem13" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6984076, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem14" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.228548, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem15" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.581253, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem16" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem17" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 27.147034)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
@@ -355,3 +334,6 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_ya4ey")
 stretch_mode = 1
+
+[node name="ShadowPuzzle" parent="." instance=ExtResource("13_trceg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

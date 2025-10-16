@@ -1,0 +1,151 @@
+[gd_scene load_steps=11 format=3 uid="uid://bc30qdnv660xy"]
+
+[ext_resource type="Script" uid="uid://lfucjibrj0au" path="res://scenes/code_puzzle.gd" id="1_vg53r"]
+[ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="2_hsdbb"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="2_s536q"]
+[ext_resource type="Script" uid="uid://ccffqgwv86wvy" path="res://scenes/environment/props/obelisk_code.gd" id="3_hsdbb"]
+[ext_resource type="PackedScene" uid="uid://bu6mjckmlx5bj" path="res://scenes/environment/props/interactables/ButtonCircle.tscn" id="4_r3jns"]
+[ext_resource type="PackedScene" uid="uid://cl8chnd7s8q24" path="res://scenes/environment/props/interactables/ButtonSquare.tscn" id="5_vg53r"]
+[ext_resource type="PackedScene" uid="uid://bbbgfq2g3i73l" path="res://scenes/environment/props/interactables/ButtonTri.tscn" id="6_s536q"]
+
+[sub_resource type="TextMesh" id="TextMesh_s12g7"]
+text = "■"
+
+[sub_resource type="TextMesh" id="TextMesh_hsdbb"]
+text = "▲"
+
+[sub_resource type="TextMesh" id="TextMesh_hmx58"]
+text = "●"
+
+[node name="CodePuzzle" type="Node3D"]
+script = ExtResource("1_vg53r")
+
+[node name="Gem" parent="." instance=ExtResource("2_s536q")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -161.32816, -7.240053, -122.95498)
+color = Color(0.47058824, 0.9764706, 0, 1)
+
+[node name="Obelisk_Square" parent="." instance=ExtResource("2_hsdbb")]
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 20.50113, -15.722626, 67.50032)
+script = ExtResource("3_hsdbb")
+rise_time = 18
+sink_time = 20
+
+[node name="Square" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.89838743, 1.5940764, 0)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square2" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.77539873, 3.0349908, 0)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square3" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.8206035e-08, -4.327244e-08, -0.90338564, 1.5940764, 0.061826706)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square4" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.9949786, 0.024149418, 1.5940764, 0.90346336)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square5" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873205e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497855, -0.014701605, 1.5940764, -0.90114594)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square6" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.820604e-08, -4.327244e-08, -0.7523713, 3.0349908, 0)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square7" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.99497867, 0.016451597, 3.0349908, 0.7781105)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Square8" type="MeshInstance3D" parent="Obelisk_Square"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497867, 0.0624249, 3.0349908, -0.7668133)
+mesh = SubResource("TextMesh_s12g7")
+
+[node name="Obelisk_Tri" parent="." instance=ExtResource("2_hsdbb")]
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -114.22306, -16.009, -36.636032)
+script = ExtResource("3_hsdbb")
+rise_time = 12
+sink_time = 14
+
+[node name="Triangle" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.89838743, 1.5940764, 0)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle2" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.77539873, 3.0349908, 0)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle3" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.8206035e-08, -4.327244e-08, -0.90338564, 1.5940764, 0.061826706)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle4" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.9949786, 0.024149418, 1.5940764, 0.90346336)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle5" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873205e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497855, -0.014701605, 1.5940764, -0.90114594)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle6" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.820604e-08, -4.327244e-08, -0.7523713, 3.0349908, 0)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle7" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.99497867, 0.016451597, 3.0349908, 0.7781105)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Triangle8" type="MeshInstance3D" parent="Obelisk_Tri"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497867, 0.0624249, 3.0349908, -0.7668133)
+mesh = SubResource("TextMesh_hsdbb")
+
+[node name="Obelisk_Circ" parent="." instance=ExtResource("2_hsdbb")]
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -149.9, -13.82, -166.1)
+script = ExtResource("3_hsdbb")
+rise_time = 6
+sink_time = 8
+
+[node name="Circle" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.898, 1.594, 0)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle2" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-3.5531602e-07, -0.8945732, 0.9949789, -3.5740833e-08, 8.893355, 0.10008384, -8.1697035, 8.651364e-15, -4.3711378e-08, 0.77539873, 3.0349908, 0)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle3" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.8206035e-08, -4.327244e-08, -0.90338564, 1.5940764, 0.061826706)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle4" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.9949786, 0.024149418, 1.5940764, 0.90346336)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle5" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873205e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497855, -0.014701605, 1.5940764, -0.90114594)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle6" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-3.5890213e-07, 0.8945731, -0.9949789, -3.5740833e-08, 8.893355, 0.10008385, 8.169703, 7.820604e-08, -4.327244e-08, -0.7523713, 3.0349908, 0)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle7" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(8.1697035, -9.6743456e-08, -1.3093167e-09, -3.5740833e-08, 8.893355, 0.10008385, 1.7930807e-09, -0.894573, 0.99497867, 0.016451597, 3.0349908, 0.7781105)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="Circle8" type="MeshInstance3D" parent="Obelisk_Circ"]
+transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497867, 0.0624249, 3.0349908, -0.7668133)
+mesh = SubResource("TextMesh_hmx58")
+
+[node name="ButtonCircle" parent="." instance=ExtResource("4_r3jns")]
+transform = Transform3D(1.7320454, 5.039825, 0, -2.9999907, 2.9097438, 0, 0, 0, 3.464091, -172.65726, -7.454601, -126.81767)
+num = 1
+
+[node name="ButtonSquare" parent="." instance=ExtResource("5_vg53r")]
+transform = Transform3D(-1.6109275, -4.894324, 0, 2.790208, -2.8257396, 0, 0, 0, 3.2218547, -172.48543, -7.249918, -121.57422)
+num = 3
+
+[node name="ButtonTri" parent="." instance=ExtResource("6_s536q")]
+transform = Transform3D(-8.0391565e-08, 4.405165, -1.8391451, 1.3924229e-07, 2.543323, 3.1854928, 3.6782904, -7.8992593e-22, -1.6078315e-07, -172.27525, -7.4098854, -116.849884)
+num = 2

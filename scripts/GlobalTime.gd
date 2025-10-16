@@ -2,7 +2,7 @@ extends Node
 
 # 0.0 -> 24.0 (hours)
 var time_of_day : float = 0.0  # Start at 6 AM
-var day_length : float = 1 * 60.0  # Seconds for a full day
+var day_length : float = 3 * 60.0  # Seconds for a full day
 var day_counter : int = 0
 var stopped : bool = false
 
