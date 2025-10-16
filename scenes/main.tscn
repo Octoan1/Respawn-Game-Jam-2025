@@ -160,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -23.321, -563.775)
 
 [node name="Gem_R" parent="Objects" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 177.0003, -19.680122, 126.10027)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 163, -19.68, 126.1)
 color = Color(0.827451, 0.6862745, 0.21568628, 1)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
