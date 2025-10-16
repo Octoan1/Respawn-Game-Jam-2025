@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bw8komx66owcc"]
 
-[ext_resource type="Texture2D" uid="uid://cmkym57fs65gp" path="res://assets/textures/Sand.png" id="1_ya5nx"]
+[ext_resource type="Texture2D" uid="uid://b3fgcjshgw7lf" path="res://assets/textures/Sand.png" id="1_ya5nx"]
 
 [resource]
 specular_mode = 2
