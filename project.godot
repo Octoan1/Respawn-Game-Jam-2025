@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Respawn Game Jam"
+config/name="The Desert of Time"
+config/version="1.8"
 run/main_scene="uid://b8k07vwbcoo4v"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://qd3hwn6pphqa"
