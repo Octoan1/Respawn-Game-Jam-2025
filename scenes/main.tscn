@@ -1,10 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=28 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" path="res://scripts/reset_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
@@ -13,11 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://hws8fv1mmh2t" path="res://scenes/GlowPuzzle.tscn" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
-[ext_resource type="PackedScene" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
-[ext_resource type="PackedScene" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
-[ext_resource type="PackedScene" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="AudioStream" uid="uid://dm6dmdpgw7uyd" path="res://assets/sounds/music/chillGuitarLoop.wav" id="17_muem4"]
-[ext_resource type="AudioStream" uid="uid://d2axngwjgrsd6" path="res://assets/sounds/music/windNoise.wav" id="18_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -375,16 +373,3 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_ya4ey")
 stretch_mode = 1
-
-[node name="Audio" type="Node" parent="."]
-
-[node name="coolGuitarMusic" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("17_muem4")
-volume_db = -14.0
-autoplay = true
-playback_type = 1
-
-[node name="desertSounds" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("18_dp3eg")
-volume_db = -18.0
-autoplay = true
