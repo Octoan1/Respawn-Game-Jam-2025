@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxa563snxi6os"]
+[gd_scene load_steps=4 format=3 uid="uid://bxa563snxi6os"]
 
 [ext_resource type="ArrayMesh" uid="uid://bbwj1lcbyun5j" path="res://assets/models/Platform.obj" id="1_fv3qr"]
+[ext_resource type="Material" uid="uid://boeb400w5nwkw" path="res://assets/Materials/Marble.tres" id="2_2sc28"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2sc28"]
 points = PackedVector3Array(-6.62528, -0.009637, -6.62528, -6.62528, -0.009637, 6.62528, -5.5707865, 9.549292, -5.5707865, 6.623984, -0.009637, -6.62528, -5.5707865, 9.549292, 5.569489, 6.623984, -0.009637, 6.62528, -5.5007463, 10, -5.5007463, 5.569491, 9.549292, -5.5707865, -5.5007463, 10, 5.4994493, 5.569491, 9.549292, 5.569489, 5.49945, 10, -5.5007463, 5.49945, 10, 5.4994493)
@@ -9,6 +10,7 @@ points = PackedVector3Array(-6.62528, -0.009637, -6.62528, -6.62528, -0.009637, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fv3qr")
+surface_material_override/0 = ExtResource("2_2sc28")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 

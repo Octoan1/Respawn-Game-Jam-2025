@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3vyb7"]
 
 [node name="Player" type="CharacterBody3D"]
+disable_mode = 2
 floor_stop_on_slope = false
 script = ExtResource("1_3vyb7")
 

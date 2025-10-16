@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://boeb400w5nwkw"]
+
+[ext_resource type="Texture2D" uid="uid://dwrobkaa5w6c4" path="res://assets/textures/Marble.png" id="1_yp4ng"]
+
+[resource]
+albedo_texture = ExtResource("1_yp4ng")
+anisotropy = 1.0
+uv1_scale = Vector3(2, 2, 2)
+texture_filter = 0
+stencil_flags = 2
+stencil_reference = 46
