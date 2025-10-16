@@ -59,7 +59,7 @@ transform = Transform3D(-0.002550354, -0.0103509845, -0.29038608, -0.0015929168,
 transform = Transform3D(0.21477717, 0, 0, 0, 0.21477717, 0, 0, 0, 0.21477717, -1.875054, 11.417967, 180.6122)
 
 [node name="Pillar_Shadow_1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, -15.687166, -9.427385, 141.92839)
+transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, -14.071028, -9.427385, 141.92839)
 mesh = ExtResource("5_uh8t4")
 
 [node name="4" type="MeshInstance3D" parent="Pillar_Shadow_1"]
