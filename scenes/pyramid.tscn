@@ -92,7 +92,6 @@ func _on_display_gem(target: Gem):
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw6ir"]
-albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
 albedo_texture = ExtResource("2_m8ubx")
 albedo_texture_force_srgb = true
 uv1_scale = Vector3(10, 10, 10)

@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
-[ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
+[ext_resource type="Script" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
@@ -129,6 +129,8 @@ color = Color(0, 0, 0, 1)
 [node name="Sun" type="DirectionalLight3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, -0.9774491, 0.21117117, 0, -0.21117117, -0.9774491, 0.68523884, 2.824976, -10.557611)
 shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_max_distance = 500.0
 script = ExtResource("1_tbgi4")
 sun_angle_offset = 180.0
 
