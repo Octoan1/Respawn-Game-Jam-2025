@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7cfmo3tbto5t"]
+[gd_scene load_steps=19 format=3 uid="uid://b7cfmo3tbto5t"]
 
 [ext_resource type="ArrayMesh" uid="uid://caya73uwxw2xq" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
 [ext_resource type="Texture2D" uid="uid://cagyg4ypnlu5v" path="res://assets/textures/pryamid2.png" id="2_m8ubx"]
 [ext_resource type="ArrayMesh" uid="uid://cpdda50mehdbe" path="res://assets/models/PyramidDoor.obj" id="2_sw6ir"]
 [ext_resource type="AudioStream" uid="uid://dyg3nhxwpu5wj" path="res://assets/sounds/sfx/laser.wav" id="3_yvq63"]
-[ext_resource type="Texture2D" uid="uid://jquqbbhpsa4k" path="res://assets/textures/sandstone.png" id="4_70q3q"]
 [ext_resource type="AudioStream" uid="uid://owvk0h886g00" path="res://assets/sounds/sfx/explosion.wav" id="4_ifwva"]
 [ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="5_m8ubx"]
 
@@ -104,7 +103,6 @@ data = PackedVector3Array(-75.269, 0, -75.269, -0.0011999999, 100, -0.0011999999
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvq63"]
 albedo_color = Color(1, 0.7694398, 0.49347115, 1)
-albedo_texture = ExtResource("4_70q3q")
 albedo_texture_force_srgb = true
 metallic_specular = 0.0
 texture_filter = 0
