@@ -15,6 +15,7 @@ config/version="1.8"
 run/main_scene="uid://b8k07vwbcoo4v"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://qd3hwn6pphqa"
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 
