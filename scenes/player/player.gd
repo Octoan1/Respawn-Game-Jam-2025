@@ -32,7 +32,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * Settings.MOUSE_X)
 			camera.rotate_x(-event.relative.y * Settings.MOUSE_Y)
-			#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-88), deg_to_rad(88))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-88), deg_to_rad(88))
 
 
 func _physics_process(delta: float) -> void:
