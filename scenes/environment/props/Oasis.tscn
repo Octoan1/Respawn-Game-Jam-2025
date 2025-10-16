@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://525vqtybje7r"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwvfyrhajjh5d" path="res://assets/models/OasisBowl.obj" id="1_8k207"]
+[ext_resource type="Material" uid="uid://bw8komx66owcc" path="res://assets/Materials/map.tres" id="2_hkuus"]
+
+[node name="Oasis" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8k207")
+surface_material_override/0 = ExtResource("2_hkuus")
