@@ -111,7 +111,9 @@ render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6938272, -3.5668142, -52.17606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56101084, -1.146781, -65.233154)
+SPEED = 15.0
+JUMP_VELOCITY = 5.0
 
 [node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
 script = ExtResource("2_85g3d")
