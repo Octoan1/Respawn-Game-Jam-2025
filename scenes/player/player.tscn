@@ -52,5 +52,10 @@ fixed_fps = 120
 process_material = SubResource("ParticleProcessMaterial_dovo2")
 draw_pass_1 = SubResource("BoxMesh_dovo2")
 
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43030643, 0)
+doppler_tracking = 1
+current = true
+
 [connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
 [connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]
