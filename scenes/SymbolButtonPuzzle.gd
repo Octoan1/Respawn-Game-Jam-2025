@@ -1,12 +1,16 @@
 extends Node3D
 var off_cooldown = false
 var solution = []
+
 var move_sun_button = false
 var move_moon_button = false
 var move_star_button = false
 var move_hourglass_button = false
-var speed = 0.3
-var wall_speed = 0.6
+
+var movement = false
+
+var speed = 0.6
+var reset_speed = 1.4
 var puzzle_complete = false
 var reset_button = false
 
@@ -82,15 +86,15 @@ func hourglass_button_pressed(body: Node3D) -> void:
 func sun_button_pressed(body: Node3D) -> void:
 	if(body.name=="Player"):
 		if(off_cooldown == true):
-			reset_button = false
-			move_sun_button = true
-			solution.append("sun")
-			
-			off_cooldown = false
-			$ButtonCooldown.start()
-			
-			solution_check()
-			reset_buttons()
+				reset_button = false
+				move_sun_button = true
+				solution.append("sun")
+				
+				off_cooldown = false
+				$ButtonCooldown.start()
+				
+				solution_check()
+				reset_buttons()
 			
 
 # Code: Sun moon star hourglass
@@ -110,38 +114,68 @@ func reset_buttons() -> void:
 		move_hourglass_button = false
 		move_star_button = false
 		
-		
+		print("puzzle resetting")
 		reset_button = true
 		solution = []
 
 func on_cooldown() -> void:
-	off_cooldown = true
-	print("Button cooldown refreshed!")
+	if(movement == false):
+		off_cooldown = true
+		print("Button cooldown refreshed!")
+	else:
+		$ButtonCooldown.start()
 
 
 func _process(delta: float) -> void:
 	if(move_sun_button == true):
-		if(SunButton.position.y >= sun_start-2.75):
+		if(SunButton.position.y >= sun_start-0.3):
 			SunButton.position.y = SunButton.position.y - delta*speed
+			movement = true
+		else:
+			movement = false
+
 	
 	if(move_moon_button == true):
-		if(MoonButton.position.y >= moon_start-2.75):
+		if(MoonButton.position.y >= moon_start-0.3):
 			MoonButton.position.y = MoonButton.position.y - delta*speed
+			movement = true
+		else:
+			movement = false
+
 	
 	if(move_star_button == true):
-		if(StarButton.position.y >= star_start-2.75):
+		if(StarButton.position.y >= star_start-0.3):
 			StarButton.position.y = StarButton.position.y - delta*speed
+			movement = true
+		else:
+			movement = false
 	
 	if(move_hourglass_button == true):
-		if(HourglassButton.position.y >= hourglass_start-2.75):
+		if(HourglassButton.position.y >= hourglass_start-0.3):
 			HourglassButton.position.y = HourglassButton.position.y - delta*speed
+			movement = true
+		else:
+			movement = false
+
 	
 	if(reset_button == true):
 		if(MoonButton.position.y <= moon_start):
-			MoonButton.position.y = MoonButton.position.y + delta*speed
+			MoonButton.position.y = MoonButton.position.y + delta*reset_speed
+			movement = true
+		else:
+			movement = false
 		if(SunButton.position.y <= sun_start):
-			SunButton.position.y = SunButton.position.y + delta*speed
+			SunButton.position.y = SunButton.position.y + delta*reset_speed
+			movement = true
+		else:
+			movement = false
 		if(StarButton.position.y <= star_start):
-			StarButton.position.y = StarButton.position.y + delta*speed
+			StarButton.position.y = StarButton.position.y + delta*reset_speed
+			movement = true
+		else:
+			movement = false
 		if(HourglassButton.position.y <= hourglass_start):
-			HourglassButton.position.y = HourglassButton.position.y + delta*speed
+			HourglassButton.position.y = HourglassButton.position.y + delta*reset_speed
+			movement = true
+		else:
+			movement = false
