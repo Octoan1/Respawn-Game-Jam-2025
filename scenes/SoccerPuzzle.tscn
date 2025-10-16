@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cev0gsburuygq"]
+[gd_scene load_steps=11 format=3 uid="uid://cev0gsburuygq"]
 
 [ext_resource type="Script" uid="uid://evogox0jp1n8" path="res://scenes/soccer_puzzle.gd" id="1_b1a20"]
-[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="1_pgajp"]
 [ext_resource type="PackedScene" uid="uid://d4j25vdnf11ie" path="res://scenes/environment/props/Tumbleweed.tscn" id="2_yte0e"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="3_8reoo"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="3_b1a20"]
@@ -25,8 +24,6 @@ script = ExtResource("1_b1a20")
 
 [node name="Tumbleweed" parent="." instance=ExtResource("2_yte0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.1, -9.025337, -22.14)
-
-[node name="Map" parent="." instance=ExtResource("1_pgajp")]
 
 [node name="Arch2" parent="." instance=ExtResource("3_8reoo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -9.886, 20)
