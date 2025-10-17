@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=32 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
+[ext_resource type="PackedScene" uid="uid://74fgclvw5hvi" path="res://scenes/environment/props/interactables/final_gem.tscn" id="9_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://hws8fv1mmh2t" path="res://scenes/GlowPuzzle.tscn" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
@@ -114,7 +115,7 @@ render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -261.8987, 3.3559504, 285.98535)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.4815645, -47.53917)
 SPEED = 15.0
 JUMP_VELOCITY = 6.0
 
@@ -300,6 +301,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.12146, -2.4546232, -296.6
 
 [node name="HiddenUnderRocksGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.86766, -19.772457, -273.1916)
+
+[node name="FinalGem" parent="Objects/GemContainer" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(23.420973, 0, 0, 0, 23.420973, 0, 0, 0, 23.420973, 0, -15.964812, -563.775)
 
 [node name="GlowPuzzle" parent="Objects" instance=ExtResource("11_jkv2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
