@@ -20,6 +20,9 @@ func _process(_delta: float) -> void:
 		self.get_parent().code[1] = self.get_parent().code[2]
 		self.get_parent().code[2] = self.get_parent().code[3]
 		self.get_parent().code[3] = goal_num
+		print(goal_num, " was added")
+		print(self.get_parent().code)
+		print()
 	if(tumbleweed_x < arch_x - 4 || tumbleweed_x > arch_x + 4 || tumbleweed_z < arch_z - 1 || tumbleweed_z > arch_z + 1):
 		inside = false
 	

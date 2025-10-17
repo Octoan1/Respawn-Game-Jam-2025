@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://na1oipovgn4f"]
 
 [ext_resource type="ArrayMesh" uid="uid://lk6i0qp0qhql" path="res://assets/models/Tumbleweed.obj" id="1_1avtr"]
-[ext_resource type="Material" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_vikhi"]
+[ext_resource type="Material" uid="uid://c52ovn8l3iyla" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_vikhi"]
 [ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="3_syep6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3jipt"]
@@ -12,7 +12,7 @@ transparency = 1
 cull_mode = 1
 diffuse_mode = 3
 specular_mode = 2
-albedo_color = Color(1, 0.44313726, 0, 1)
+albedo_color = Color(0.23529412, 0.48235294, 1, 1)
 albedo_texture = ExtResource("3_syep6")
 albedo_texture_force_srgb = true
 uv1_scale = Vector3(4, 4, 4)
