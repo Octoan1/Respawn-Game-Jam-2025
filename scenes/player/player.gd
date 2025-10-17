@@ -18,15 +18,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel"):
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		UIManager.toggle_pause() 
-	elif event.is_action_pressed("secret_button"):
-		if SPEED < 100:
-			SPEED = 100
-			JUMP_VELOCITY = 20
-			can_fly = true
-		else:
-			SPEED = 12
-			JUMP_VELOCITY = 4.5
-			can_fly = false
+	#elif event.is_action_pressed("secret_button"):
+		#if SPEED < 100:
+			#SPEED = 100
+			#JUMP_VELOCITY = 20
+			#can_fly = true
+		#else:
+			#SPEED = 12
+			#JUMP_VELOCITY = 4.5
+			#can_fly = false
 	
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
