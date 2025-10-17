@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=37 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -17,15 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
-[ext_resource type="PackedScene" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
-[ext_resource type="PackedScene" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
-[ext_resource type="PackedScene" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
-[ext_resource type="PackedScene" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://duv5k15o6elhv" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
-[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="22_2wyq8"]
-[ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="24_og1vs"]
-[ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="25_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://c8k25itnq8soa" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
+[ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
+[ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://b4akyeb3270mm" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://dtx4campllfov" path="res://scenes/Maze.tscn" id="22_y6deb"]
+[ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="23_og1vs"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -355,11 +354,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 [node name="OasisPuzzle" parent="Objects" instance=ExtResource("17_muem4")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
-[node name="LongRock" parent="Objects" instance=ExtResource("22_2wyq8")]
-transform = Transform3D(4.829629, 0, -1.2940953, 0, 5, 0, 1.2940953, 0, 4.829629, -296.7371, -20.33036, -207.31825)
-
-[node name="LongRock2" parent="Objects" instance=ExtResource("22_2wyq8")]
-transform = Transform3D(4.711223, 0, 1.674627, 0, 5, 0, -1.674627, 0, 4.711223, -321.68393, -18.63577, -208.28096)
+[node name="Maze" parent="Objects" instance=ExtResource("22_y6deb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
@@ -616,21 +612,3 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_ya4ey")
 stretch_mode = 1
-
-[node name="TallRock" parent="." instance=ExtResource("24_og1vs")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -263.53403, -18.398556, -331.24484)
-
-[node name="TallRock2" parent="." instance=ExtResource("24_og1vs")]
-transform = Transform3D(8.660254, 0, -5, 0, 10, 0, 5, 0, 8.660254, -263.28052, -18.55191, -251.26082)
-
-[node name="TallRock3" parent="." instance=ExtResource("24_og1vs")]
-transform = Transform3D(-4.999999, 1.1324682e-06, 8.660255, -1.509958e-06, -15, 2.842171e-14, 8.660255, -1.9614931e-06, 4.999999, -225.87418, 21.628033, -308.3552)
-
-[node name="FlatRock" parent="." instance=ExtResource("25_2wyq8")]
-transform = Transform3D(4.0291753, 1.0916663, 16.269722, -0.15254894, 9.938232, -1.8786309, -14.447924, 0.1995061, 4.557067, -249.84645, 43.394855, -290.6665)
-
-[node name="FlatRock2" parent="." instance=ExtResource("25_2wyq8")]
-transform = Transform3D(2.025326, -0.49197266, -1.3909981, 1.0270442, 1.8791463, -3.6033427e-08, 1.9604168, -0.4762055, 1.4370539, -337.96762, -13.829573, -210.38959)
-
-[node name="FlatRock3" parent="." instance=ExtResource("25_2wyq8")]
-transform = Transform3D(4.8243036, -0.7882853, 0, 1.3138089, 2.8945823, 0, 0, 0, 5, -296.42963, -17.386997, -195.98337)
