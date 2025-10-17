@@ -10,6 +10,9 @@ extends Node
 # start menu
 @onready var start_menu = ui.find_child("StartMenu")
 @onready var play_button = ui.find_child("PlayButton")
+# info menu
+@onready var info_menu = ui.find_child("InfoScreen")
+@onready var continue_button = ui.find_child("ContinueButton")
 
 # crosshair handling 
 @onready var crosshair = ui.find_child("Crosshair")
@@ -18,6 +21,7 @@ extends Node
 
 enum UIState {
 	START_MENU,
+	INFO_MENU,
 	NORMAL, 
 	PAUSED,
 	GAME_END
@@ -33,10 +37,17 @@ var current_ui_state: UIState = UIState.NORMAL
 
 func _ready():
 	play_button.pressed.connect(_on_play_button_pressed)
+	continue_button.pressed.connect(_on_continue_button_pressed)
 
 func _on_play_button_pressed():
 	print("hello")
 	start_menu.visible = false
+	info_menu.visible = true
+	#set_paused(false)
+	
+func _on_continue_button_pressed():
+	print("continued")
+	info_menu.visible = false
 	set_paused(false)
 
 func toggle_pause():
