@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://udesrlmps4m4"]
 
 [ext_resource type="ArrayMesh" uid="uid://fcxfydakuxpk" path="res://assets/models/MapSculpt.obj" id="1_w3537"]
-[ext_resource type="Material" uid="uid://bw8komx66owcc" path="res://assets/materials/map.tres" id="2_ymt3c"]
+[ext_resource type="Material" uid="uid://bw8komx66owcc" path="res://assets/Materials/map.tres" id="2_ymt3c"]
 [ext_resource type="ArrayMesh" uid="uid://dpuud5vaeqsj8" path="res://assets/models/OutMap2.obj" id="3_dbgr8"]
 [ext_resource type="ArrayMesh" uid="uid://cg5gt45pa1w7" path="res://assets/models/PyramidTerrain.obj" id="4_dbgr8"]
 [ext_resource type="Texture2D" uid="uid://cagyg4ypnlu5v" path="res://assets/textures/pryamid2.png" id="4_ymt3c"]
@@ -20,7 +20,7 @@ uv1_scale = Vector3(20, 20, 20)
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbgr8"]
-size = Vector3(200, 2, 338.29834)
+size = Vector3(200, 3.355, 338.298)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbgr8"]
 albedo_color = Color(0.734882, 0.31022802, 0.12225299, 1)

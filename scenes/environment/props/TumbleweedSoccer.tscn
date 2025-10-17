@@ -1,18 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://na1oipovgn4f"]
 
 [ext_resource type="ArrayMesh" uid="uid://lk6i0qp0qhql" path="res://assets/models/Tumbleweed.obj" id="1_1avtr"]
-[ext_resource type="Material" uid="uid://c52ovn8l3iyla" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_vikhi"]
 [ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="3_syep6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3jipt"]
 friction = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p0rm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4dw7"]
+transparency = 1
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_is_srgb = true
+albedo_color = Color(0.53886896, 0.988429, 4.6028924, 1)
+albedo_texture = ExtResource("3_syep6")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(8, 8, 8)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1avtr"]
 transparency = 1
 cull_mode = 1
 diffuse_mode = 3
 specular_mode = 2
-albedo_color = Color(0.23529412, 0.48235294, 1, 1)
+albedo_color = Color(0.13253784, 0.34464586, 0.7890625, 1)
 albedo_texture = ExtResource("3_syep6")
 albedo_texture_force_srgb = true
 uv1_scale = Vector3(4, 4, 4)
@@ -52,14 +62,13 @@ mesh = ExtResource("1_1avtr")
 skeleton = NodePath("../..")
 
 [node name="outside" type="MeshInstance3D" parent="RigidBody3D"]
-material_override = ExtResource("2_vikhi")
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("1_1avtr")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("2_vikhi")
+surface_material_override/0 = SubResource("StandardMaterial3D_i4dw7")
 
 [node name="inside" type="MeshInstance3D" parent="RigidBody3D/outside"]
 cast_shadow = 0
 mesh = ExtResource("1_1avtr")
-surface_material_override/0 = SubResource("StandardMaterial3D_0p0rm")
+surface_material_override/0 = SubResource("StandardMaterial3D_1avtr")
