@@ -7,12 +7,17 @@ extends Node
 @onready var pause_menu = ui.find_child("PauseMenu")
 @onready var end_screen = ui.find_child("GameEndScreen")
 
+# start menu
+@onready var start_menu = ui.find_child("StartMenu")
+@onready var play_button = ui.find_child("PlayButton")
+
 # crosshair handling 
 @onready var crosshair = ui.find_child("Crosshair")
 @onready var default_crosshair = crosshair.find_child("DefaultCrosshair")
 @onready var interaction_crosshair = crosshair.find_child("InteractionCrosshair")
 
 enum UIState {
+	START_MENU,
 	NORMAL, 
 	PAUSED,
 	GAME_END
@@ -25,6 +30,14 @@ enum CrosshairState {
 
 var current_crosshair_state: CrosshairState = CrosshairState.DEFAULT
 var current_ui_state: UIState = UIState.NORMAL
+
+func _ready():
+	play_button.pressed.connect(_on_play_button_pressed)
+
+func _on_play_button_pressed():
+	print("hello")
+	start_menu.visible = false
+	set_paused(false)
 
 func toggle_pause():
 	set_paused(current_ui_state != UIState.PAUSED)
