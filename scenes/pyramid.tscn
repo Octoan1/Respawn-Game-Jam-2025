@@ -100,7 +100,10 @@ func _on_display_gem(target: Gem):
 		
 
 func _on_all_gems_collected():
+	GlobalTime.time_of_day = 23.6
+	await get_tree().create_timer(5).timeout
 	beam.play(\"pyramidEffect\")
+	await get_tree().create_timer(8.5).timeout
 	open_door = true
 	
 
@@ -331,7 +334,6 @@ libraries = {
 }
 
 [node name="LightCylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2000, 0)
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_m8ubx")
 
