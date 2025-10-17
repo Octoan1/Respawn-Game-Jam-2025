@@ -71,6 +71,7 @@ func set_game_end(score: int):
 	crosshair.visible = false
 	default_crosshair.visible = false
 	interaction_crosshair.visible = false
+	GlobalTime.stopped = true
 	
 	end_screen.visible = true
 	
