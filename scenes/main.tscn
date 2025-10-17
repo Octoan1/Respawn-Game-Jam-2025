@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=36 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://b4akyeb3270mm" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
+[ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="22_y6deb"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -32,7 +33,6 @@ script/source = "extends Node3D
 
 func _ready():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # optional for mouse look
-	UIManager.set_paused(false)
 	pass
 
 func _unhandled_input(event):
@@ -355,6 +355,41 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
+
+[node name="StartMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/StartMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_y6deb")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="UI/StartMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.99997
+offset_top = -256.0
+offset_right = -67.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(5.3333917, 3.1908126)
+text = "PLAY"
 
 [node name="PauseMenu" type="Control" parent="UI"]
 visible = false
