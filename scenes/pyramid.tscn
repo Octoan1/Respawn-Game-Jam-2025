@@ -16,11 +16,19 @@ script/source = "extends Node3D
 @onready var gem_wall := $GemWall
 
 var current_gem_index : int = 1
+var open_door: bool = false
 
 func _ready() -> void:
 	#_pyramid_effect()
 	GameManager.display_gem.connect(_on_display_gem)
+	GameManager.all_gems_collected.connect(_on_all_gems_collected)
 
+func _process(delta: float) -> void:
+	if (open_door): 
+		var speed = 10
+		door.position.y -= speed * delta 
+		gem_wall.position.y -= speed * delta
+		if door.position.y < -40: open_door = false
 
 func _on_display_gem(target: Gem):
 	var color: Color = target.color
@@ -87,6 +95,9 @@ func _on_display_gem(target: Gem):
 		#get_tree().create_timer(.1).timeout
 		
 
+func _on_all_gems_collected():
+	open_door = true
+	
 
 	
 "

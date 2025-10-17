@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://fose1jl4v8o"]
+[gd_scene load_steps=21 format=3 uid="uid://fose1jl4v8o"]
 
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="1_j2lli"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="2_faykp"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="3_qb311"]
 [ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="4_b4cqg"]
-[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="5_fxywd"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="6_wom2h"]
 [ext_resource type="Material" uid="uid://bgw8aqfaifdlg" path="res://scenes/minty_green.tres" id="7_kj0k2"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="8_3qyae"]
@@ -73,9 +72,6 @@ script = ExtResource("4_b4cqg")
 [node name="PlatformerPillar" parent="PlatformingPuzzle" instance=ExtResource("3_qb311")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1368.3385, -14.11681, 90.38344)
 script = ExtResource("4_b4cqg")
-
-[node name="PlatformerGem1" parent="PlatformingPuzzle" instance=ExtResource("5_fxywd")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1472.4569, -2.4592152, 97.04364)
 
 [node name="FlatRockPlatformer" parent="PlatformingPuzzle" instance=ExtResource("6_wom2h")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1235.3014, -7.12894, 81.083)
@@ -537,17 +533,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -27.584106, -9.703847, 
 [node name="Obelisk3" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("10_trhtj")]
 transform = Transform3D(0.6794413, -0.7337298, 0, 0.7337298, 0.6794413, 0, 0, 0, 1, 28.6846, -9.219504, -7.140381)
 
-[node name="Gems" type="Node3D" parent="InvisiblePathPuzzle"]
-
-[node name="GemByDebris" parent="InvisiblePathPuzzle/Gems" instance=ExtResource("5_fxywd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 38.123688, -8.823994, -23.138763)
-
-[node name="GemBehindPuzzle" parent="InvisiblePathPuzzle/Gems" instance=ExtResource("5_fxywd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.57164, -8.703848, 8.875137)
-
-[node name="InvisPathGem" parent="InvisiblePathPuzzle/Gems" instance=ExtResource("5_fxywd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20.975983, 0.008854628, -5.669403)
-
 [node name="BranchDecorations" type="Node3D" parent="."]
 
 [node name="Obelisk2" parent="BranchDecorations" instance=ExtResource("10_trhtj")]
@@ -574,23 +559,20 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -301.4397, -19.772453, 168.57
 [node name="Arch" parent="BranchDecorations" instance=ExtResource("2_faykp")]
 transform = Transform3D(8.809807, 0, 2.2494564, 0, 10, 0, -1.8404644, 0, 10.767542, -167.15881, -19.77246, 45.221363)
 
-[node name="LongRock" parent="BranchDecorations" instance=ExtResource("8_3qyae")]
-transform = Transform3D(0.12879564, 0, -0.99167114, 0, 1, 0, 0.99167114, 0, 0.12879564, -196.85858, -16.196356, 98.68575)
-
 [node name="LongRock3" parent="BranchDecorations" instance=ExtResource("8_3qyae")]
-transform = Transform3D(0.12879564, 0, -0.99167114, 0, 1, 0, 0.99167114, 0, 0.12879564, -202.55417, -15.963064, 98.85428)
+transform = Transform3D(0.16743432, 0, -1.2891724, 0, 1.3, 0, 1.2891724, 0, 0.16743432, -199.06627, -15.963064, 98.74621)
 
 [node name="FlatRock2" parent="BranchDecorations" instance=ExtResource("6_wom2h")]
 transform = Transform3D(1.2226918, -0.57928115, 0, 0.8689218, 0.8151278, 0, 0, 0, 1, -192.26602, -17.207722, 84.99947)
 
 [node name="LongRock2" parent="BranchDecorations" instance=ExtResource("8_3qyae")]
-transform = Transform3D(0.91636276, 0, -0.40034902, 0, 1, 0, 0.40034902, 0, 0.91636276, -189.37798, -16.242405, 94.746605)
+transform = Transform3D(1.1912715, 0, -0.5204537, 0, 1.3, 0, 0.5204537, 0, 1.1912715, -189.37798, -16.242405, 94.746605)
 
 [node name="RoundRock" parent="BranchDecorations" instance=ExtResource("11_1c0bh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -185.64041, -19.987026, 87.12943)
 
 [node name="RoundRock2" parent="BranchDecorations" instance=ExtResource("11_1c0bh")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -211.97446, -20.083607, 100.54701)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -211.97446, -20.083607, 100.54701)
 
 [node name="TallRock" parent="BranchDecorations" instance=ExtResource("9_0lppu")]
 transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 2, -206.33601, -19.74715, 98.686775)
@@ -634,16 +616,14 @@ transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -188.76517, -19.697456, 1
 [node name="Pillar8" parent="BranchDecorations" instance=ExtResource("3_qb311")]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, -171.69032, -19.697456, 159.17102)
 
-[node name="Gems" type="Node3D" parent="BranchDecorations"]
-
-[node name="Gem2" parent="BranchDecorations/Gems" instance=ExtResource("5_fxywd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.041, -15.669535, 100.75372)
-
-[node name="Gem" parent="BranchDecorations/Gems" instance=ExtResource("5_fxywd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.35678, -19.772457, 167.64372)
-
 [node name="Arch2" parent="BranchDecorations" instance=ExtResource("2_faykp")]
 transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 2.7, -170.78247, -8.307723, 167.64507)
 
 [node name="Arch3" parent="BranchDecorations" instance=ExtResource("2_faykp")]
 transform = Transform3D(1, 0, 0, 0, 2.5, 0, 0, 0, 2.7, -189.95363, -8.307723, 167.64507)
+
+[node name="RoundRock" parent="." instance=ExtResource("11_1c0bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -355.02264, -20.331055, 335.24283)
+
+[node name="RoundRock2" parent="." instance=ExtResource("11_1c0bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.23438, -20.644442, 324.44717)

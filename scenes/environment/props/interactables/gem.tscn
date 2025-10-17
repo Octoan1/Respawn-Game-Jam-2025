@@ -35,10 +35,8 @@ metadata/_custom_type_script = "uid://culihtv734n8p"
 [node name="CoolParticle" parent="." instance=ExtResource("4_b77ts")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0376818, 0)
 
-[node name="gemCollect" type="AudioStreamPlayer3D" parent="."]
+[node name="gemCollect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7kxro")
-max_polyphony = 16
 bus = &"SFX"
-playback_type = 1
 
 [connection signal="interacted" from="Interactable" to="." method="_on_gem_interacted"]
