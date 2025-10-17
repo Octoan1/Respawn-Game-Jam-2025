@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=33 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://c8k25itnq8soa" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
@@ -116,7 +116,7 @@ render_target_update_mode = 4
 
 [node name="Player" parent="Objects/PlayerPostProcess/PostProcessViewport" instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.4815645, -47.53917)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.99884796, -64.652954)
 SPEED = 15.0
 JUMP_VELOCITY = 6.0
 

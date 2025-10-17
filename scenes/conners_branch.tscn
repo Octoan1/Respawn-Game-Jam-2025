@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://fose1jl4v8o"]
+[gd_scene load_steps=26 format=3 uid="uid://fose1jl4v8o"]
 
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="1_j2lli"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="2_faykp"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="3_qb311"]
 [ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="4_b4cqg"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="6_wom2h"]
+[ext_resource type="Script" uid="uid://6ypoga7aqwc1" path="res://scenes/textGone.gd" id="7_faykp"]
 [ext_resource type="Material" uid="uid://bgw8aqfaifdlg" path="res://scenes/minty_green.tres" id="7_kj0k2"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="8_3qyae"]
+[ext_resource type="Script" uid="uid://dgivkhyi1dgah" path="res://scenes/text.gd" id="8_qb311"]
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="9_0lppu"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="10_trhtj"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="11_1c0bh"]
@@ -36,12 +38,33 @@ text = "☐☐☐☐☐
 font_size = 18
 line_spacing = -7.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vnx5"]
+transparency = 1
+albedo_color = Color(0, 1.8247963, 0.5311358, 0)
+
+[sub_resource type="TextMesh" id="TextMesh_0vnx5"]
+material = SubResource("StandardMaterial3D_0vnx5")
+text = "             ☐
+☐☐☐   ☐
+☐       ☐☐
+☐☐          
+      ☐☐   
+"
+font_size = 18
+line_spacing = -7.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_e755i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro3en"]
 albedo_color = Color(0.972549, 0.09803922, 0.20392157, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_od4ux"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faykp"]
+albedo_color = Color(0.18631536, 0.31521547, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_qb311"]
+material = SubResource("StandardMaterial3D_faykp")
+text = "☾ ⏳"
+font_size = 80
 
 [node name="Conner\'s Branch" type="Node3D"]
 
@@ -380,6 +403,12 @@ mesh = SubResource("BoxMesh_tm6hj")
 [node name="text" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5122032)
 mesh = SubResource("TextMesh_t5ykj")
+script = ExtResource("7_faykp")
+
+[node name="solution_text" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5122032)
+mesh = SubResource("TextMesh_0vnx5")
+script = ExtResource("8_qb311")
 
 [node name="PuzzlePartialKey" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.624619, -1.9311664, 24.182617)
@@ -394,79 +423,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.868698, -1.9311664, 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzlePartialKey2"]
 material_override = SubResource("StandardMaterial3D_ro3en")
 mesh = SubResource("BoxMesh_e755i")
-
-[node name="Shadows" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7456088, 2.379181)
-
-[node name="Row2Shadow1" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.828995, 0.5, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/Row2Shadow1"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="Row2Shadow2" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 0.5, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/Row2Shadow2"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow3" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 1.2999997, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow3"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow4" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.100006, 2.1, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow4"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow5" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.850006, 2.1, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow5"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow6" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.600006, 2.1, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow6"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow7" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.395996, 1.2999997, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow7"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow8" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 1.2999997, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow8"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow9" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 2.1, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow9"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
-
-[node name="PuzzleKeyShadow10" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 17.199997, 3, 20.959)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/Shadows/PuzzleKeyShadow10"]
-cast_shadow = 3
-mesh = SubResource("BoxMesh_od4ux")
 
 [node name="Decorations" type="Node3D" parent="InvisiblePathPuzzle"]
 
@@ -627,3 +583,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -355.02264, -20.331055, 335.2
 
 [node name="RoundRock2" parent="." instance=ExtResource("11_1c0bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -359.23438, -20.644442, 324.44717)
+
+[node name="FlatRock" parent="." instance=ExtResource("6_wom2h")]
+transform = Transform3D(8.2591144e-16, 5.2453668e-08, -2.5, 0.76119405, 0.3692066, 3.3621948e-08, 0.24613771, -1.141791, -1.03977655e-07, -271.92694, 4.468129, 348.89075)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="FlatRock"]
+transform = Transform3D(-8.74228e-08, -5, -8.526513e-14, 8.742278e-08, -1.4210855e-14, -5, 2, -2.1855695e-07, 2.1855695e-07, 0, 0.35559082, 0.15372467)
+mesh = SubResource("TextMesh_qb311")
