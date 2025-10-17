@@ -19,7 +19,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		UIManager.toggle_pause() 
 	#elif event.is_action_pressed("secret_button"):
-		#bool secretButton = true
 		#if SPEED < 100:
 			#SPEED = 100
 			#JUMP_VELOCITY = 20
