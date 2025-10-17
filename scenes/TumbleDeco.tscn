@@ -10,11 +10,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.85522, -9.006437, -152.7
 [node name="Tumbleweed2" parent="." instance=ExtResource("1_tkjg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.19604, -9.046724, -132.60506)
 
-[node name="Tumbleweed3" parent="." instance=ExtResource("1_tkjg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.40785, -9.046724, -32.840065)
-
 [node name="Tumbleweed4" parent="." instance=ExtResource("1_tkjg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.765335, -9.046722, 145.06848)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.823273, -9.046722, 37.979446)
 
 [node name="Tumbleweed5" parent="." instance=ExtResource("1_tkjg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.931364, 115.555466)
