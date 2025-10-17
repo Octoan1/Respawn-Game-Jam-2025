@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=28 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -374,6 +373,3 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_ya4ey")
 stretch_mode = 1
-
-[node name="OasisPuzzle" parent="." instance=ExtResource("17_muem4")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
