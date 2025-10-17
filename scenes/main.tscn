@@ -17,12 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://c8k25itnq8soa" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
-[ext_resource type="PackedScene" uid="uid://b4akyeb3270mm" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://duv5k15o6elhv" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dtx4campllfov" path="res://scenes/Maze.tscn" id="22_y6deb"]
 [ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="23_og1vs"]
 
@@ -288,6 +288,56 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="Maze" parent="Objects" instance=ExtResource("22_y6deb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
+[node name="test (delete)" type="Node" parent="Objects"]
+
+[node name="Gem" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.73929, 20.064362)
+
+[node name="Gem2" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6180735, -19.73929, 20.064362)
+
+[node name="Gem3" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3303776, -19.73929, 20.064362)
+
+[node name="Gem4" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.948451, -19.73929, 20.064362)
+
+[node name="Gem5" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.73929, 22.944202)
+
+[node name="Gem6" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6180735, -19.73929, 22.944202)
+
+[node name="Gem7" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3303776, -19.73929, 22.944202)
+
+[node name="Gem8" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.948451, -19.73929, 22.944202)
+
+[node name="Gem9" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.73929, 25.410576)
+
+[node name="Gem10" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6180735, -19.73929, 25.410576)
+
+[node name="Gem11" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3303776, -19.73929, 25.410576)
+
+[node name="Gem12" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.948451, -19.73929, 25.410576)
+
+[node name="Gem13" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.73929, 27.647472)
+
+[node name="Gem14" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6180735, -19.73929, 27.647472)
+
+[node name="Gem15" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3303776, -19.73929, 27.647472)
+
+[node name="Gem16" parent="Objects/test (delete)" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.948451, -19.73929, 27.647472)
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
