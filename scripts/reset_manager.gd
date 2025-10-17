@@ -7,7 +7,7 @@ extends Node
 @export var player_path : NodePath
 @onready var player : Node = get_node_or_null(player_path)
 
-@export var start_position : Vector3
+@export var start_position = Vector3(0,-1,-65)
 
 @export var on : bool
 

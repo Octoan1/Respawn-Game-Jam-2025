@@ -126,7 +126,6 @@ JUMP_VELOCITY = 6.0
 [node name="ResetManager" type="Node" parent="Objects/PlayerPostProcess"]
 script = ExtResource("2_85g3d")
 player_path = NodePath("../PostProcessViewport/Player")
-start_position = Vector3(0, 13, 0)
 on = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Objects/PlayerPostProcess/ResetManager"]

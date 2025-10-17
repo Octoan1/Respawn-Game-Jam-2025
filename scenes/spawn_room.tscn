@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bwsvywxccw3ja"]
+[gd_scene load_steps=25 format=3 uid="uid://c8k25itnq8soa"]
 
 [ext_resource type="Script" uid="uid://cm87n4at3odmy" path="res://scenes/SpawnRoomScript.gd" id="1_orhc3"]
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="2_8whbu"]
@@ -190,16 +190,17 @@ stream = ExtResource("5_bdx0g")
 
 [node name="Gem" parent="." instance=ExtResource("4_oahmm")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 18.843277, 7.068308, 4.192116)
+color = Color(0.99999994, 0.20240158, 0.6824543, 1)
 
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="moon_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="outer_middle_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="inner_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="_on_moon_area_body_entered"]
-[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="moon_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons" method="hourglass_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
+[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="star_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="inner_outer_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="outer_button_pressed"]
-[connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="star_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons/StarButton/StarArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SpawnButtons/SunButton/SunArea" to="SpawnButtons" method="sun_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/SunButton/SunArea" to="SpawnButtons/SunButton/SunArea" method="_on_body_entered"]
