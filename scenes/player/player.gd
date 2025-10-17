@@ -35,7 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-88), deg_to_rad(88))
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -64,7 +64,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()
+	if (UIManager.current_ui_state == UIManager.UIState.NORMAL):
+		move_and_slide()
 
 #@onready var crosshair: TextureRect = $Head/Camera3D/Control/Crosshair
 #@onready var crosshair_2: TextureRect = $Head/Camera3D/Control/Crosshair2
