@@ -109,8 +109,6 @@ func sun_button_pressed(body: Node3D) -> void:
 # Code: Sun moon star hourglass
 func solution_check() -> void:
 	print("Checking solution!")
-	for i in 4:
-		print(solution.get(i))
 	if(solution.get(0) == "sun" && solution.get(1) == "moon" && solution.get(2) == "star" && solution.get(3) == "hourglass"):
 		puzzle_complete = true
 		print("puzzle complete!")
