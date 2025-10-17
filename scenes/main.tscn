@@ -1,4 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://b8k07vwbcoo4v"]
+
+[gd_scene load_steps=35 format=3 uid="uid://b8k07vwbcoo4v"]
+
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -20,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://b4akyeb3270mm" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -168,11 +172,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.47
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -23.321, -563.775)
 
 [node name="Gem_R" parent="Objects" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 163, -19.68, 126.1)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 137.38269, -19.068615, 53.9217)
 color = Color(0.827451, 0.6862745, 0.21568628, 1)
 
 [node name="Obelisk_R" parent="Objects" instance=ExtResource("5_tefeu")]
-transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 163, -20.411, 126.1)
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, 137.38269, -20.024717, 53.9217)
 script = ExtResource("11_trceg")
 player_path = NodePath("../PlayerPostProcess/PostProcessViewport/Player")
 gem_path = NodePath("../Gem_R")
@@ -327,10 +331,17 @@ transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.
 
 [node name="ParkourChallengeBranch" parent="Objects" instance=ExtResource("18_gqmmt")]
 
+[node name="TumbleDeco" parent="Objects" instance=ExtResource("20_pm3ni")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
+[node name="OasisPuzzle" parent="Objects" instance=ExtResource("17_muem4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
 
 [node name="PauseMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -366,6 +377,82 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
 text = "PAUSED"
+
+[node name="GameEndScreen" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.6627451)
+
+[node name="Title" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN!!!"
+
+[node name="GemsCollected" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.5
+offset_top = -278.0
+offset_right = 262.5
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.76963276, 0.8054356, 0.3832661, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gems Collected: %i out of -1"
+horizontal_alignment = 1
+
+[node name="DaysTaken" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -228.0
+offset_right = 263.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.42352942, 0.39607844, 0.91764706, 1)
+theme_override_font_sizes/font_size = 30
+text = "Time Spent: %i days"
+horizontal_alignment = 1
 
 [node name="Crosshair" type="Control" parent="UI"]
 visible = false

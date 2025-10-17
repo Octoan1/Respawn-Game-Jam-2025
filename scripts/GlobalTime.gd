@@ -10,6 +10,6 @@ func _process(delta: float) -> void:
 	# Increase time based on day length
 	if(!stopped):
 		time_of_day = fmod(time_of_day, 24.0)  # Wrap around 24 hours
-		time_of_day += (24.0 / day_length) * delta
+		time_of_day += (24.0 / day_length*2) * delta
 		if(time_of_day >= 24):
 			day_counter += 1

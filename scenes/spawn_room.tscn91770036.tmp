@@ -191,10 +191,10 @@ stream = ExtResource("5_bdx0g")
 [node name="Gem" parent="." instance=ExtResource("4_oahmm")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, 18.843277, 7.068308, 4.192116)
 
-[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="outer_middle_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="moon_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="inner_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="_on_moon_area_body_entered"]
-[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="moon_button_pressed"]
+[connection signal="body_entered" from="SpawnButtons/MoonButton/MoonArea" to="SpawnButtons" method="outer_middle_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons" method="hourglass_button_pressed"]
 [connection signal="body_entered" from="SpawnButtons/HourglassButton/HourglassArea" to="SpawnButtons/HourglassButton/HourglassArea" method="_on_body_entered"]
 [connection signal="body_entered" from="SpawnButtons/StarButton/StarArea" to="SpawnButtons" method="inner_outer_button_pressed"]

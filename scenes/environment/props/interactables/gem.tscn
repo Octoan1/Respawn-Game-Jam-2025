@@ -12,7 +12,7 @@ metallic = 0.75
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4yqmr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b77ts"]
-size = Vector3(1.7453146, 1.2578125, 1.7369156)
+size = Vector3(1.7453146, 1.34375, 1.7369156)
 
 [node name="Gem" type="Node3D"]
 script = ExtResource("1_oywcy")
