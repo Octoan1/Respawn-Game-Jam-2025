@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=38 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://duv5k15o6elhv" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dtx4campllfov" path="res://scenes/Maze.tscn" id="22_y6deb"]
+[ext_resource type="PackedScene" uid="uid://txqikdwfiu0y" path="res://scenes/CalvinBranch.tscn" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="23_og1vs"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -258,6 +259,22 @@ color = Color(0, 0.8494162, 0.7585879, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.83115, 21.256453, -48.205307)
 color = Color(0, 0.8509804, 0.75686276, 1)
 
+[node name="CalvinGem1" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -316.0536, -19.714798, -192.82935)
+color = Color(0.8805438, 0.4527315, 0.13600078, 1)
+
+[node name="ObeliskCircleGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.00494, -19.77246, 151.91632)
+color = Color(0.11848802, 0.41139224, 0.44338465, 1)
+
+[node name="GemUnderSlope" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.241068, -19.042875, 332.75644)
+color = Color(0.44177777, 0.46478605, 0.80874044, 1)
+
+[node name="GemUnderParkourSlope" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252.0061, -19.772457, -75.78006)
+color = Color(0.25755858, 0.44174603, 0.20700836, 1)
+
 [node name="GlowPuzzle" parent="Objects" instance=ExtResource("11_jkv2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
@@ -287,6 +304,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="Maze" parent="Objects" instance=ExtResource("22_y6deb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
+
+[node name="CalvinBranch" parent="Objects" instance=ExtResource("23_2wyq8")]
 
 [node name="test (delete)" type="Node" parent="Objects"]
 

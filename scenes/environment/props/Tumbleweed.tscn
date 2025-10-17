@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d4j25vdnf11ie"]
 
-[ext_resource type="Material" uid="uid://cm282l6688wyb" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="1_3hfcc"]
+[ext_resource type="Material" uid="uid://c52ovn8l3iyla" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="1_3hfcc"]
 [ext_resource type="ArrayMesh" uid="uid://lk6i0qp0qhql" path="res://assets/models/Tumbleweed.obj" id="1_egvqs"]
 [ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="2_3hfcc"]
 
