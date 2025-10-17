@@ -93,3 +93,12 @@ transform = Transform3D(1.9949015, 0.200155, 0.10174716, -0.14271647, 2.7977808,
 
 [node name="RoundRock3" parent="." instance=ExtResource("4_0t2c4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 125.957596, -20.144962, -152.48524)
+
+[node name="RoundRock4" parent="." instance=ExtResource("4_0t2c4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 189.22664, -12.820239, -301.84702)
+
+[node name="RoundRock5" parent="." instance=ExtResource("4_0t2c4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 181.20436, -17.201067, -300.78983)
+
+[node name="RoundRock6" parent="." instance=ExtResource("4_0t2c4")]
+transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 219.62523, -21.7382, -263.9529)
