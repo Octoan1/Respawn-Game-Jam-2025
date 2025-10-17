@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=35 format=3 uid="uid://b8k07vwbcoo4v"]
-
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -285,12 +283,15 @@ color = Color(0.99705714, 0.62329054, 0.60385305, 1)
 
 [node name="ObeliskDebrisGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.72328, -18.657454, 257.47778)
+color = Color(0.08235294, 0.21176471, 0.5647059, 1)
 
 [node name="InvisiblePathGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -350.4701, -1.1149483, 296.47897)
+color = Color(0.08235294, 0.21176471, 0.5647059, 1)
 
 [node name="HiddenBehindPathGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -363.04724, -18.417162, 321.48627)
+color = Color(0.08235294, 0.21176471, 0.5647059, 1)
 
 [node name="BehindPlatformGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.59956, -19.772457, 167.71086)
@@ -300,15 +301,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -312.54645, -15.059364, 108.4
 
 [node name="PillarRingGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.27195, -8.125523, -199.90875)
+color = Color(0, 0.8509804, 0, 1)
 
 [node name="PillarWallGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 295.12146, -2.4546232, -296.66385)
+color = Color(0, 0.8509804, 0, 1)
 
 [node name="HiddenUnderRocksGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.86766, -19.772457, -273.1916)
+color = Color(0, 0.8494162, 0, 1)
 
 [node name="FinalGem" parent="Objects/GemContainer" instance=ExtResource("9_gqmmt")]
 transform = Transform3D(23.420973, 0, 0, 0, 23.420973, 0, 0, 0, 23.420973, 0, -15.964812, -563.775)
+
+[node name="GemOnRockJump" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.05928, -14.093512, 101.563156)
+color = Color(0.08235294, 0.21176471, 0.5647059, 1)
+
+[node name="GemJumpChallenge1" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.35571, 0.23718071, -49.28263)
+color = Color(0, 0.8494162, 0.7585879, 1)
+
+[node name="GemJumpChallenge2" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320.83115, 21.256453, -48.205307)
+color = Color(0, 0.8509804, 0.75686276, 1)
 
 [node name="GlowPuzzle" parent="Objects" instance=ExtResource("11_jkv2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
