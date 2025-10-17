@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=35 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -18,12 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
-[ext_resource type="PackedScene" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
+[ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://b4akyeb3270mm" path="res://scenes/TumbleDeco.tscn" id="20_pm3ni"]
-[ext_resource type="PackedScene" uid="uid://dtx4campllfov" path="res://scenes/Maze.tscn" id="22_y6deb"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -334,9 +333,6 @@ transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="OasisPuzzle" parent="Objects" instance=ExtResource("17_muem4")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
-
-[node name="Maze" parent="Objects" instance=ExtResource("22_y6deb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="UI" type="Node" parent="."]
