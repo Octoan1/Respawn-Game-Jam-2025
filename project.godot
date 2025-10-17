@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="The Desert of Time"
+config/description="Play as Ra, who dies each night and resurrects each morning, as you seek to repair the Pharaoh’s pyramid. Take advantage of the time of day to solve puzzles and parkour across the dunes of ancient Egypt. Try to collect all the gems in the least amount of days!"
 config/version="1.8"
 run/main_scene="uid://b8k07vwbcoo4v"
 config/features=PackedStringArray("4.5", "Forward Plus")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7cfmo3tbto5t"]
+[gd_scene load_steps=18 format=3 uid="uid://b7cfmo3tbto5t"]
 
 [ext_resource type="ArrayMesh" uid="uid://caya73uwxw2xq" path="res://assets/models/Pyramid.obj" id="1_4u2o7"]
 [ext_resource type="Texture2D" uid="uid://cagyg4ypnlu5v" path="res://assets/textures/pryamid2.png" id="2_m8ubx"]
@@ -288,14 +288,6 @@ _data = {
 &"pyramidEffect": SubResource("Animation_sw6ir")
 }
 
-[sub_resource type="GDScript" id="GDScript_yvq63"]
-resource_name = "pyramidAnimation"
-script/source = "extends AnimationPlayer
-
-func _ready() -> void:
-	play(\"pyramidEffect\")
-"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifwva"]
 shading_mode = 0
 
@@ -328,11 +320,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yvq63")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_yvq63")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="beam" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_ifwva")
 }
-script = SubResource("GDScript_yvq63")
 
 [node name="LightCylinder" type="MeshInstance3D" parent="."]
 cast_shadow = 0
@@ -501,3 +492,10 @@ volume_db = -14.0
 
 [node name="explosion" type="AudioStreamPlayer" parent="."]
 volume_db = 8.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 5)
+light_energy = 0.77
+light_indirect_energy = 16.0
+omni_range = 150.0
+omni_attenuation = -10.0
