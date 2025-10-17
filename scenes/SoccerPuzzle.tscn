@@ -23,7 +23,7 @@ text = "1"
 script = ExtResource("1_b1a20")
 
 [node name="Tumbleweed" parent="." instance=ExtResource("2_yte0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.1, -9.025337, -22.14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8612366, -9.025337, 19.372765)
 
 [node name="Arch2" parent="." instance=ExtResource("3_8reoo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -9.886, 20)

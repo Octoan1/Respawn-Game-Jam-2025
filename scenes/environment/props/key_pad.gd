@@ -11,9 +11,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if(code[0] == 4 && code[1] == 2 && code[2] == 7 && !won):
-		if(self.global_position.y > key_pad_y - 1):
+		if(self.global_position.y > key_pad_y - 2):
 			self.global_position = self.global_position - Vector3(0, delta * 0.5, 0)
-		elif(self.get_parent().get_child(0).global_position.y < gem_y + 2):
+		elif(self.get_parent().get_child(0).global_position.y < gem_y + 3):
 			self.get_parent().get_child(0).global_position = self.get_parent().get_child(0).global_position + Vector3(0, delta * 0.5, 0)
 		else:
 			won = true
