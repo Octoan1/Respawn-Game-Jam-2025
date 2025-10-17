@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://fose1jl4v8o"]
+[gd_scene load_steps=28 format=3 uid="uid://fose1jl4v8o"]
 
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="1_j2lli"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="2_faykp"]
@@ -12,6 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="9_0lppu"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="10_trhtj"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="11_1c0bh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faykp"]
+albedo_color = Color(0.7554169, 0.7723388, 0.42358288, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_b4cqg"]
+material = SubResource("StandardMaterial3D_faykp")
+text = "⏳"
+font_size = 30
 
 [sub_resource type="BoxMesh" id="BoxMesh_ids8r"]
 
@@ -58,11 +66,11 @@ line_spacing = -7.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro3en"]
 albedo_color = Color(0.972549, 0.09803922, 0.20392157, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faykp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxywd"]
 albedo_color = Color(0.18631536, 0.31521547, 1, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_qb311"]
-material = SubResource("StandardMaterial3D_faykp")
+material = SubResource("StandardMaterial3D_fxywd")
 text = "☾ ⏳"
 font_size = 80
 
@@ -98,6 +106,10 @@ script = ExtResource("4_b4cqg")
 
 [node name="FlatRockPlatformer" parent="PlatformingPuzzle" instance=ExtResource("6_wom2h")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 1, -1235.3014, -7.12894, 81.083)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="PlatformingPuzzle/FlatRockPlatformer"]
+transform = Transform3D(-2.6226832e-07, -5.9999995, 2.6226832e-07, 0, -2.6226832e-07, -6, 6, -2.6226832e-07, 1.1464113e-14, -1.1660156, 0.3155098, 0)
+mesh = SubResource("TextMesh_b4cqg")
 
 [node name="InvisiblePathPuzzle" type="Node3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -307.89737, -1.0094681, 303.76788)
@@ -439,7 +451,7 @@ transform = Transform3D(2.7032018, -1.2303215, 0, 1.8928022, 1.7570812, 0, 0, 0,
 transform = Transform3D(-1.207687e-07, 4.5871495e-08, -1.92, 1.6144885, 1.7958627, 5.5198633e-16, 2.7628658, -1.0494174, -8.392586e-08, -28.327072, -6.466961, 4.8987274)
 
 [node name="FlatRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("6_wom2h")]
-transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 41.666756, -9.485428, -2.1805267)
+transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 38.949448, -9.485428, -0.0019378662)
 
 [node name="TallRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("9_0lppu")]
 transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, 62.56356, -10.453514, 5.780014)
