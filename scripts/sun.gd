@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 	light_energy = lerp(night_intensity, day_intensity, factor)
 	light_color = _get_sun_color(t)
 	
-	if(t < sunrise_time - 1 or t > sunset_time + 1):
+	if(t < sunrise_time or t > sunset_time):
 		visible = false
 	else:
 		visible = true
