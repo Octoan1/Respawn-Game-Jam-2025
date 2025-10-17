@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4akyeb3270mm"]
+[gd_scene load_steps=3 format=3 uid="uid://duv5k15o6elhv"]
 
 [ext_resource type="PackedScene" uid="uid://d4j25vdnf11ie" path="res://scenes/environment/props/Tumbleweed.tscn" id="1_tkjg0"]
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="2_rrcba"]
 
 [node name="TumbleDeco" type="Node3D"]
 
@@ -18,3 +19,320 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.931364, 115.555466)
 
 [node name="Tumbleweed6" parent="." instance=ExtResource("1_tkjg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.87266, -9.0467205, 43.616695)
+
+[node name="Tumbleweed3" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.894535, -9.015543, -48.986828)
+
+[node name="Tumbleweed7" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.16343, -9.046719, 6.9881477)
+
+[node name="Tumbleweed8" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.377882, -9.0467205, 29.495262)
+
+[node name="Tumbleweed9" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.90156, -9.046722, -50.726093)
+
+[node name="Tumbleweed10" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.876274, -9.046724, -88.28375)
+
+[node name="Tumbleweed11" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.53152, -9.030266, -109.32464)
+
+[node name="Tumbleweed12" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.575882, -9.046606, 29.513954)
+
+[node name="Map" parent="." instance=ExtResource("2_rrcba")]
+
+[node name="Tumbleweed13" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.84047, -9.027455, -95.09885)
+
+[node name="Tumbleweed14" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.66801, -8.913296, -97.8105)
+
+[node name="Tumbleweed15" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.06175, -9.02596, -95.25561)
+
+[node name="Tumbleweed16" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.66591, -9.003898, -97.50038)
+
+[node name="Tumbleweed17" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.22464, -9.024453, -95.41209)
+
+[node name="Tumbleweed18" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.60721, -8.895355, -96.86751)
+
+[node name="Tumbleweed19" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.52177, -8.992135, -98.69873)
+
+[node name="Tumbleweed20" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.76154, -8.805241, -99.91737)
+
+[node name="Tumbleweed21" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.17453, -9.046446, -95.61203)
+
+[node name="Tumbleweed22" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.5088, -9.008733, -97.639084)
+
+[node name="Tumbleweed23" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.81934, -8.868298, -99.64698)
+
+[node name="Tumbleweed24" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.90727, -8.986278, -99.52179)
+
+[node name="Tumbleweed25" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.17625, -8.837666, -100.46547)
+
+[node name="Tumbleweed26" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.63506, -8.700638, -101.44824)
+
+[node name="Tumbleweed27" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.66786, -8.805431, -101.20779)
+
+[node name="Tumbleweed28" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.0635, -9.009885, -96.89411)
+
+[node name="Tumbleweed29" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.86311, -9.046532, -96.40887)
+
+[node name="Tumbleweed30" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.226, -9.009234, -98.879814)
+
+[node name="Tumbleweed31" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.74094, -8.982206, -100.39265)
+
+[node name="Tumbleweed32" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.54106, -5.437798, -95.57855)
+
+[node name="Tumbleweed33" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.55998, -5.3069596, -97.80755)
+
+[node name="Tumbleweed34" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.53183, -4.482348, -95.07235)
+
+[node name="Tumbleweed35" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.44434, -4.0845118, -94.95766)
+
+[node name="Tumbleweed36" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.1773, -6.467837, -95.007614)
+
+[node name="Tumbleweed37" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.28842, -2.2380984, -95.145546)
+
+[node name="Tumbleweed38" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.69084, -1.4989825, -94.99224)
+
+[node name="Tumbleweed39" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.97871, -4.9451685, -94.946106)
+
+[node name="Tumbleweed40" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.83934, -2.1978467, -95.62306)
+
+[node name="Tumbleweed41" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.99341, -0.7025529, -95.00293)
+
+[node name="Tumbleweed42" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.97258, 0.80213416, -95.24467)
+
+[node name="Tumbleweed43" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.11395, 1.2725676, -95.02933)
+
+[node name="Tumbleweed44" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.8181, -1.4240962, -94.99321)
+
+[node name="Tumbleweed45" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.7745, 2.1768944, -95.14155)
+
+[node name="Tumbleweed46" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.05382, -9.046652, -97.74194)
+
+[node name="Tumbleweed47" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.91846, -6.0898676, -97.692535)
+
+[node name="Tumbleweed48" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.80072, -7.085425, -99.13367)
+
+[node name="Tumbleweed49" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.46695, -3.1203523, -97.84932)
+
+[node name="Tumbleweed50" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -156.89583, 0.48612565, -95.4845)
+
+[node name="Tumbleweed51" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.7235, -7.1997356, -98.985466)
+
+[node name="Tumbleweed52" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.0015, -7.196846, -98.91396)
+
+[node name="Tumbleweed53" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.23602, -7.096572, -99.70603)
+
+[node name="Tumbleweed54" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.2306, -5.3941917, -99.18595)
+
+[node name="Tumbleweed55" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.55609, -8.716581, -102.02167)
+
+[node name="Tumbleweed56" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.47914, -8.706207, -102.77624)
+
+[node name="Tumbleweed57" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.69107, -7.035287, -100.71703)
+
+[node name="Tumbleweed58" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.43219, -7.106202, -99.53249)
+
+[node name="Tumbleweed59" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.48201, -7.5063906, -101.11818)
+
+[node name="Tumbleweed60" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.80708, -7.462619, -96.6694)
+
+[node name="Tumbleweed61" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.84666, -7.3177776, -97.09492)
+
+[node name="Tumbleweed62" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.98294, -5.318589, -99.52343)
+
+[node name="Tumbleweed63" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.62753, -5.0807514, -96.7066)
+
+[node name="Tumbleweed64" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.8657, -2.721626, -96.66559)
+
+[node name="Tumbleweed55" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5895691, 0.064465284, -5.9554367)
+
+[node name="Tumbleweed56" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48739624, 0.07483935, -6.7100143)
+
+[node name="Tumbleweed55" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5895691, 5.3048058, 0.42611694)
+
+[node name="Tumbleweed56" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48739624, 5.31518, -0.3284607)
+
+[node name="Tumbleweed57" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7245178, 6.9861, 1.7307434)
+
+[node name="Tumbleweed58" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4656677, 6.915185, 2.9152832)
+
+[node name="Tumbleweed59" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4845276, 6.5149965, 1.3296051)
+
+[node name="Tumbleweed60" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8405457, 6.5587683, 5.7783813)
+
+[node name="Tumbleweed61" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88012695, 6.7036095, 5.3528748)
+
+[node name="Tumbleweed62" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.016388, 8.702798, 2.924347)
+
+[node name="Tumbleweed63" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6609802, 8.940636, 5.7411804)
+
+[node name="Tumbleweed64" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10083008, 11.299761, 5.782196)
+
+[node name="Tumbleweed65" parent="Tumbleweed64/Tumbleweed56" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14682, 9.8428, 5.5934906)
+
+[node name="Tumbleweed55" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5895691, 0.6933327, -5.172035)
+
+[node name="Tumbleweed56" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48739624, 0.70370674, -5.926613)
+
+[node name="Tumbleweed57" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7245178, 2.374627, -3.8674088)
+
+[node name="Tumbleweed58" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4656677, 2.303712, -2.682869)
+
+[node name="Tumbleweed59" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4845276, 1.9035234, -4.268547)
+
+[node name="Tumbleweed60" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8405457, 1.9472952, 0.18022919)
+
+[node name="Tumbleweed61" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88012695, 2.0921364, -0.2452774)
+
+[node name="Tumbleweed62" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.016388, 4.091325, -2.6738052)
+
+[node name="Tumbleweed63" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6609802, 4.3291636, 0.14302826)
+
+[node name="Tumbleweed64" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10083008, 6.688287, 0.18404388)
+
+[node name="Tumbleweed65" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14682, 5.231328, -0.00466156)
+
+[node name="Tumbleweed55" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5895691, 0.6933327, -5.172035)
+
+[node name="Tumbleweed56" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48739624, 0.70370674, -5.926613)
+
+[node name="Tumbleweed57" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7245178, 2.374627, -3.8674088)
+
+[node name="Tumbleweed58" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4656677, 2.303712, -2.682869)
+
+[node name="Tumbleweed59" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4845276, 1.9035234, -4.268547)
+
+[node name="Tumbleweed60" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8405457, 1.9472952, 0.18022919)
+
+[node name="Tumbleweed61" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88012695, 2.0921364, -0.2452774)
+
+[node name="Tumbleweed62" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.016388, 4.091325, -2.6738052)
+
+[node name="Tumbleweed63" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6609802, 4.3291636, 0.14302826)
+
+[node name="Tumbleweed64" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10083008, 6.688287, 0.18404388)
+
+[node name="Tumbleweed65" parent="Tumbleweed64/Tumbleweed56/Tumbleweed65/Tumbleweed65" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14682, 5.231328, -0.00466156)
+
+[node name="Tumbleweed57" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7245178, 1.7457597, -4.6508102)
+
+[node name="Tumbleweed58" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4656677, 1.6748445, -3.4662704)
+
+[node name="Tumbleweed59" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4845276, 1.274656, -5.0519485)
+
+[node name="Tumbleweed60" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8405457, 1.3184278, -0.6031723)
+
+[node name="Tumbleweed61" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88012695, 1.463269, -1.0286789)
+
+[node name="Tumbleweed62" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.016388, 3.4624574, -3.4572067)
+
+[node name="Tumbleweed63" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6609802, 3.7002952, -0.64037323)
+
+[node name="Tumbleweed64" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10083008, 6.0594206, -0.5993576)
+
+[node name="Tumbleweed65" parent="Tumbleweed64" instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14682, 4.60246, -0.78806305)
+
+[node name="Tumbleweed65" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.11337, -4.1785874, -96.854294)
+
+[node name="Tumbleweed66" parent="." instance=ExtResource("1_tkjg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150.43765, -0.7710518, -96.605446)
