@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtx4campllfov"]
+
+[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="1_h1dk6"]
+[ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="2_i3brf"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="3_722ey"]
+
+[node name="Maze" type="Node3D"]
+
+[node name="LongRock" parent="." instance=ExtResource("1_h1dk6")]
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -86.37062, -2.7825842, -4.701662)
+
+[node name="LongRock2" parent="." instance=ExtResource("1_h1dk6")]
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -86.37062, -2.7825842, -37.09247)
+
+[node name="LongRock3" parent="." instance=ExtResource("1_h1dk6")]
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -3.5100238, 0, -86.37062, -2.7825842, -22.129848)
+
+[node name="RoundRock" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -115.33891, -6.2657886, -18.403875)
+
+[node name="RoundRock2" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -115.33891, -6.2657886, -28.197052)
+
+[node name="RoundRock3" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(-0.6400316, 0, 3.4556584, 0, 3.5144296, 0, -3.4556584, 0, -0.6400316, -135.26355, -6.2657905, -35.527657)
+
+[node name="RoundRock4" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(-0.3882751, 0, 3.4929154, 0, 3.5144296, 0, -3.4929154, 0, -0.3882751, -127.22938, -7.2615786, -25.945904)
+
+[node name="LongRock4" parent="." instance=ExtResource("1_h1dk6")]
+transform = Transform3D(4.4138703, 2.0239918, 0, 0, 0, 5.402508, 3.115259, -2.867704, 0, -146.75307, -2.7825804, -19.207504)
+
+[node name="LongRock5" parent="." instance=ExtResource("1_h1dk6")]
+transform = Transform3D(-0.37093365, 3.5017407, 0, 0, 0, 5.4025083, 5.389759, 0.24099661, 0, -169.69086, -2.7825842, -30.71853)
+
+[node name="RoundRock5" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -155.25316, -6.2657886, -7.4683323)
+
+[node name="RoundRock6" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(1.8833842, 0, 2.967167, 0, 3.5144296, 0, -2.967167, 0, 1.8833842, -154.0454, -6.2657886, -18.789356)
+
+[node name="Gem" parent="." instance=ExtResource("3_722ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -176.12221, -6.652583, -28.652544)
+color = Color(0.99607843, 0, 0.6313726, 1)
+
+[node name="RoundRock7" parent="." instance=ExtResource("2_i3brf")]
+transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -104.96706, -6.2657886, -24.006456)
