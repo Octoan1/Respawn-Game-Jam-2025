@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbbgfq2g3i73l"]
+[gd_scene load_steps=6 format=3 uid="uid://bbbgfq2g3i73l"]
 
 [ext_resource type="Script" uid="uid://ddfsxi0hqht8k" path="res://scenes/environment/props/interactables/button_code.gd" id="1_xj08f"]
 [ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_7tlgt"]
+[ext_resource type="AudioStream" uid="uid://db20s06eccs8k" path="res://assets/sounds/sfx/ButtonPress.wav" id="3_7tlgt"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_njypj"]
 
@@ -24,5 +25,10 @@ shape = SubResource("ConcavePolygonShape3D_xj08f")
 [node name="Interactable" type="Node3D" parent="."]
 script = ExtResource("2_7tlgt")
 metadata/_custom_type_script = "uid://culihtv734n8p"
+
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7tlgt")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="interacted" from="Interactable" to="." method="_on_button_code_interacted"]

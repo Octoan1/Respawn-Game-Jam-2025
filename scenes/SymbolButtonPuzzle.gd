@@ -31,6 +31,8 @@ var star_start = StarButton.position.y
 var HourglassButton = $HourglassButton
 @onready
 var hourglass_start = HourglassButton.position.y
+const BUTTON_PRESS = preload("uid://db20s06eccs8k")
+@onready var press = $press
 
 signal move_walls
 
@@ -41,6 +43,7 @@ signal move_walls
 func star_button_pressed(body: Node3D) -> void:
 	if(body.name=="Player"):
 		if(off_cooldown == true):
+			press.play()
 			reset_button = false
 			move_star_button = true
 			solution.append("star")
@@ -56,8 +59,8 @@ func star_button_pressed(body: Node3D) -> void:
 func moon_button_pressed(body: Node3D) -> void:
 	print(body.name)
 	if(body.name=="Player"):
-		print("Player has entered!")
 		if(off_cooldown == true):
+			press.play()
 			reset_button = false
 			move_moon_button = true
 			print("Moon button pressed")
@@ -73,6 +76,7 @@ func moon_button_pressed(body: Node3D) -> void:
 func hourglass_button_pressed(body: Node3D) -> void:
 	if(body.name=="Player"):
 		if(off_cooldown == true):
+			press.play()
 			reset_button = false
 			move_hourglass_button = true
 			solution.append("hourglass")
@@ -86,6 +90,7 @@ func hourglass_button_pressed(body: Node3D) -> void:
 func sun_button_pressed(body: Node3D) -> void:
 	if(body.name=="Player"):
 		if(off_cooldown == true):
+				press.play()
 				reset_button = false
 				move_sun_button = true
 				solution.append("sun")

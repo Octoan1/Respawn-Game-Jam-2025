@@ -163,7 +163,7 @@ tracks/2/keys = {
 tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("laser")
+tracks/3/path = NodePath("laser2")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -252,13 +252,13 @@ tracks/3/keys = {
 "start_offset": 0.1153,
 "stream": ExtResource("3_yvq63")
 }],
-"times": PackedFloat32Array(0.93333334, 2.6666667, 4.2, 4.766667, 5.0333333, 5.2, 5.3333335, 5.366667, 5.4333334, 5.5, 5.5333333, 5.548611, 5.6, 5.6666665, 5.733333, 5.740201, 5.748749, 5.757276, 5.7631783, 5.767816, 5.771189)
+"times": PackedFloat32Array(0.9376796, 2.6710129, 4.204346, 4.7710133, 5.0376797, 5.204346, 5.33768, 5.371013, 5.43768, 5.5043464, 5.5376797, 5.5529575, 5.6043463, 5.671013, 5.7376795, 5.7445474, 5.753095, 5.7616224, 5.7675247, 5.7721624, 5.7755356)
 }
-tracks/3/use_blend = false
+tracks/3/use_blend = true
 tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Explosion")
+tracks/4/path = NodePath("explosion")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -267,9 +267,9 @@ tracks/4/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("4_ifwva")
 }],
-"times": PackedFloat32Array(7.8333335)
+"times": PackedFloat32Array(7.8340807)
 }
-tracks/4/use_blend = false
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ifwva"]
 _data = {
@@ -324,19 +324,8 @@ libraries = {
 script = SubResource("GDScript_yvq63")
 
 [node name="LightCylinder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2000, 0)
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_m8ubx")
-
-[node name="laser" type="AudioStreamPlayer3D" parent="."]
-volume_db = 29.63
-max_distance = 4096.0
-max_polyphony = 32
-
-[node name="Explosion" type="AudioStreamPlayer3D" parent="."]
-volume_db = 23.704
-max_distance = 4096.0
-max_polyphony = 32
 
 [node name="GemWall" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9, 15.65, 55.1)
@@ -495,3 +484,9 @@ visible = false
 mesh = ExtResource("5_m8ubx")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
+
+[node name="laser2" type="AudioStreamPlayer" parent="."]
+volume_db = -14.0
+
+[node name="explosion" type="AudioStreamPlayer" parent="."]
+volume_db = 8.0

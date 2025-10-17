@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu6mjckmlx5bj"]
+[gd_scene load_steps=6 format=3 uid="uid://bu6mjckmlx5bj"]
 
 [ext_resource type="Script" uid="uid://ddfsxi0hqht8k" path="res://scenes/environment/props/interactables/button_code.gd" id="1_t7tgo"]
 [ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="2_pvx3c"]
+[ext_resource type="AudioStream" uid="uid://db20s06eccs8k" path="res://assets/sounds/sfx/ButtonPress.wav" id="3_pvx3c"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_61nk8"]
 
@@ -24,5 +25,10 @@ shape = SubResource("BoxShape3D_t7tgo")
 [node name="Interactable" type="Node3D" parent="."]
 script = ExtResource("2_pvx3c")
 metadata/_custom_type_script = "uid://culihtv734n8p"
+
+[node name="press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pvx3c")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="interacted" from="Interactable" to="." method="_on_button_code_interacted"]

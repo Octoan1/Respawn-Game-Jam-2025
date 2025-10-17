@@ -29,7 +29,5 @@ metadata/_custom_type_script = "uid://culihtv734n8p"
 
 [node name="press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kb746")
-volume_db = -10.0
-bus = &"SFX"
 
 [connection signal="interacted" from="Interactable" to="." method="_on_key_interacted"]

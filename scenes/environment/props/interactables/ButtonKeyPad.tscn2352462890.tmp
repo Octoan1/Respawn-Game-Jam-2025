@@ -12,6 +12,7 @@
 
 [node name="ButtonKeyPad" type="Node3D"]
 script = ExtResource("1_axtyh")
+key_num = null
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.17817742, 0, 0, 0, 1, 0, 0, 0)
@@ -29,7 +30,5 @@ metadata/_custom_type_script = "uid://culihtv734n8p"
 
 [node name="press" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_kb746")
-volume_db = -10.0
-bus = &"SFX"
 
 [connection signal="interacted" from="Interactable" to="." method="_on_key_interacted"]

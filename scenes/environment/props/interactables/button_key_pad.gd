@@ -4,11 +4,15 @@ extends Node3D
 var default_color : Color = Color("white")
 var clicked_color : Color = Color("gray")
 
+const BUTTON_PRESS = preload("uid://db20s06eccs8k")
+@onready var press = $press
+
 func _ready() -> void:
 	if self.get_child(0).material_override == null:
 		self.get_child(0).material_override = StandardMaterial3D.new()
 
 func _on_key_interacted() -> void:
+	press.play()
 	self.get_parent().code[0] = self.get_parent().code[1]
 	self.get_parent().code[1] = self.get_parent().code[2]
 	self.get_parent().code[2] = key_num
