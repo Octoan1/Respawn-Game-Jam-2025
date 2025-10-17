@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://74fgclvw5hvi"]
+
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="1_6th84"]
+[ext_resource type="Script" uid="uid://cac76g21xwg6k" path="res://scenes/environment/props/interactables/final_gem.gd" id="2_3plw4"]
+
+[node name="FinalGem" instance=ExtResource("1_6th84")]
+script = ExtResource("2_3plw4")
