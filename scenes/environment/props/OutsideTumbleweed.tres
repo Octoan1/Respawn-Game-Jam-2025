@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cm282l6688wyb"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c52ovn8l3iyla"]
 
 [ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="1_wr6s7"]
 
@@ -7,6 +7,7 @@ transparency = 1
 diffuse_mode = 3
 specular_mode = 2
 vertex_color_is_srgb = true
+albedo_color = Color(1, 0.44313726, 0, 1)
 albedo_texture = ExtResource("1_wr6s7")
 albedo_texture_force_srgb = true
 uv1_scale = Vector3(8, 8, 8)
