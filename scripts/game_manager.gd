@@ -25,6 +25,7 @@ func add_gem(gem: Gem) -> void:
 		
 func end_game():
 	print("game is ending now")
+	UIManager.set_game_end(score)
 	
 	
 	

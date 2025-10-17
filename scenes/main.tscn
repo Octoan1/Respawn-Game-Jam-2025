@@ -328,6 +328,7 @@ transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.
 unique_name_in_owner = true
 
 [node name="PauseMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -363,6 +364,82 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
 text = "PAUSED"
+
+[node name="GameEndScreen" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.6627451)
+
+[node name="Title" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN!!!"
+
+[node name="GemsCollected" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.5
+offset_top = -278.0
+offset_right = 262.5
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.76963276, 0.8054356, 0.3832661, 1)
+theme_override_font_sizes/font_size = 30
+text = "Gems Collected: %i out of -1"
+horizontal_alignment = 1
+
+[node name="DaysTaken" type="Label" parent="UI/GameEndScreen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -228.0
+offset_right = 263.0
+offset_bottom = -159.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.42352942, 0.39607844, 0.91764706, 1)
+theme_override_font_sizes/font_size = 30
+text = "Time Spent: %i days"
+horizontal_alignment = 1
 
 [node name="Crosshair" type="Control" parent="UI"]
 visible = false
