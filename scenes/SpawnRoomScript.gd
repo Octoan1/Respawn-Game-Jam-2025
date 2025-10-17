@@ -1,6 +1,7 @@
 extends Node3D
 
 var moving = false
+var won = false
 var speed = 1
 
 func _ready():
@@ -17,7 +18,8 @@ func walls_move() -> void:
 	$Gem.visible = true
 
 func _process(delta: float) -> void:
-	if(moving == true):
+	
+	if(moving == true and !won):
 		if($Wall.position.y >= -15):
 			$Wall.position.y = $Wall.position.y - delta*speed
 		if($Wall2.position.y >= -15):
@@ -29,3 +31,5 @@ func _process(delta: float) -> void:
 		if($Gem):
 			if($Gem.position.y >= 0.5):
 				$Gem.position.y = $Gem.position.y - delta*2
+		else:
+			won = true

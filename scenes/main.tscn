@@ -162,7 +162,7 @@ environment = SubResource("Environment_sugp2")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="BoxTest" parent="Objects" instance=ExtResource("4_tipki")]
-transform = Transform3D(5.850618, 0, 0, 0, 5.850618, 0, 0, 0, 5.850618, 7.8138437, 0.5258244, -435.7407)
+transform = Transform3D(63.00577, 0, 0, 0, 63.00577, 0, 0, 0, 63.00577, 7.8138437, 25.564337, -905.9067)
 
 [node name="Obelisk" parent="Objects" instance=ExtResource("5_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6626887, -8.420917, -36.470493)
