@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bc30qdnv660xy" path="res://scenes/CodePuzzle.tscn" id="12_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://1ndcwe0bworj" path="res://scenes/ShadowPuzzle.tscn" id="12_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cev0gsburuygq" path="res://scenes/SoccerPuzzle.tscn" id="14_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://c8k25itnq8soa" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://bwsvywxccw3ja" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://er3kl7do4sbi" path="res://scenes/OasisPuzzle.tscn" id="17_muem4"]
@@ -213,74 +213,6 @@ transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08
 mesh = SubResource("TextMesh_trceg")
 
 [node name="GemContainer" type="Node" parent="Objects"]
-
-[node name="Gem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.601067, -6.815952, -44.59222)
-color = Color(0.62352943, 0.8235294, 0, 1)
-
-[node name="Gem2" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.601067, -5.4133506, -57.132687)
-color = Color(0.97411424, 0.58859926, 0.88071537, 1)
-
-[node name="Gem3" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7801743, -5.6442876, -53.69524)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem4" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7801743, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem5" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.977664, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem6" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.044881, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem7" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.237375, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem8" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.35017, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem9" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.214355, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem10" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.291265, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem11" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.198328, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem12" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.271912, -18.364363, 27.478273)
-color = Color(5.0055983e-06, 0.8389714, 0.88756067, 1)
-
-[node name="Gem13" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6984076, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem14" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.228548, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem15" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.581253, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem16" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 32.507973)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
-
-[node name="Gem17" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.647696, -18.364363, 27.147034)
-color = Color(0.99705714, 0.62329054, 0.60385305, 1)
 
 [node name="ObeliskDebrisGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.72328, -18.657454, 257.47778)
