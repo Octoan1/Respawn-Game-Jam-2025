@@ -25,10 +25,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (open_door): 
-		var speed = 10
+		var speed = 2
 		door.position.y -= speed * delta 
 		gem_wall.position.y -= speed * delta
-		if door.position.y < -40: open_door = false
+		if door.position.y < -60: open_door = false
 
 func _on_display_gem(target: Gem):
 	var color: Color = target.color
