@@ -31,8 +31,12 @@ var star_start = StarButton.position.y
 var HourglassButton = $HourglassButton
 @onready
 var hourglass_start = HourglassButton.position.y
+
+#sounds
 const BUTTON_PRESS = preload("uid://db20s06eccs8k")
 @onready var press = $press
+const STONESLIDING = preload("uid://b3cakvjt2e5bk")
+@onready var reset = $reset
 
 signal move_walls
 
@@ -114,19 +118,18 @@ func solution_check() -> void:
 
 func reset_buttons() -> void:
 	if(move_sun_button == true && move_moon_button == true && move_hourglass_button == true && move_star_button == true && puzzle_complete == false):
+		reset.play()
 		move_sun_button = false
 		move_moon_button = false
 		move_hourglass_button = false
 		move_star_button = false
 		
-		print("puzzle resetting")
 		reset_button = true
 		solution = []
 
 func on_cooldown() -> void:
 	if(movement == false):
 		off_cooldown = true
-		print("Button cooldown refreshed!")
 	else:
 		$ButtonCooldown.start()
 
