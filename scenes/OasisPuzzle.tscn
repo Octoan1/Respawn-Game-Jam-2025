@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://er3kl7do4sbi"]
+
+[ext_resource type="PackedScene" uid="uid://bc5ei3whwiwgd" path="res://scenes/environment/props/Oasis.tscn" id="1_6saj5"]
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="2_20r3m"]
+[ext_resource type="Script" uid="uid://cco06rsbtx5hc" path="res://scenes/water.gd" id="3_q6ip3"]
+[ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_pah0b"]
+[ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="5_gu4qf"]
+[ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="6_cs2kc"]
+[ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="7_3w1f2"]
+[ext_resource type="PackedScene" uid="uid://cu2n8k86nlljv" path="res://scenes/TumbleweedGem.tscn" id="8_20r3m"]
+[ext_resource type="Script" uid="uid://gffedljgjbej" path="res://scenes/tumbleweed_gem.gd" id="9_q6ip3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h6e1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlw0p"]
+albedo_color = Color(0, 0.6509804, 0.80784315, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t3xx2"]
+radius = 0.4975586
+
+[node name="OasisPuzzle" type="Node3D"]
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(84.884445, 0, 0, 0, 10.989763, 0, 0, 0, 85.01229, 151.10236, -13.938105, 99.753685)
+transparency = 0.61
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_h6e1h")
+surface_material_override/0 = SubResource("StandardMaterial3D_vlw0p")
+script = ExtResource("3_q6ip3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Water"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+shape = SubResource("CylinderShape3D_t3xx2")
+
+[node name="Oasis" parent="." instance=ExtResource("1_6saj5")]
+transform = Transform3D(2, 0, 0, 0, 2.4536083, 0, 0, 0, 2, 146.48572, -11.301516, 104.692825)
+
+[node name="Map" parent="." instance=ExtResource("2_20r3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07030487, 2.0057564, -0.71668243)
+
+[node name="RoundRock" parent="." instance=ExtResource("4_pah0b")]
+transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 90.42649, -6.8029757, 82.63215)
+
+[node name="RoundRock2" parent="." instance=ExtResource("4_pah0b")]
+transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 85.67194, -6.8029757, 94.18468)
+
+[node name="LongRock" parent="." instance=ExtResource("5_gu4qf")]
+transform = Transform3D(2.6286495, 0, -6.8208113, 0, 7.309806, 0, 6.8208113, 0, 2.6286495, 97.395515, -10.238634, 116.537636)
+
+[node name="FlatRock" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.5974992, 0, -0.8018695, 0, 2.862, 0, 0.8018695, 0, 0.5974992, 114.44917, -2.840228, 120.2254)
+
+[node name="FlatRock2" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.5974992, 0, -0.8018695, 0, 2.862, 0, 0.8018695, 0, 0.5974992, 117.93936, -2.840229, 124.97613)
+
+[node name="FlatRock3" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.5974992, 0, -0.8018695, 0, 2.862, 0, 0.8018695, 0, 0.5974992, 121.64613, -2.840228, 129.70874)
+
+[node name="FlatRock4" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.80194247, 0, -0.5974012, 0, 2.862, 0, 0.5974012, 0, 0.80194247, 125.75015, -2.840228, 133.7312)
+
+[node name="FlatRock5" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.88999, 0, -0.45597988, 0, 2.862, 0, 0.45597988, 0, 0.88999, 130.85413, -2.840228, 136.52641)
+
+[node name="FlatRock6" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.943379, 0, -0.3317166, 0, 2.862, 0, 0.3317166, 0, 0.943379, 136.19518, -2.840228, 138.75697)
+
+[node name="FlatRock7" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.9657991, 0, -0.25929102, 0, 2.862, 0, 0.25929102, 0, 0.9657991, 141.81392, -2.840228, 140.81671)
+
+[node name="FlatRock10" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.99237275, 0, 0.123272374, 0, 2.862, 0, -0.123272374, 0, 0.99237275, 158.80699, -2.8402271, 140.5405)
+
+[node name="FlatRock11" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.99237275, 0, 0.123272374, 0, 2.862, 0, -0.123272374, 0, 0.99237275, 164.75307, -2.8402262, 139.65616)
+
+[node name="FlatRock12" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.9156205, 0, 0.40204358, 0, 2.862, 0, -0.40204358, 0, 0.9156205, 170.27798, -2.8402262, 138.07555)
+
+[node name="FlatRock13" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.8361712, 0, 0.54846823, 0, 2.862, 0, -0.54846823, 0, 0.8361712, 175.23001, -2.8402262, 135.01921)
+
+[node name="FlatRock14" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(0.7545149, 0, 0.6562828, 0, 2.862, 0, -0.6562828, 0, 0.7545149, 179.80827, -2.8402262, 131.47775)
+
+[node name="Gem" parent="." instance=ExtResource("7_3w1f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.34346, -7.8712125, 87.03421)
+color = Color(0, 0, 1, 1)
+
+[node name="TumbleweedGem" parent="." instance=ExtResource("8_20r3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.85513, -7.040966, -17.924622)
+script = ExtResource("9_q6ip3")
+
+[node name="Gem2" parent="." instance=ExtResource("7_3w1f2")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+color = Color(0, 1, 0.19215687, 1)
