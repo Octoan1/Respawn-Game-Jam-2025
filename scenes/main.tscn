@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c8k25itnq8soa" path="res://scenes/spawn_room.tscn" id="15_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://fose1jl4v8o" path="res://scenes/conners_branch.tscn" id="16_0ld40"]
 [ext_resource type="PackedScene" uid="uid://6n5o3114oxly" path="res://scenes/joey_decorations.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://ybh3kicc3qoh" path="res://scenes/parkour_challenge_branch.tscn" id="18_gqmmt"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
 resource_name = "GlobalInputs"
@@ -323,6 +324,8 @@ transform = Transform3D(-4.371139e-09, 0, -1, 0, 1, 0, 0.1, 0, -4.371139e-08, 4.
 [node name="Conner\'s Branch" parent="Objects" instance=ExtResource("16_0ld40")]
 
 [node name="joey-Decorations" parent="Objects" instance=ExtResource("17_0ld40")]
+
+[node name="ParkourChallengeBranch" parent="Objects" instance=ExtResource("18_gqmmt")]
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
