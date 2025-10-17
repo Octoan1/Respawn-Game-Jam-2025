@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://na1oipovgn4f"]
+
+[ext_resource type="ArrayMesh" uid="uid://lk6i0qp0qhql" path="res://assets/models/Tumbleweed.obj" id="1_1avtr"]
+[ext_resource type="Material" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_vikhi"]
+[ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="3_syep6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3jipt"]
+friction = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0p0rm"]
+transparency = 1
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(1, 0.44313726, 0, 1)
+albedo_texture = ExtResource("3_syep6")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(4, 4, 4)
+texture_filter = 0
+disable_receive_shadows = true
+
+[node name="TumbleweedSoccer" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+disable_mode = 2
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_3jipt")
+
+[node name="vertical" type="CollisionPolygon3D" parent="RigidBody3D"]
+depth = 0.8
+polygon = PackedVector2Array(-0.6154899, 0.5766059, -0.8496918, -0.0033229524, -0.598761, -0.62786174, -0.013256013, -0.82303, 0.31016594, -0.72823405, 0.594554, -0.5553706, 0.8287559, -0.0144753875, 0.6057065, 0.6100634, 0.009048998, 0.8331129)
+
+[node name="horizontal" type="CollisionPolygon3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+depth = 0.8
+polygon = PackedVector2Array(-0.6154899, 0.5766059, -0.8496918, -0.0033229524, -0.598761, -0.62786174, -0.013256013, -0.82303, 0.31016594, -0.72823405, 0.594554, -0.5553706, 0.8287559, -0.0144753875, 0.6057065, 0.6100634, 0.009048998, 0.8331129)
+
+[node name="diagonal1" type="CollisionPolygon3D" parent="RigidBody3D"]
+transform = Transform3D(1.06, 0, 0, 0, 0.7495331, -0.7495331, 0, 0.7495331, 0.7495331, 0, 0, 0)
+depth = 0.5
+polygon = PackedVector2Array(-0.6154899, 0.5766059, -0.8496918, -0.0033229524, -0.598761, -0.62786174, -0.013256013, -0.82303, 0.31016594, -0.72823405, 0.594554, -0.5553706, 0.8287559, -0.0144753875, 0.6057065, 0.6100634, 0.009048998, 0.8331129)
+
+[node name="diagonal2" type="CollisionPolygon3D" parent="RigidBody3D"]
+transform = Transform3D(1.06, 0, 0, 0, 0.7495331, 0.7495331, 0, -0.7495331, 0.7495331, 0, 0, 0)
+depth = 0.5
+polygon = PackedVector2Array(-0.6154899, 0.5766059, -0.8496918, -0.0033229524, -0.598761, -0.62786174, -0.013256013, -0.82303, 0.31016594, -0.72823405, 0.594554, -0.5553706, 0.8287559, -0.0144753875, 0.6057065, 0.6100634, 0.009048998, 0.8331129)
+
+[node name="shadow" type="MeshInstance3D" parent="RigidBody3D"]
+transparency = 1.0
+cast_shadow = 3
+mesh = ExtResource("1_1avtr")
+skeleton = NodePath("../..")
+
+[node name="outside" type="MeshInstance3D" parent="RigidBody3D"]
+material_override = ExtResource("2_vikhi")
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("1_1avtr")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_vikhi")
+
+[node name="inside" type="MeshInstance3D" parent="RigidBody3D/outside"]
+cast_shadow = 0
+mesh = ExtResource("1_1avtr")
+surface_material_override/0 = SubResource("StandardMaterial3D_0p0rm")

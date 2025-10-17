@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cev0gsburuygq"]
+[gd_scene load_steps=12 format=3 uid="uid://cev0gsburuygq"]
 
 [ext_resource type="Script" uid="uid://evogox0jp1n8" path="res://scenes/soccer_puzzle.gd" id="1_b1a20"]
-[ext_resource type="PackedScene" uid="uid://d4j25vdnf11ie" path="res://scenes/environment/props/Tumbleweed.tscn" id="2_yte0e"]
+[ext_resource type="PackedScene" uid="uid://na1oipovgn4f" path="res://scenes/environment/props/TumbleweedSoccer.tscn" id="2_b1a20"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="3_8reoo"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="3_b1a20"]
 [ext_resource type="Script" uid="uid://b3d3la5340ey" path="res://scripts/goal.gd" id="4_8reoo"]
 [ext_resource type="Script" uid="uid://bldegleck22kg" path="res://scripts/show_flip.gd" id="4_yte0e"]
+[ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="7_s3fa3"]
 
 [sub_resource type="TextMesh" id="TextMesh_pgajp"]
 text = "2"
@@ -22,8 +23,8 @@ text = "1"
 [node name="SoccerPuzzle" type="Node3D"]
 script = ExtResource("1_b1a20")
 
-[node name="Tumbleweed" parent="." instance=ExtResource("2_yte0e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8612366, -9.025337, 19.372765)
+[node name="TumbleweedSoccer" parent="." instance=ExtResource("2_b1a20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.087734, -9.027828, 19.726028)
 
 [node name="Arch2" parent="." instance=ExtResource("3_8reoo")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -9.886, 20)
@@ -73,3 +74,5 @@ script = ExtResource("4_yte0e")
 [node name="Gem" parent="." instance=ExtResource("3_b1a20")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.022076, -11.111679, -20.96394)
 color = Color(0.015686275, 0.7529412, 0.9843137, 1)
+
+[node name="Map" parent="." instance=ExtResource("7_s3fa3")]
