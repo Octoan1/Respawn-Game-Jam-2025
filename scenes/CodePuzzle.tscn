@@ -63,7 +63,7 @@ transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08
 mesh = SubResource("TextMesh_s12g7")
 
 [node name="Obelisk_Tri" parent="." instance=ExtResource("2_hsdbb")]
-transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -114.22306, -16.009, -36.636032)
+transform = Transform3D(1.9510453, 0, 0, 0, 1.7038836, 0, 0, 0, 1.9000001, -56.108215, -16.009008, -61.98661)
 script = ExtResource("3_hsdbb")
 rise_time = 12
 sink_time = 14
@@ -149,3 +149,9 @@ num = 3
 [node name="ButtonTri" parent="." instance=ExtResource("6_s536q")]
 transform = Transform3D(-8.0391565e-08, 4.405165, -1.8391451, 1.3924229e-07, 2.543323, 3.1854928, 3.6782904, -7.8992593e-22, -1.6078315e-07, -172.27525, -7.4098854, -116.849884)
 num = 2
+
+[node name="Obelisk" parent="." instance=ExtResource("2_hsdbb")]
+transform = Transform3D(0.8063311, -0.34935558, 0.47726393, 0, 0.80691916, 0.59066206, -0.5914645, -0.47626922, 0.650644, -163.86604, -9.71427, -131.03262)
+
+[node name="Obelisk2" parent="." instance=ExtResource("2_hsdbb")]
+transform = Transform3D(1, 0, 0, 0, 0.88362676, -0.468192, 0, 0.468192, 0.88362676, -168.62085, -8.889374, -111.49844)
