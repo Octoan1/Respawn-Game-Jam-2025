@@ -86,7 +86,7 @@ func set_game_end(score: int):
 	var days_taken_label: Label = end_screen.find_child("DaysTaken")
 	
 	# update labels
-	gems_collected_label.text = "Gems Collected: %d out of -1" %score
+	gems_collected_label.text = "Gems Collected: %d out of 20" %score
 	days_taken_label.text = "Time Spent: %d days" %GlobalTime.day_counter
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

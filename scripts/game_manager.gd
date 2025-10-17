@@ -5,7 +5,7 @@ signal all_gems_collected()
 
 var gems_collected: Array[Gem] 
 var score: int = 0
-const MAX_SCORE = 3
+const SCORE_FOR_DOOR = 16
 
 
 func add_gem(gem: Gem) -> void:
@@ -19,7 +19,7 @@ func add_gem(gem: Gem) -> void:
 		print("Gem collected:", gem.name, ", Total gems:", gems_collected.size())
 	
 	# When max reached, emit signal
-	if score == MAX_SCORE:
+	if score == SCORE_FOR_DOOR:
 		print("All gems collected! Opening pyramid door...")
 		all_gems_collected.emit()
 		
