@@ -35,7 +35,7 @@ var hourglass_start = HourglassButton.position.y
 #sounds
 const BUTTON_PRESS = preload("uid://db20s06eccs8k")
 @onready var press = $press
-const STONESLIDING = preload("uid://b3cakvjt2e5bk")
+const STONESLIDING = preload("uid://dca3akkbbitk5")
 @onready var reset = $reset
 
 signal move_walls
