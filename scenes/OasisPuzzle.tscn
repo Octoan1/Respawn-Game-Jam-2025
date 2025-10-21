@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://er3kl7do4sbi"]
 
-[ext_resource type="PackedScene" uid="uid://525vqtybje7r" path="res://scenes/environment/props/Oasis.tscn" id="1_6saj5"]
+[ext_resource type="PackedScene" uid="uid://bc5ei3whwiwgd" path="res://scenes/environment/props/Oasis.tscn" id="1_6saj5"]
 [ext_resource type="Script" path="res://scenes/water.gd" id="3_q6ip3"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_pah0b"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="5_gu4qf"]
@@ -44,13 +44,13 @@ color = Color(0, 1, 0.19215687, 1)
 transform = Transform3D(2, 0, 0, 0, 2.4536083, 0, 0, 0, 2, 146.48572, -11.301516, 104.692825)
 
 [node name="RoundRock" parent="." instance=ExtResource("4_pah0b")]
-transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 90.42649, -6.8029757, 82.63215)
+transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 86.57679, -7.930566, 82.854454)
 
 [node name="RoundRock2" parent="." instance=ExtResource("4_pah0b")]
-transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 85.67194, -6.8029757, 94.18468)
+transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 85.67194, -8.254159, 94.18468)
 
 [node name="LongRock" parent="." instance=ExtResource("5_gu4qf")]
-transform = Transform3D(2.6286495, 0, -6.8208113, 0, 7.309806, 0, 6.8208113, 0, 2.6286495, 97.395515, -10.238634, 116.537636)
+transform = Transform3D(2.6286495, 0, -6.8208113, 0, 7.309806, 0, 6.8208113, 0, 2.6286495, 97.395515, -10.872866, 116.537636)
 
 [node name="FlatRock" parent="." instance=ExtResource("6_cs2kc")]
 transform = Transform3D(0.5974992, 0, -0.8018695, 0, 2.862, 0, 0.8018695, 0, 0.5974992, 114.44917, -2.840228, 120.2254)
@@ -100,16 +100,16 @@ script = ExtResource("9_q6ip3")
 transform = Transform3D(0.15089856, 0, -0.98854923, 0, 1.3702539, 0, 0.98854923, 0, 0.15089856, 175.24118, -7.880472, 142.07617)
 
 [node name="Tree2" parent="." instance=ExtResource("10_cs2kc")]
-transform = Transform3D(0.7838018, 0, 0.6210111, 0, 1.3702539, 0, -0.6210111, 0, 0.7838018, 105.534515, -7.880472, 136.86958)
+transform = Transform3D(0.7838018, 0, 0.6210111, 0, 1.3702539, 0, -0.6210111, 0, 0.7838018, 105.534515, -9.281263, 136.86958)
 
 [node name="Tree3" parent="." instance=ExtResource("10_cs2kc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.275604, -3.4336076, 130.36913)
 
 [node name="Tree4" parent="." instance=ExtResource("10_cs2kc")]
-transform = Transform3D(-0.8360564, 0, -0.54864347, 0, 1, 0, 0.54864347, 0, -0.8360564, 172.75606, -9.886229, 160.5671)
+transform = Transform3D(-1.0032678, 0, -0.65837216, 0, 1.2, 0, 0.65837216, 0, -1.0032678, 172.75606, -11.345825, 160.5671)
 
 [node name="Tree5" parent="." instance=ExtResource("10_cs2kc")]
-transform = Transform3D(-0.8360564, 0, -0.54864347, 0, 1, 0, 0.54864347, 0, -0.8360564, 161.54047, -9.886229, 169.39328)
+transform = Transform3D(-1.0868733, 0, -0.7132365, 0, 1.3, 0, 0.7132365, 0, -1.0868733, 161.54047, -11.8139, 169.39328)
 
 [node name="RockCluster" parent="." instance=ExtResource("11_3w1f2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.05495, -7.9202185, 105.38217)
@@ -128,3 +128,12 @@ transform = Transform3D(1.8796945, -5.1359777, 2.5674174, 5.4695563, 2.423747, 0
 
 [node name="FlatRock8" parent="." instance=ExtResource("6_cs2kc")]
 transform = Transform3D(-0.023787942, 0.13429804, -1.8246878, 0.76748514, 4.739319, 0.03257958, 1.6560959, -2.194415, -0.041307937, 147.81601, -7.08862, 131.64607)
+
+[node name="TallRock2" parent="." instance=ExtResource("12_h6e1h")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 83.295425, -8.77198, 75.23931)
+
+[node name="FlatRock9" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(-2.0264247e-07, 4.912372e-08, 3, 1.8730329, 2.7815516, 0, -4.6359196, 1.1238197, -1.3113416e-07, 149.32509, -8.24312, 158.23743)
+
+[node name="FlatRock15" parent="." instance=ExtResource("6_cs2kc")]
+transform = Transform3D(1.3096763, 0, 0.5075384, 0, 2.8, 0, -0.7714583, 0, 0.8616291, 175.5052, -4.7883554, 134.8424)

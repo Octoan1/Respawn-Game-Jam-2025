@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cu2n8k86nlljv"]
 
 [ext_resource type="ArrayMesh" uid="uid://lk6i0qp0qhql" path="res://assets/models/Tumbleweed.obj" id="1_r65f3"]
-[ext_resource type="Material" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_hxrf8"]
+[ext_resource type="Material" uid="uid://c52ovn8l3iyla" path="res://scenes/environment/props/OutsideTumbleweed.tres" id="2_hxrf8"]
 [ext_resource type="Texture2D" uid="uid://bkihpl4l4lkvt" path="res://assets/textures/TubleWeed.png" id="3_xd4f8"]
 [ext_resource type="ArrayMesh" uid="uid://n4vcu1jpv4lr" path="res://assets/models/Gem.obj" id="4_t63d6"]
 
@@ -28,6 +28,7 @@ metallic = 0.75
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 disable_mode = 2
 collision_layer = 2
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_p71c4")
 
 [node name="vertical" type="CollisionPolygon3D" parent="RigidBody3D"]

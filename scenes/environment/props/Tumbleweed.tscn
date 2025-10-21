@@ -21,10 +21,11 @@ disable_receive_shadows = true
 [node name="Tumbleweed" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-disable_mode = 2
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_3hfcc")
+sleeping = true
+freeze_mode = 1
 
 [node name="vertical" type="CollisionPolygon3D" parent="RigidBody3D"]
 depth = 0.8
