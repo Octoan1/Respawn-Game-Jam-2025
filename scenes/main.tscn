@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=37 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -43,26 +43,6 @@ func _unhandled_input(event):
 		sub_viewport.push_input(event)
 "
 
-[sub_resource type="Shader" id="Shader_tbgi4"]
-code = "shader_type canvas_item;
-
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-}
-
-//void light() {
-//	// Called for every pixel for every light affecting the CanvasItem.
-//	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
-shader = SubResource("Shader_tbgi4")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
 viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
 
@@ -102,7 +82,6 @@ script = SubResource("GDScript_tbgi4")
 [node name="Objects" type="Node" parent="."]
 
 [node name="PlayerPostProcess" type="TextureRect" parent="Objects"]
-material = SubResource("ShaderMaterial_o6xl0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -113,7 +92,6 @@ texture = SubResource("ViewportTexture_tipki")
 expand_mode = 1
 
 [node name="PostProcessViewport" type="SubViewport" parent="Objects/PlayerPostProcess"]
-anisotropic_filtering_level = 0
 canvas_item_default_texture_filter = 0
 canvas_item_default_texture_repeat = 1
 size = Vector2i(320, 240)
