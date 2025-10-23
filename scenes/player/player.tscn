@@ -22,13 +22,17 @@ size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Player" type="CharacterBody3D"]
 disable_mode = 2
+wall_min_slide_angle = 0.80285144
 floor_stop_on_slope = false
+safe_margin = 0.1
 script = ExtResource("1_3vyb7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("BoxShape3D_dovo2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("CapsuleMesh_3vyb7")
@@ -54,11 +58,6 @@ seed = 3861090122
 fixed_fps = 20
 process_material = SubResource("ParticleProcessMaterial_dovo2")
 draw_pass_1 = SubResource("BoxMesh_dovo2")
-
-[node name="AudioListener3D" type="AudioListener3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43030643, 0)
-doppler_tracking = 1
-current = true
 
 [connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
 [connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]
