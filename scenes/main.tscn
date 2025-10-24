@@ -246,6 +246,9 @@ color = Color(0.8805438, 0.4527315, 0.13600078, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.00494, -19.77246, 151.91632)
 color = Color(0.11848802, 0.41139224, 0.44338465, 1)
 
+[node name="MeshInstance3D" parent="Objects/GemContainer/ObeliskCircleGem" index="0"]
+cast_shadow = 3
+
 [node name="GemUnderSlope" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.241068, -19.042875, 332.75644)
 color = Color(0.44177777, 0.46478605, 0.80874044, 1)
@@ -545,3 +548,5 @@ stretch_mode = 1
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("27_vxglm")
 bake_simplification_distance = 2.0
+
+[editable path="Objects/GemContainer/ObeliskCircleGem"]

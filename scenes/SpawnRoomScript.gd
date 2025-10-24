@@ -3,10 +3,12 @@ extends Node3D
 var moving = false
 var won = false
 var speed = 1
+@onready var collision_shape_3d: CollisionShape3D = $Gem/MeshInstance3D/StaticBody3D/CollisionShape3D
 
 func _ready():
 	# if this is in a different main scene thing, change "jump_puzzle" to "main" etc.
 	$Gem.visible = false
+	collision_shape_3d.disabled = true
 	var button = %SpawnButtons
 	if button:
 		button.connect("move_walls", Callable(self, "walls_move"))
@@ -15,7 +17,6 @@ func _ready():
 func walls_move() -> void:
 	print("signal acquired")
 	moving = true
-	$Gem.visible = true
 
 func _process(delta: float) -> void:
 	var door = false
@@ -38,6 +39,8 @@ func _process(delta: float) -> void:
 			door = true
 		if(GameManager.score == 0):
 			if($Gem):
+				$Gem.visible = true
+				collision_shape_3d.disabled = false
 				if($Gem.position.y >= 0.5):
 					$Gem.position.y = $Gem.position.y - delta*2
 		elif(door):

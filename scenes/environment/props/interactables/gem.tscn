@@ -21,10 +21,10 @@ script = ExtResource("1_oywcy")
 mesh = ExtResource("1_4yqmr")
 surface_material_override/0 = SubResource("StandardMaterial3D_4yqmr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 physics_material_override = SubResource("PhysicsMaterial_4yqmr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024123192, 0.62852097, -0.0044517517)
 shape = SubResource("BoxShape3D_b77ts")
 

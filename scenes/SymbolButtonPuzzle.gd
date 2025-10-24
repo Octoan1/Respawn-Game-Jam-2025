@@ -108,11 +108,10 @@ func sun_button_pressed(body: Node3D) -> void:
 
 # Code: Sun moon star hourglass
 func solution_check() -> void:
-	print("Checking solution!")
-	if(solution.get(0) == "sun" && solution.get(1) == "moon" && solution.get(2) == "star" && solution.get(3) == "hourglass"):
-		puzzle_complete = true
-		print("puzzle complete!")
-		emit_signal("move_walls")
+	if(!puzzle_complete):
+		if(solution.get(0) == "sun" && solution.get(1) == "moon" && solution.get(2) == "star" && solution.get(3) == "hourglass"):
+			puzzle_complete = true
+			emit_signal("move_walls")
 
 func reset_buttons() -> void:
 	if(move_sun_button == true && move_moon_button == true && move_hourglass_button == true && move_star_button == true && puzzle_complete == false):
