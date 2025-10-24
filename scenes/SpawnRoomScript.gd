@@ -20,24 +20,25 @@ func walls_move() -> void:
 func _process(delta: float) -> void:
 	var door = false
 	if(moving == true and !won):
-		if($Wall.position.y >= -50):
+		if($Wall.position.y >= -15):
 			$Wall.position.y = $Wall.position.y - delta*speed
 		else:
 			door = true
-		if($Wall2.position.y >= -50):
+		if($Wall2.position.y >= -15):
 			$Wall2.position.y = $Wall2.position.y - delta*speed
 		else:
 			door = true
-		if($Wall3.position.y >= -50):
+		if($Wall3.position.y >= -15):
 			$Wall3.position.y = $Wall3.position.y - delta*speed
 		else:
 			door = true
-		if($Wall4.position.y >= -50):
+		if($Wall4.position.y >= -15):
 			$Wall4.position.y = $Wall4.position.y - delta*speed
 		else:
 			door = true
-		if($Gem):
-			if($Gem.position.y >= 0.5):
-				$Gem.position.y = $Gem.position.y - delta*2
+		if(GameManager.score == 0):
+			if($Gem):
+				if($Gem.position.y >= 0.5):
+					$Gem.position.y = $Gem.position.y - delta*2
 		elif(door):
 			won = true
