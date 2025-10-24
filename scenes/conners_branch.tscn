@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://fose1jl4v8o"]
+[gd_scene load_steps=25 format=3 uid="uid://fose1jl4v8o"]
 
 [ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="1_j2lli"]
 [ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="2_faykp"]
 [ext_resource type="PackedScene" uid="uid://ds7ijrojuic5k" path="res://scenes/environment/props/Pillar.tscn" id="3_qb311"]
 [ext_resource type="Script" uid="uid://wy23ue3rentm" path="res://scenes/environment/props/platform_rise.gd" id="4_b4cqg"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="6_wom2h"]
-[ext_resource type="Script" uid="uid://6ypoga7aqwc1" path="res://scenes/textGone.gd" id="7_faykp"]
 [ext_resource type="Material" uid="uid://bgw8aqfaifdlg" path="res://scenes/minty_green.tres" id="7_kj0k2"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="8_3qyae"]
 [ext_resource type="Script" uid="uid://dgivkhyi1dgah" path="res://scenes/text.gd" id="8_qb311"]
@@ -56,15 +55,10 @@ text = "             ☐
 ☐☐☐   ☐
 ☐       ☐☐
 ☐☐          
-      ☐☐   
+      ☐      
 "
 font_size = 18
 line_spacing = -7.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_e755i"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro3en"]
-albedo_color = Color(0.972549, 0.09803922, 0.20392157, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxywd"]
 albedo_color = Color(0.18631536, 0.31521547, 1, 1)
@@ -415,26 +409,11 @@ mesh = SubResource("BoxMesh_tm6hj")
 [node name="text" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5122032)
 mesh = SubResource("TextMesh_t5ykj")
-script = ExtResource("7_faykp")
 
 [node name="solution_text" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzleKeyWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5122032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.52733994)
 mesh = SubResource("TextMesh_0vnx5")
 script = ExtResource("8_qb311")
-
-[node name="PuzzlePartialKey" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.624619, -1.9311664, 24.182617)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzlePartialKey"]
-material_override = ExtResource("7_kj0k2")
-mesh = SubResource("BoxMesh_e755i")
-
-[node name="PuzzlePartialKey2" type="Node3D" parent="InvisiblePathPuzzle/PuzzleKey"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.868698, -1.9311664, 24.182617)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="InvisiblePathPuzzle/PuzzleKey/PuzzlePartialKey2"]
-material_override = SubResource("StandardMaterial3D_ro3en")
-mesh = SubResource("BoxMesh_e755i")
 
 [node name="Decorations" type="Node3D" parent="InvisiblePathPuzzle"]
 
@@ -451,7 +430,7 @@ transform = Transform3D(2.7032018, -1.2303215, 0, 1.8928022, 1.7570812, 0, 0, 0,
 transform = Transform3D(-1.207687e-07, 4.5871495e-08, -1.92, 1.6144885, 1.7958627, 5.5198633e-16, 2.7628658, -1.0494174, -8.392586e-08, -28.327072, -6.466961, 4.8987274)
 
 [node name="FlatRock2" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("6_wom2h")]
-transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 38.949448, -9.485428, -0.0019378662)
+transform = Transform3D(-1.4313855, 0, 0.83809835, 0, 1.3, 0, -1.3968306, 0, -0.85883135, 35.776024, -9.485428, 3.903473)
 
 [node name="TallRock" parent="InvisiblePathPuzzle/Decorations" instance=ExtResource("9_0lppu")]
 transform = Transform3D(0.8240609, -0.9650273, -0.42858362, 0, 0.6499999, -0.86602545, 1.3714677, 0.57984686, 0.257519, 62.56356, -10.453514, 5.780014)
