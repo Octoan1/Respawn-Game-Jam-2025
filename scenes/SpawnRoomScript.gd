@@ -20,7 +20,7 @@ func walls_move() -> void:
 
 func _process(delta: float) -> void:
 	var door = false
-	if(moving == true and !won):
+	if(moving == true and !won && !door):
 		if($Wall.position.y >= -15):
 			$Wall.position.y = $Wall.position.y - delta*speed
 		else:
