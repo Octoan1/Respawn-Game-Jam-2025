@@ -140,7 +140,7 @@ transform = Transform3D(-8.742277e-08, 1.9999999, 0, -1.9999999, -8.742277e-08, 
 transform = Transform3D(1.9999999, 0, 0, 0, -8.742277e-08, 2, 0, -1.9999999, -8.742278e-08, 271.25345, -0.779135, -54.517742)
 
 [node name="Pillar18" parent="." instance=ExtResource("2_e2gki")]
-transform = Transform3D(1.3, 0, 0, 0, 2.6, 0, 0, 0, 1.3, 285.44547, -19.095102, -84.452484)
+transform = Transform3D(1.3, 0, 0, 0, 2.6, 0, 0, 0, 1.3, 285.445, -19.697, -84.452)
 
 [node name="FlatRock4" parent="." instance=ExtResource("6_howqw")]
 transform = Transform3D(1.9577348, -0.40899208, 0, 0.40005463, 1.9149537, -0.4158234, 0.08503424, 0.40703598, 1.9562953, 303.0243, -5.1008844, -97.3962)
