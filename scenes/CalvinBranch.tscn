@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://txqikdwfiu0y"]
+[gd_scene load_steps=11 format=3 uid="uid://txqikdwfiu0y"]
 
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="1_vgdyd"]
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="2_rt4wv"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="3_wy0ms"]
+[ext_resource type="PackedScene" uid="uid://cqixnefgk5m86" path="res://scenes/environment/props/Arch.tscn" id="5_deq55"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wy0ms"]
+albedo_color = Color(0.6355698, 0.2352941, 1, 1)
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deq55"]
+albedo_color = Color(0.8359375, 0.1697998, 0.1697998, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kf1ym"]
+albedo_color = Color(0.2352941, 1, 0.7311581, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p66q"]
+albedo_color = Color(0.9843137, 0.4, 0.5803922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7h88q"]
+albedo_color = Color(1, 0.59375, 0.2352941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sdqh"]
+albedo_color = Color(0.2412684, 1, 0.2352941, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Arch3" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(4.074153, 0, -9.808383, 0, 10, 0, 8.025041, 0, 4.979521, -77.11345, -19.755531, -152.18976)
+
+[node name="MeshInstance3D" parent="Arch3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.2165356, 0, 0.92515516)
+surface_material_override/0 = SubResource("StandardMaterial3D_wy0ms")
 
 [node name="LongRock" parent="." instance=ExtResource("1_vgdyd")]
 transform = Transform3D(4.829629, 0, -1.2940953, 0, 5, 0, 1.2940953, 0, 4.829629, -296.7371, -20.33036, -207.31825)
@@ -29,3 +56,47 @@ transform = Transform3D(2.025326, -0.49197266, -1.3909981, 1.0270442, 1.8791463,
 
 [node name="FlatRock3" parent="." instance=ExtResource("3_wy0ms")]
 transform = Transform3D(4.8243036, -0.7882853, 0, 1.3138089, 2.8945823, 0, 0, 0, 5, -296.42963, -17.386997, -195.98337)
+
+[node name="Arch" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(8.914477, 0, -1.5128407, 0, 10, 0, 1.2377789, 0, 10.895473, -152.52777, -19.772457, -40.48352)
+
+[node name="MeshInstance3D" parent="Arch" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 2.9802322e-08, 0, 1, -2.476408, 0, -0.26226723)
+surface_material_override/0 = SubResource("StandardMaterial3D_deq55")
+
+[node name="Arch2" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(9, 0, 0, 0, 10, 0, 0, 0, 11, 140.07628, -19.772457, -47.621735)
+
+[node name="MeshInstance3D" parent="Arch2" index="0"]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, -0.63331795, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_kf1ym")
+
+[node name="Arch4" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(6.321615, 0, 7.8295903, 0, 9.999998, 0, -6.4060283, 0, 7.7264166, 106.54915, -19.772457, -152.97131)
+
+[node name="MeshInstance3D" parent="Arch4" index="0"]
+transform = Transform3D(1, 0, -2.3841858e-07, 0, 1.0000023, 0, 2.9802322e-08, 0, 1, -0.8693943, 0, -1.1276307)
+surface_material_override/0 = SubResource("StandardMaterial3D_3p66q")
+
+[node name="Arch5" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(6.8349757, 0, -7.1563306, 0, 10, 0, 5.8551793, 0, 8.353858, 87.62454, -19.772457, 53.206787)
+
+[node name="MeshInstance3D" parent="Arch5" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7h88q")
+
+[node name="CollisionShape3D" parent="Arch5/MeshInstance3D/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.9999999, 0, 0, 0)
+
+[node name="Arch6" parent="." instance=ExtResource("5_deq55")]
+transform = Transform3D(-0.046023846, 0, 10.999856, 0, 10.000001, 0, -8.999884, 0, -0.056252003, -1.5433731, -19.754238, 90.49426)
+
+[node name="MeshInstance3D" parent="Arch6" index="0"]
+transform = Transform3D(0.99999994, 0, 4.656613e-10, 0, 0.9999999, 0, -4.656613e-10, 0, 1, 0.0018424988, 0, -0.29481918)
+surface_material_override/0 = SubResource("StandardMaterial3D_6sdqh")
+
+[editable path="Arch3"]
+[editable path="Arch"]
+[editable path="Arch2"]
+[editable path="Arch4"]
+[editable path="Arch5"]
+[editable path="Arch6"]
