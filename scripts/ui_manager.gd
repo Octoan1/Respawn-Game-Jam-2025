@@ -59,6 +59,9 @@ func set_paused(paused: bool):
 	
 	current_ui_state = UIState.PAUSED if paused else UIState.NORMAL
 	
+	var gems_collected_label: Label = pause_menu.find_child("Gems Collected")
+	gems_collected_label.text = "Gems Collected: %d/24" %GameManager.score
+	
 	#get_tree().paused = paused
 	GlobalTime.stopped = paused
 	pause_menu.visible = paused

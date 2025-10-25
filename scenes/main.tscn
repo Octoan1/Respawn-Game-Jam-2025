@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
 [ext_resource type="Script" uid="uid://r2wqyo83o31q" path="res://scripts/reset_manager.gd" id="2_85g3d"]
 [ext_resource type="Script" uid="uid://soqf1r4ntq6" path="res://scenes/moon.gd" id="3_o6xl0"]
-[ext_resource type="PackedScene" path="res://scenes/box_test.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://la87aneavtp7" path="res://scenes/box_test.tscn" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://btf5arbs8djy5" path="res://assets/crosshair.svg" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://udesrlmps4m4" path="res://scenes/environment/props/map.tscn" id="6_tipki"]
@@ -318,10 +318,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -116.99997
-offset_top = -256.0
-offset_right = -67.0
-offset_bottom = -225.0
+offset_left = -146.0
+offset_top = -246.0
+offset_right = -96.00003
+offset_bottom = -215.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(5.3333917, 3.1908126)
@@ -348,6 +348,20 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.6627451)
 
+[node name="ColorRect2" type="ColorRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = 227.0
+offset_right = 173.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.708819, -0.008597563)
+mouse_filter = 1
+
 [node name="Label" type="Label" parent="UI/PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
@@ -355,15 +369,54 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = -11.5
-offset_right = 31.0
-offset_bottom = 11.5
+offset_left = -96.0
+offset_top = -188.0
+offset_right = 97.0
+offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
-text = "PAUSED"
+text = "PAUSED!!!!"
+
+[node name="Gems Collected" type="Label" parent="UI/PauseMenu"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -555.0
+offset_top = -308.0
+offset_right = -34.0
+offset_bottom = -239.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "Gems Collected: 0/24"
+
+[node name="Tooltips" type="Label" parent="UI/PauseMenu"]
+modulate = Color(0.74138474, 0.7413847, 0.74138457, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -66.0
+offset_right = 319.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "- Collect gems to win 
+- use WASD to move
+- can interact with things 
+- time effects world "
 
 [node name="InfoScreen" type="Control" parent="UI"]
 visible = false
@@ -385,39 +438,35 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.14117648, 0.14117648, 0.14117648, 0.8784314)
 
-[node name="Label" type="Label" parent="UI/InfoScreen"]
+[node name="Label2" type="Label" parent="UI/InfoScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -322.0
-offset_top = -249.0
-offset_right = 288.0
-offset_bottom = 36.0
+offset_left = -461.0
+offset_top = -194.0
+offset_right = 458.0
+offset_bottom = 308.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_font_sizes/font_size = 50
-text = "- Collect gems to win 
-- use WASD to move
-- can interact with things 
-- time effects world "
+theme_override_font_sizes/font_size = 30
+text = "Welcome to the Desert of Time! To restore a normal cycle of day and night, you must repair the Pharaoh's pyramid by collecting gems scattered across the dunes. Click on a gem to collect it. Keep in mind that some gems can only be obtained at day, and some only at night! Be careful, since you shall reincarnate at this point each morning. Good luck! "
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="ContinueButton" type="Button" parent="UI/InfoScreen"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -234.0
-offset_top = -221.0
-offset_right = -155.0
-offset_bottom = -190.0
+offset_left = -211.0
+offset_top = 449.0
+offset_right = -132.0
+offset_bottom = 480.0
 grow_horizontal = 2
-grow_vertical = 0
 scale = Vector2(5.3333917, 3.1908126)
 text = "Continue"
 
