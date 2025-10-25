@@ -127,5 +127,5 @@ mesh = ExtResource("5_uh8t4")
 shape = SubResource("ConvexPolygonShape3D_km1ug")
 
 [node name="Gem" parent="." instance=ExtResource("8_km1ug")]
-transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -1.8779999, 11.246007, 180.62)
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -1.878, 8, 180.62)
 color = Color(0.827451, 0.6862745, 0.21568628, 1)
