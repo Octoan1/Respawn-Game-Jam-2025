@@ -9,9 +9,7 @@ var base_color : Color = Color(0.8, 0.8, 0.9)
 
 func _ready() -> void:
 	scale = Vector3.ONE * moon_size
-	if material_override == null:
-		material_override = StandardMaterial3D.new()
-	material_override.albedo_color = base_color
+	
 	#material_override.unshaded = true
 
 func _process(_delta: float) -> void:
@@ -29,8 +27,7 @@ func _process(_delta: float) -> void:
 	global_position = Vector3(0, height, forward)
 
 	# Smoothly fade visibility based on sun position
-	var night_factor = clamp(abs(cos(deg_to_rad(sun_angle_deg))), 0.8, 1.0)
-	material_override.albedo_color = base_color * night_factor * max_brightness
+	
 	
 	if(t < 1 or t > 11):
 		visible = true
