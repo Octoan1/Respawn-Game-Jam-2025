@@ -7,13 +7,13 @@
 [node name="Maze" type="Node3D"]
 
 [node name="LongRock" parent="." instance=ExtResource("1_h1dk6")]
-transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -86.37062, -2.7825842, -4.701662)
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -94.86792, -2.7825842, -4.701662)
 
 [node name="LongRock2" parent="." instance=ExtResource("1_h1dk6")]
-transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -86.37062, -2.7825842, -37.09247)
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -5.4025083, 0, -94.86792, -2.7825842, -37.09247)
 
 [node name="LongRock3" parent="." instance=ExtResource("1_h1dk6")]
-transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -3.5100238, 0, -86.37062, -2.7825842, -22.129848)
+transform = Transform3D(5.402508, 0, 0, 0, 0, 5.4025083, 0, -3.5100238, 0, -94.86792, -2.7825842, -22.129848)
 
 [node name="RoundRock" parent="." instance=ExtResource("2_i3brf")]
 transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -115.33891, -6.2657886, -18.403875)
@@ -42,6 +42,3 @@ transform = Transform3D(1.8833842, 0, 2.967167, 0, 3.5144296, 0, -2.967167, 0, 1
 [node name="Gem" parent="." instance=ExtResource("3_722ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -176.12221, -6.652583, -28.652544)
 color = Color(0.99607843, 0, 0.6313726, 1)
-
-[node name="RoundRock7" parent="." instance=ExtResource("2_i3brf")]
-transform = Transform3D(3.5144296, 0, 0, 0, 3.5144296, 0, 0, 0, 3.5144296, -104.96706, -6.2657886, -24.006456)
