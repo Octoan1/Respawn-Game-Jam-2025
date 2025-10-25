@@ -11,6 +11,9 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 
+# Coyote time stuff
+var coyote_time_active := true
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -39,9 +42,14 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		if %CoyoteTimer.is_stopped():
+			%CoyoteTimer.start()
+	else:
+		coyote_time_active = true
+		%CoyoteTimer.stop()
 
 	# Handle Jump.
-	if Input.is_action_pressed("jump") and (is_on_floor() or can_fly):
+	if Input.is_action_pressed("jump") and (coyote_time_active or can_fly):
 		velocity.y = JUMP_VELOCITY
 		
 	# Interaction 
@@ -91,3 +99,7 @@ func _on_area_3d_body_entered(body: Node3D):
 	emit_signal("area_entered", body)
 	
 	
+
+
+func _on_coyote_timer_timeout() -> void:
+	coyote_time_active = false

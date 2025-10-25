@@ -59,5 +59,10 @@ fixed_fps = 20
 process_material = SubResource("ParticleProcessMaterial_dovo2")
 draw_pass_1 = SubResource("BoxMesh_dovo2")
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.2
+
 [connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
 [connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
