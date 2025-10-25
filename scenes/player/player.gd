@@ -37,7 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			SPEED = 12
 			JUMP_VELOCITY = 4.5
 			can_fly = false
-	
+	elif event.is_action_pressed("time_forward"):
+		GlobalTime.time_of_day += 1
+	elif event.is_action_pressed("time_backward"):
+		GlobalTime.time_of_day -= 1
+
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * Settings.MOUSE_X)
