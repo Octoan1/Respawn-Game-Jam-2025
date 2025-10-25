@@ -23,10 +23,6 @@ text = "7"
 
 [node name="ShadowPuzzle" type="Node3D"]
 
-[node name="Gem" parent="." instance=ExtResource("8_km1ug")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.878, 11.246, 180.62)
-color = Color(0.827451, 0.6862745, 0.21568628, 1)
-
 [node name="LongRock" parent="." instance=ExtResource("2_qh8n0")]
 transform = Transform3D(0.67033786, -9.593308, -0.8547665, 8.156234, 0.89053005, -0.85688084, 0.92011327, -0.9049112, 8.218445, 2.797113, -11.8661, 182.84834)
 
@@ -34,7 +30,7 @@ transform = Transform3D(0.67033786, -9.593308, -0.8547665, 8.156234, 0.89053005,
 transform = Transform3D(-1.7963562e-07, 1.3461457e-07, -5.1354413, 3.4859424, 3.7710707, -2.3086269e-08, 3.7710707, -3.4859424, -2.2328696e-07, -3.9807038, -0.95371723, 166.32112)
 
 [node name="Key Pad" parent="." instance=ExtResource("3_oae73")]
-transform = Transform3D(-5.8046457e-10, -9.414871e-09, 0.15266567, -0.08913688, 0.13009119, 3.3366148e-09, -0.066797026, -0.17359939, -5.779186e-09, -1.8786627, 12.504196, 180.6237)
+transform = Transform3D(-1.9365196e-09, -1.923441e-08, 0.3, -0.17765321, 0.23987213, 6.5567103e-09, -0.13312903, -0.32009587, -1.3113417e-08, -1.8786627, 12.504196, 180.6237)
 script = ExtResource("4_wj11y")
 
 [node name="ButtonKeyPad" parent="Key Pad" instance=ExtResource("4_j28p2")]
@@ -74,7 +70,7 @@ transform = Transform3D(0.6384611, -5.9604645e-08, 1.0658141e-14, 0, 0.6384621, 
 key_num = 9
 
 [node name="Pillar" parent="." instance=ExtResource("4_y6it1")]
-transform = Transform3D(0.29008177, 0, 0, 0, 0.29008177, 0, 0, 0, 0.29008177, -1.8745157, 10.515797, 180.61049)
+transform = Transform3D(0.6, 0, 0, 0, 0.29, 0, 0, 0, 0.6, -1.8745157, 10.264237, 180.61049)
 
 [node name="Pillar_Shadow_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.7691395, 0, 0, 0, 1.2441466, 0, 0, 0, 1.7691395, -14.071028, -9.427385, 141.92839)
@@ -129,3 +125,7 @@ mesh = ExtResource("5_uh8t4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar_Shadow_3/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_km1ug")
+
+[node name="Gem" parent="." instance=ExtResource("8_km1ug")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -1.8779999, 11.246007, 180.62)
+color = Color(0.827451, 0.6862745, 0.21568628, 1)
