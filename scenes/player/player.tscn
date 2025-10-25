@@ -48,6 +48,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 target_position = Vector3(0, 0, -2)
 script = ExtResource("2_dovo2")
 
+[node name="FlashLight" type="SpotLight3D" parent="Neck/Camera3D"]
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 0
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14619458, 0)
 transparency = 1.0
@@ -62,6 +69,13 @@ draw_pass_1 = SubResource("BoxMesh_dovo2")
 [node name="CoyoteTimer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.2
+
+[node name="AreaLight" type="OmniLight3D" parent="."]
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 0
 
 [connection signal="looking_at" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_looking_at"]
 [connection signal="stopped_looking" from="Neck/Camera3D/InteractionRayCast" to="." method="_on_interaction_ray_cast_stopped_looking"]

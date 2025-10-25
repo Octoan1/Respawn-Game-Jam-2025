@@ -14,6 +14,13 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Coyote time stuff
 var coyote_time_active := true
 
+# Player light stuff
+@onready var flash_light: SpotLight3D = $Neck/Camera3D/FlashLight
+@onready var area_light: OmniLight3D = $AreaLight
+
+func _process(delta: float) -> void:
+	_player_lights()
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -97,9 +104,14 @@ signal area_entered(data)
 
 func _on_area_3d_body_entered(body: Node3D):
 	emit_signal("area_entered", body)
-	
-	
-
 
 func _on_coyote_timer_timeout() -> void:
 	coyote_time_active = false
+
+func _player_lights() -> void:
+	if(GlobalTime.time_of_day > 12):
+		area_light.omni_range = 5
+		flash_light.spot_range = 5
+	else:
+		area_light.omni_range = 0
+		flash_light.spot_range = 0
