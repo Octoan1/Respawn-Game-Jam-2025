@@ -22,7 +22,7 @@ func _ready() -> void:
 
 var t := 0.0
 func _process(delta: float) -> void:
-	t += 2 * delta
+	t += .05	
 	position.y += sin(t) * .005
 	mesh.rotate_y(PI/4 * delta)
 
