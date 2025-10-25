@@ -50,8 +50,8 @@ func _on_play_button_pressed():
 func _on_continue_button_pressed():
 	print("continued")
 	info_menu.visible = false
-	set_paused(false)
 	current_ui_state = UIState.NORMAL
+	set_paused(false)
 
 func toggle_pause():
 	set_paused(current_ui_state != UIState.PAUSED)
