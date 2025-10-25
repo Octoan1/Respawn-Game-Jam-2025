@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=40 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://txqikdwfiu0y" path="res://scenes/CalvinBranch.tscn" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="23_og1vs"]
 [ext_resource type="PackedScene" uid="uid://c4me6ubd4dauw" path="res://scenes/Moon_Door.tscn" id="24_2f3dj"]
+[ext_resource type="Script" uid="uid://cq1nm0ch765wk" path="res://scenes/sky_manager.gd" id="26_fv21b"]
 [ext_resource type="ArrayOccluder3D" uid="uid://vno0f4qisokd" path="res://scenes/OcclusionProfile.occ" id="27_vxglm"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -50,6 +51,7 @@ viewport_path = NodePath("Objects/PlayerPostProcess/PostProcessViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
 albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 106.1
 
@@ -58,7 +60,7 @@ material = SubResource("StandardMaterial3D_choun")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85g3d"]
 shading_mode = 0
-albedo_color = Color(0.8509804, 0.8509804, 0.8509804, 1)
+albedo_color = Color(0.44291043, 0.4429109, 0.44291037, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -131,8 +133,8 @@ sun_angle_offset = 180.0
 mesh = SubResource("SphereMesh_tipki")
 surface_material_override/0 = SubResource("StandardMaterial3D_85g3d")
 script = ExtResource("3_o6xl0")
-moon_distance = 1150.0
-moon_size = 200.0
+moon_distance = 1800.0
+moon_size = 300.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Objects"]
 environment = SubResource("Environment_sugp2")
@@ -294,6 +296,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 [node name="CalvinBranch" parent="Objects" instance=ExtResource("23_2wyq8")]
 
 [node name="MoonDoorPrefab" parent="Objects" instance=ExtResource("24_2f3dj")]
+
+[node name="SkyManager" type="Node" parent="Objects"]
+script = ExtResource("26_fv21b")
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
