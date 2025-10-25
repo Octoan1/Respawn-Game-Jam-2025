@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_5stq5"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="5_suv70"]
 [ext_resource type="FontFile" uid="uid://6rnqe57nmi7e" path="res://assets/models/Tonutsa-1jEB2.ttf" id="6_la06y"]
-[ext_resource type="Script" path="res://scenes/text.gd" id="7_5stq5"]
+[ext_resource type="Script" uid="uid://dgivkhyi1dgah" path="res://scenes/text.gd" id="7_5stq5"]
 [ext_resource type="PackedScene" uid="uid://i8p0bkkwa0ot" path="res://scenes/environment/props/obelisk.tscn" id="7_la06y"]
 
 [sub_resource type="TextMesh" id="TextMesh_6t14r"]
@@ -30,12 +30,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_la06y")
 script = ExtResource("7_5stq5")
 
 [node name="Rocks" type="Node3D" parent="."]
-
-[node name="TallRock" parent="Rocks" instance=ExtResource("2_xdehj")]
-transform = Transform3D(2.1661077, 0, 2.231662, 0, 3.1100383, 0, -2.231662, 0, 2.1661077, 37.167694, -8.227286, -91.31)
-
-[node name="TallRock2" parent="Rocks" instance=ExtResource("2_xdehj")]
-transform = Transform3D(-3.312104, 0, 0, 0, 3.0110033, 0, 0, 0, 3.0110033, 70.088005, -7.4687767, -64.64334)
 
 [node name="RoundRock" parent="Rocks" instance=ExtResource("4_5stq5")]
 transform = Transform3D(2.3591795, 0, 0, 0, 2.3591795, 0, 0, 0, 2.3591795, 88.0497, -8.13875, -77.37453)
