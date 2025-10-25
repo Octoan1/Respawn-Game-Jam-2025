@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=38 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b7cfmo3tbto5t" path="res://scenes/pyramid.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://74fgclvw5hvi" path="res://scenes/environment/props/interactables/final_gem.tscn" id="9_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="10_eb6dy"]
+[ext_resource type="Script" uid="uid://culihtv734n8p" path="res://scenes/components/interactable.gd" id="11_2f3dj"]
 [ext_resource type="PackedScene" uid="uid://hws8fv1mmh2t" path="res://scenes/GlowPuzzle.tscn" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://bt12wcgor20dm" path="res://scenes/environment/props/obelisk.gd" id="11_trceg"]
 [ext_resource type="Texture2D" uid="uid://dsqdrajec6dag" path="res://assets/interaction_crosshair.png" id="11_ya4ey"]
@@ -190,6 +191,10 @@ mesh = SubResource("TextMesh_trceg")
 [node name="Star8" type="MeshInstance3D" parent="Objects/Obelisk_R"]
 transform = Transform3D(-8.1697035, -9.674343e-08, -8.873206e-08, -3.5740833e-08, 8.893355, 0.10008385, 7.1242505e-07, 0.894573, -0.99497867, 0.0624249, 3.0349908, -0.7668133)
 mesh = SubResource("TextMesh_trceg")
+
+[node name="Interactable" type="Node3D" parent="Objects/Obelisk_R"]
+script = ExtResource("11_2f3dj")
+metadata/_custom_type_script = "uid://culihtv734n8p"
 
 [node name="GemContainer" type="Node" parent="Objects"]
 

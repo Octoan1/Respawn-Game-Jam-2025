@@ -38,22 +38,28 @@ var current_ui_state: UIState = UIState.NORMAL
 func _ready():
 	play_button.pressed.connect(_on_play_button_pressed)
 	continue_button.pressed.connect(_on_continue_button_pressed)
+	current_ui_state = UIState.START_MENU
 
 func _on_play_button_pressed():
 	print("hello")
 	start_menu.visible = false
 	info_menu.visible = true
+	current_ui_state = UIState.INFO_MENU
 	#set_paused(false)
 	
 func _on_continue_button_pressed():
 	print("continued")
 	info_menu.visible = false
 	set_paused(false)
+	current_ui_state = UIState.NORMAL
 
 func toggle_pause():
 	set_paused(current_ui_state != UIState.PAUSED)
 	
 func set_paused(paused: bool):
+	if current_ui_state == UIState.START_MENU or current_ui_state == UIState.INFO_MENU:
+		return
+	
 	if current_ui_state == UIState.GAME_END:
 		return  # ignore crosshair updates during game end
 	
