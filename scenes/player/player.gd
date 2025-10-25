@@ -110,8 +110,8 @@ func _on_coyote_timer_timeout() -> void:
 
 func _player_lights() -> void:
 	if(GlobalTime.time_of_day > 12):
-		area_light.omni_range = 5
-		flash_light.spot_range = 5
+		area_light.omni_range = 3
+		flash_light.spot_range = 50
 	else:
 		area_light.omni_range = 0
 		flash_light.spot_range = 0
