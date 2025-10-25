@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4me6ubd4dauw"]
+
+[ext_resource type="PackedScene" uid="uid://bxa563snxi6os" path="res://scenes/environment/props/Platform.tscn" id="1_w2ahc"]
+[ext_resource type="Script" uid="uid://cqr50i3h20b45" path="res://scenes/environment/props/MoonDoor.gd" id="2_341rs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tel4y"]
+albedo_color = Color(0.1882353, 0.3137255, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_qkpxi"]
+material = SubResource("StandardMaterial3D_tel4y")
+text = "☾"
+font_size = 64
+
+[node name="MoonDoorPrefab" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -172.06784, -19.762815, -45.618492)
+
+[node name="MoonDoor" parent="." instance=ExtResource("1_w2ahc")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("2_341rs")
+
+[node name="MoonDoorText" type="MeshInstance3D" parent="MoonDoor"]
+transform = Transform3D(-4.8082524e-07, 0, 7.9999995, 0, 7.9999995, 0, -10.999999, 0, -3.496911e-07, 5.7379303, 5.4748316, 0)
+mesh = SubResource("TextMesh_qkpxi")

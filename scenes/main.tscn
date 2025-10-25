@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b8k07vwbcoo4v"]
+[gd_scene load_steps=38 format=3 uid="uid://b8k07vwbcoo4v"]
 
 [ext_resource type="PackedScene" uid="uid://blehgd713ihr" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rp88fv7e3vcy" path="res://scripts/sun.gd" id="1_tbgi4"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dtx4campllfov" path="res://scenes/Maze.tscn" id="22_y6deb"]
 [ext_resource type="PackedScene" uid="uid://txqikdwfiu0y" path="res://scenes/CalvinBranch.tscn" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://cqjtb17muml78" path="res://assets/title screen.png" id="23_og1vs"]
+[ext_resource type="PackedScene" uid="uid://c4me6ubd4dauw" path="res://scenes/Moon_Door.tscn" id="24_2f3dj"]
 [ext_resource type="ArrayOccluder3D" uid="uid://vno0f4qisokd" path="res://scenes/OcclusionProfile.occ" id="27_vxglm"]
 
 [sub_resource type="GDScript" id="GDScript_tbgi4"]
@@ -288,6 +289,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 0, 0)
 
 [node name="CalvinBranch" parent="Objects" instance=ExtResource("23_2wyq8")]
+
+[node name="MoonDoorPrefab" parent="Objects" instance=ExtResource("24_2f3dj")]
 
 [node name="UI" type="Node" parent="."]
 unique_name_in_owner = true
