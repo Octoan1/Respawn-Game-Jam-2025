@@ -2,8 +2,8 @@ extends CharacterBody3D
 
 #signal interact(target)
 
-@export var SPEED: float = 12
-@export var JUMP_VELOCITY: float = 4.5
+@export var SPEED: float = 15
+@export var JUMP_VELOCITY: float = 6
 var can_fly: bool = false
 
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
