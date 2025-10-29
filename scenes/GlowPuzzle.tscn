@@ -13,10 +13,12 @@ font = ExtResource("6_la06y")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la06y"]
 transparency = 1
-albedo_color = Color(0, 1, 0, 0.9764706)
+blend_mode = 3
 emission_enabled = true
 emission = Color(0, 0.84313726, 0, 1)
-emission_energy_multiplier = 3.31
+emission_energy_multiplier = 65.16
+backlight_enabled = true
+backlight = Color(0, 0.7543013, 7.70092e-07, 1)
 
 [node name="GlowPuzzle" type="Node3D"]
 
@@ -28,6 +30,30 @@ transform = Transform3D(-11.999995, -2.8319364e-06, 5.496349e-07, 1.1917194e-06,
 mesh = SubResource("TextMesh_6t14r")
 surface_material_override/0 = SubResource("StandardMaterial3D_la06y")
 script = ExtResource("7_5stq5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FlatRock/Text"]
+transform = Transform3D(0.012381266, 1.9984014e-15, 5.551115e-16, 0, 0.008852635, 6.9849193e-09, -9.992007e-16, -2.9352852e-16, 0.026766393, -0.0063066483, -0.015660822, 0.12423611)
+light_color = Color(0.14117648, 1, 0.1882353, 1)
+light_energy = 10.165
+light_volumetric_fog_energy = 0.0
+spot_range = 23.368034
+spot_angle = 72.46
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="FlatRock/Text"]
+transform = Transform3D(0.012381266, 1.9984014e-15, 1.6098234e-15, 0, 0.008852635, 6.9849193e-09, -3.2196468e-15, -9.313229e-10, 0.026766393, 0.17436683, -0.015799463, 0.12756181)
+light_color = Color(0.14117648, 1, 0.1882353, 1)
+light_energy = 10.165
+light_volumetric_fog_energy = 0.0
+spot_range = 23.368034
+spot_angle = 72.46
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="FlatRock/Text"]
+transform = Transform3D(0.012381266, 1.9984014e-15, 2.6090241e-15, 0, 0.008852635, 6.9849193e-09, -5.6621374e-15, -9.313229e-10, 0.026766393, -0.15891027, -0.015938282, 0.13088775)
+light_color = Color(0.14117648, 1, 0.1882353, 1)
+light_energy = 10.165
+light_volumetric_fog_energy = 0.0
+spot_range = 23.368034
+spot_angle = 72.46
 
 [node name="Rocks" type="Node3D" parent="."]
 
