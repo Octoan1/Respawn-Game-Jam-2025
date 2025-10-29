@@ -38,9 +38,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			JUMP_VELOCITY = 4.5
 			can_fly = false
 	elif event.is_action_pressed("time_forward"):
-		GlobalTime.time_of_day += 1
+		if(GlobalTime.time_of_day >= 23):
+			GlobalTime.time_of_day = 23.5
+			return
+		else:
+			GlobalTime.time_of_day += .5
 	elif event.is_action_pressed("time_backward"):
-		GlobalTime.time_of_day -= 1
+		if(GlobalTime.time_of_day <= 0):
+			return
+		GlobalTime.time_of_day -= .5
 
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:

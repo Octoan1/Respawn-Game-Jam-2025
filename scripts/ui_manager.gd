@@ -66,7 +66,7 @@ func set_paused(paused: bool):
 	current_ui_state = UIState.PAUSED if paused else UIState.NORMAL
 	
 	var gems_collected_label: Label = pause_menu.find_child("Gems Collected")
-	gems_collected_label.text = "Gems Collected: %d/24" %GameManager.score
+	gems_collected_label.text = "Gems Collected: %d/23" %GameManager.score
 	
 	#get_tree().paused = paused
 	GlobalTime.stopped = paused
@@ -95,7 +95,7 @@ func set_game_end(score: int):
 	var days_taken_label: Label = end_screen.find_child("DaysTaken")
 	
 	# update labels
-	gems_collected_label.text = "Gems Collected: %d out of 24" %score
+	gems_collected_label.text = "Gems Collected: %d out of 23" %score
 	days_taken_label.text = "Time Spent: %d days" %GlobalTime.day_counter
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
