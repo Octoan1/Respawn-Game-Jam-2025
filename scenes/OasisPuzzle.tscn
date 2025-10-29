@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://er3kl7do4sbi"]
 
 [ext_resource type="PackedScene" uid="uid://bc5ei3whwiwgd" path="res://scenes/environment/props/Oasis.tscn" id="1_6saj5"]
-[ext_resource type="Script" path="res://scenes/water.gd" id="3_q6ip3"]
+[ext_resource type="Script" uid="uid://cco06rsbtx5hc" path="res://scenes/water.gd" id="3_q6ip3"]
 [ext_resource type="PackedScene" uid="uid://c28i4rrg6jin0" path="res://scenes/environment/props/RoundRock.tscn" id="4_pah0b"]
 [ext_resource type="PackedScene" uid="uid://ct5hdmo8gk37a" path="res://scenes/environment/props/LongRock.tscn" id="5_gu4qf"]
 [ext_resource type="PackedScene" uid="uid://b7qdscytrewy1" path="res://scenes/environment/props/FlatRock.tscn" id="6_cs2kc"]
 [ext_resource type="PackedScene" uid="uid://chric61ueb3o" path="res://scenes/environment/props/interactables/gem.tscn" id="7_3w1f2"]
 [ext_resource type="PackedScene" uid="uid://cu2n8k86nlljv" path="res://scenes/TumbleweedGem.tscn" id="8_20r3m"]
-[ext_resource type="Script" path="res://scenes/tumbleweed_gem.gd" id="9_q6ip3"]
+[ext_resource type="Script" uid="uid://gffedljgjbej" path="res://scenes/tumbleweed_gem.gd" id="9_q6ip3"]
 [ext_resource type="PackedScene" uid="uid://xhn3nfws0fkv" path="res://scenes/environment/props/Tree.tscn" id="10_cs2kc"]
 [ext_resource type="PackedScene" uid="uid://db6wf0j8ln6yx" path="res://scenes/environment/props/RockCluster.tscn" id="11_3w1f2"]
 [ext_resource type="PackedScene" uid="uid://b5j2m30v87u1i" path="res://scenes/environment/props/TallRock.tscn" id="12_h6e1h"]
@@ -50,7 +50,7 @@ transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 86.57679
 transform = Transform3D(3.581071, 0, 0, 0, 3.581071, 0, 0, 0, 3.581071, 85.67194, -8.254159, 94.18468)
 
 [node name="LongRock" parent="." instance=ExtResource("5_gu4qf")]
-transform = Transform3D(2.6286495, 0, -6.8208113, 0, 7.309806, 0, 6.8208113, 0, 2.6286495, 97.395515, -10.872866, 116.537636)
+transform = Transform3D(2.6287198, 0, -6.820992, 0, 10, 0, 6.820992, 0, 2.6287198, 97.395515, -10.872866, 116.537636)
 
 [node name="FlatRock" parent="." instance=ExtResource("6_cs2kc")]
 transform = Transform3D(0.5974992, 0, -0.8018695, 0, 2.862, 0, 0.8018695, 0, 0.5974992, 114.44917, -2.840228, 120.2254)

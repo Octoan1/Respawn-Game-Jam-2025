@@ -226,7 +226,7 @@ color = Color(0.08235294, 0.21176471, 0.5647059, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.59956, -19.772457, 167.71086)
 
 [node name="TimedPlatformerGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -312.54645, -15.059364, 108.4897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -312.54645, -12.589657, 108.4897)
 
 [node name="PillarRingGem" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.27195, -8.125523, -199.90875)
@@ -244,7 +244,7 @@ color = Color(0, 0.8494162, 0, 1)
 transform = Transform3D(23.420973, 0, 0, 0, 23.420973, 0, 0, 0, 23.420973, 0, -15.964812, -563.775)
 
 [node name="GemOnRockJump" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.05928, -14.093512, 101.563156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.07802, -11.442764, 100.526276)
 color = Color(0.08235294, 0.21176471, 0.5647059, 1)
 
 [node name="GemJumpChallenge1" parent="Objects/GemContainer" instance=ExtResource("10_eb6dy")]
