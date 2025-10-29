@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkihpl4l4lkvt"
 path.s3tc="res://.godot/imported/TubleWeed.png-207427001bb8206a52741f378dac295e.s3tc.ctex"
+path.etc2="res://.godot/imported/TubleWeed.png-207427001bb8206a52741f378dac295e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/TubleWeed.png"
-dest_files=["res://.godot/imported/TubleWeed.png-207427001bb8206a52741f378dac295e.s3tc.ctex"]
+dest_files=["res://.godot/imported/TubleWeed.png-207427001bb8206a52741f378dac295e.s3tc.ctex", "res://.godot/imported/TubleWeed.png-207427001bb8206a52741f378dac295e.etc2.ctex"]
 
 [params]
 

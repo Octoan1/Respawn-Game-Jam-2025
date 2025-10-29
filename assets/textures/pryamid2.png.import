@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cagyg4ypnlu5v"
 path.s3tc="res://.godot/imported/pryamid2.png-83c92955205289da361f4a4f3975795b.s3tc.ctex"
+path.etc2="res://.godot/imported/pryamid2.png-83c92955205289da361f4a4f3975795b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/pryamid2.png"
-dest_files=["res://.godot/imported/pryamid2.png-83c92955205289da361f4a4f3975795b.s3tc.ctex"]
+dest_files=["res://.godot/imported/pryamid2.png-83c92955205289da361f4a4f3975795b.s3tc.ctex", "res://.godot/imported/pryamid2.png-83c92955205289da361f4a4f3975795b.etc2.ctex"]
 
 [params]
 
